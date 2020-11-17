@@ -1,6 +1,6 @@
 /* CSS Document */
 *{
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 body {
@@ -45,6 +45,7 @@ h1 {
 
 .photo {
   display: none;
+  transition: auto;
 }
 
 .profilepic {
@@ -158,6 +159,11 @@ h1 {
 
 #upBTN {
   display: none;
+  transition: auto;
+}
+
+#downBTN {
+  transition: auto;
 }
 
 .uxdesign > .icon {
@@ -208,6 +214,7 @@ h1 {
   display: none;
   padding-top: 1.5rem;
   font-weight: 400;
+  transition: auto;
 }
 
 .icon > h1{
