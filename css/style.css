@@ -30,6 +30,16 @@ h1 {
   text-align: right;
 }
 
+.socials a {
+  color: black;
+  transition: auto;
+}
+
+.socials a:hover {
+  color: #1EAEDB;
+  transition: auto;
+}
+
 .fa-facebook, .fa-linkedin {
   font-size: 4rem;
 }
@@ -63,11 +73,13 @@ h1 {
 .resume a {
   color: black;
   font-weight: 600;
+  transition: auto;
 }
 
 .resume a:hover {
   color: #1EAEDB;
   cursor: pointer;
+  transition: auto;
 }
 
 .titlebar, .titlebar h2{
@@ -214,7 +226,6 @@ h1 {
   display: none;
   padding-top: 1.5rem;
   font-weight: 400;
-  transition: auto;
 }
 
 .icon > h1{
