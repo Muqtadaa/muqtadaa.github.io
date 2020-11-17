@@ -1,0 +1,280 @@
+/* CSS Document */
+*{
+  transition: 0.3s;
+}
+
+body {
+  background-color: #F2F8FF;
+}
+
+h1 {
+  font-weight: 1000;
+}
+
+.header {
+  background-color: white;
+  border-radius: 0 0 50px 50px;
+  padding: 2.0rem;
+  box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
+}
+
+.topbar {
+  margin-bottom: 75px;
+}
+
+.logo > img {
+  width: 5rem;
+}
+
+.socials {
+  text-align: right;
+}
+
+.fa-facebook, .fa-linkedin {
+  font-size: 4rem;
+}
+
+.name {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.name:hover {
+  color: #1EAEDB;
+}
+
+.photo {
+  display: none;
+}
+
+.profilepic {
+  background: url("../images/profilephoto.jpg");
+  background-size: cover;
+  border-radius: 25rem;
+  height: 22rem;
+  width: 22rem;
+  text-align: center;
+  margin: auto;
+  margin-bottom:1.5rem;
+  box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
+}
+
+.resume a {
+  color: black;
+  font-weight: 600;
+}
+
+.resume a:hover {
+  color: #1EAEDB;
+  cursor: pointer;
+}
+
+.titlebar, .titlebar h2{
+  color: #6E819C;
+  font-weight: 700;
+}
+
+.titlebar {
+  padding-top: 10rem;
+}
+
+.ux {
+  text-align: center;
+}
+
+.ux h3 {
+  font-weight: 700;
+  margin: 0;
+}
+
+.ux > .yolk {
+  border-radius: 25px;
+  background-image: url("../images/Screenshot (104).png");
+  padding: 10rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
+}
+
+.ux > .yolk:hover {
+  background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../images/Screenshot (104).png");
+  cursor: pointer;
+  transform: translateY(-10px);
+  color: white;
+}
+
+.ux > .via {
+  border-radius: 25px;
+  background-image: url("../images/Screenshot (106).png");
+  padding: 10rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
+}
+
+.ux > .via:hover {
+  background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../images/Screenshot (106).png");
+  cursor: pointer;
+  transform: translateY(-10px);
+  color: white;
+}
+
+.ux > .porto {
+  border-radius: 25px;
+  background-image: url("../images/Screenshot (107).png");
+  padding: 10rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
+}
+
+.ux >.porto:hover {
+  background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../images/Screenshot (107).png");
+  cursor: pointer;
+  transform: translateY(-10px);
+  color: white;
+}
+
+.skills {
+  background-color: white;
+  box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
+  border-radius: 3rem;
+  padding: 1.5rem;
+}
+
+.skillsArrow {
+  text-align: center;
+  padding: 5rem 5rem 0rem 5rem;
+  color: black;
+  cursor: pointer;
+}
+
+.skillsArrow:hover {
+  color: #1EAEDB;
+}
+
+#upBTN {
+  display: none;
+}
+
+.uxdesign > .icon {
+  background-color: #FFD9C7;
+  color: #FF7231;
+  text-align: center;
+  height: auto;
+  width: auto;
+  margin: auto;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+}
+
+.engineering > .icon {
+  background-color: #E1C8Ef;
+  color: #8132AD;
+  text-align: center;
+  height: auto;
+  width: auto;
+  margin: auto;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+}
+
+.uidesign > .icon {
+  background-color: #CCD5FF;
+  color: #4263FF;
+  text-align: center;
+  height: auto;
+  width: auto;
+  margin: auto;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+}
+
+.marketing > .icon {
+  background-color: #B6EDDE;
+  color: #32c89f;
+  text-align: center;
+  height: auto;
+  width: auto;
+  margin: auto;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+}
+
+#infoRow {
+  display: none;
+  padding-top: 1.5rem;
+  font-weight: 400;
+}
+
+.icon > h1{
+  font-size: 5rem;
+}
+
+.icon > h2 {
+  font-size: 2rem;
+}
+
+.graphicdesign {
+  color: white;
+  font-weight: 500;
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 10rem;
+  background: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.75)), url("../images/graphicdesigncover.jpg");
+  background-attachment: fixed;
+  background-position: top right;
+  background-size: cover;
+  border-radius: 25px;
+  box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
+}
+
+.graphicdesign:hover {
+  background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../images/graphicdesigncover.jpg");
+  background-attachment: fixed;
+  background-position: bottom right;
+  background-size: cover;
+  cursor: pointer;
+  transform: translateY(-10px);
+  color: white;
+}
+
+.digitalart {
+  color: white;
+  font-weight: 500;
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 10rem;
+  background: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.75)), url("../images/digitalartcover.png");
+  background-attachment: fixed;
+  background-position: top right;
+  background-size: cover;
+  border-radius: 25px;
+  box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
+}
+
+.digitalart:hover {
+  background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../images/digitalartcover.png");
+  background-attachment: fixed;
+  background-position: bottom right;
+  background-size: cover;
+  cursor: pointer;
+  transform: translateY(-10px);
+  color: white;
+}
+
+.bottom {
+  margin-bottom: 2rem;
+}
+
+.footer {
+  font-weight: 400;
+}
+
+.contact {
+  font-weight: 400;
+  font-size: 1.8rem;
+}
