@@ -1,0 +1,45 @@
+/* CSS Document */
+*{
+  transition: 0.2s;
+}
+
+body {
+  background-color: #F2F8FF;
+}
+
+h1 {
+  font-weight: 1000;
+}
+
+.header {
+  background-color: white;
+  border-radius: 0 0 50px 50px;
+  padding: 2.0rem;
+  box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
+}
+
+.topbar {
+  margin-bottom: 75px;
+}
+
+.logo > img {
+  width: 5rem;
+}
+
+.socials {
+  text-align: right;
+}
+
+.socials a {
+  color: black;
+  transition: auto;
+}
+
+.socials a:hover {
+  color: #1EAEDB;
+  transition: auto;
+}
+
+.fa-facebook, .fa-linkedin {
+  font-size: 4rem;
+}

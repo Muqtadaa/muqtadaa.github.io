@@ -11,6 +11,10 @@ h1 {
   font-weight: 1000;
 }
 
+a {
+  text-decoration: none;;
+}
+
 .header {
   background-color: white;
   border-radius: 0 0 50px 50px;
@@ -108,13 +112,14 @@ h1 {
   background-repeat: no-repeat;
   background-position: center;
   box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
+  color: black;
 }
 
 .ux > .yolk:hover {
   background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../images/Screenshot (104).png");
   cursor: pointer;
   transform: translateY(-10px);
-  color: white;
+  color: #1EAEDB;
 }
 
 .ux > .via {
@@ -125,13 +130,14 @@ h1 {
   background-repeat: no-repeat;
   background-position: center;
   box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
+  color: black;
 }
 
 .ux > .via:hover {
   background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../images/Screenshot (106).png");
   cursor: pointer;
   transform: translateY(-10px);
-  color: white;
+  color: #1EAEDB;
 }
 
 .ux > .porto {
@@ -142,13 +148,14 @@ h1 {
   background-repeat: no-repeat;
   background-position: center;
   box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
+  color: black;
 }
 
-.ux >.porto:hover {
+.ux > .porto:hover {
   background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../images/Screenshot (107).png");
   cursor: pointer;
   transform: translateY(-10px);
-  color: white;
+  color: #1EAEDB;
 }
 
 .skills {
@@ -276,6 +283,7 @@ h1 {
   background-attachment: fixed;
   background-position: center;
   background-size: contain;
+  background-repeat: no-repeat;
   border-radius: 25px;
   box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
 }
@@ -300,6 +308,7 @@ h1 {
   background-attachment: fixed;
   background-position: center;
   background-size: contain;
+  background-repeat: no-repeat;
   border-radius: 25px;
   box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
 }
@@ -325,4 +334,11 @@ h1 {
 .contact {
   font-weight: 400;
   font-size: 1.8rem;
+}
+
+@media (max-width: 550px) {
+  
+  .ux > div, .skills > div > div, .other > div {
+    margin-bottom: 1.5rem;
+  }
 }
