@@ -338,7 +338,7 @@ a {
 
 @media (max-width: 550px) {
   
-  .ux > div, .skills > div > div, .other > div {
+  .ux > a, .skills > div > div, .other > div {
     margin-bottom: 1.5rem;
   }
 }
