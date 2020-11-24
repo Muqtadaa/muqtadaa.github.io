@@ -247,6 +247,10 @@ a {
   text-align: center;
 }
 
+.other {
+  text-align: center;
+}
+
 .graphicdesign {
   color: white;
   font-weight: 500;
@@ -255,19 +259,21 @@ a {
   padding: 10rem;
   background: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.75)), url("../images/graphicdesigncover.jpg");
   background-attachment: fixed;
-  background-position: center right;
+  border-radius: 25px;
   background-size: cover;
   background-repeat: no-repeat;
-  border-radius: 25px;
+  background-position: center;
   box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
 }
 
 .graphicdesign:hover {
   background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../images/graphicdesigncover.jpg");
   background-attachment: fixed;
-  background-position: center right;
+  border-radius: 25px;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
   cursor: pointer;
   transform: translateY(-10px);
   color: white;
@@ -281,9 +287,10 @@ a {
   padding: 10rem;
   background: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.75)), url("../images/digitalartcover.png");
   background-attachment: fixed;
-  background-position: center;
-  background-size: contain;
+  border-radius: 25px;
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   border-radius: 25px;
   box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
 }
@@ -291,8 +298,10 @@ a {
 .digitalart:hover {
   background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../images/digitalartcover.png");
   background-attachment: fixed;
+  border-radius: 25px;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
   cursor: pointer;
   transform: translateY(-10px);
   color: white;
@@ -306,9 +315,9 @@ a {
   padding: 10rem;
   background: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.75)), url("../images/d20.jpg");
   background-attachment: fixed;
-  background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: right;
   border-radius: 25px;
   box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
 }
@@ -316,8 +325,10 @@ a {
 .dnd:hover {
   background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../images/d20.jpg");
   background-attachment: fixed;
+  border-radius: 25px;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
   cursor: pointer;
   transform: translateY(-10px);
   color: white;
