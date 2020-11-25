@@ -349,7 +349,12 @@ a {
 
 @media (max-width: 550px) {
   
+  .header > div > h2 {
+    font-size: 1.75rem;
+  }
+
   .ux > a, .skills > div > div, .other > div {
     margin-bottom: 1.5rem;
   }
+  
 }

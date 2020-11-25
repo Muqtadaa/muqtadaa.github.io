@@ -292,7 +292,7 @@ ul {
 ol {
   list-style: decimal inside; }
 ol, ul {
-  padding-left: 0;
+  padding-left: 2rem;
   margin-top: 0; }
 ul ul,
 ul ol,
@@ -301,6 +301,7 @@ ol ul {
   margin: 1.5rem 0 1.5rem 3rem;
   font-size: 90%; }
 li {
+  text-indent:-1.3em;
   margin-bottom: 1rem; }
 
 

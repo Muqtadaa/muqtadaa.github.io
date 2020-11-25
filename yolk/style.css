@@ -68,11 +68,6 @@ p {
   font-size: 4rem;
 }
 
-.flexContainer {
-  display: flex;
-  flex-flow: row wrap;
-}
-
 .prototype, .firstText {
   margin-top: 10rem;
   align-self: center;
@@ -83,6 +78,22 @@ p {
   border-radius: 25px;
   padding: 2.5rem;
   box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
+}
+
+.mockup1 {
+  text-align:right;
+  padding-right: 0;
+  margin-right: 0;
+  margin-bottom: 2rem;
+  border-radius: 2.5rem 0 0 2.5rem;
+}
+
+.mockup2 {
+  text-align:left;
+  padding-left: 0;
+  margin-left: 0;
+  margin-bottom: 2rem;
+  border-radius: 0 2.5rem 2.5rem 0;
 }
 
 .prototype {
@@ -144,12 +155,77 @@ p {
   font-weight: 400;
 }
 
-.chart1 {
+.chart {
   text-align: center;
 }
 
-.chart2 {
+.userPersona {
+  background-color: white;
+  border-radius: 25px;
+  padding: 2.5rem;
+  box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
+  font-weight: 400;
+}
+
+.persona {
+  border-radius: 25px;
+  padding: 2rem;
+  box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
+  margin-top: 5rem;
+  font-weight: 400;
+}
+
+.jackie {
+  background-color: #fbf2ff;
+  color: #725e7a;
+}
+
+.skyler {
+  background-color: #f2fff5;
+  color: #607d67;
+}
+
+.john {
+  background-color: #fff2f2;
+  color: #7a5e5e;
+  margin-bottom: 10rem;
+}
+
+.persona .left {
+}
+
+.profilePhoto {
   text-align: center;
+}
+
+.profilePhoto img {
+  width: 75%;
+  border-radius: 100%;
+}
+
+.wireframes {
+  background-color: white;
+  border-radius: 25px;
+  padding: 2.5rem;
+  box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
+  font-weight: 400;
+}
+
+.wireframes img {
+  border-radius: 2rem;
+}
+
+.bottom {
+  margin-bottom: 2rem;
+}
+
+.footer {
+  font-weight: 400;
+}
+
+.contact {
+  font-weight: 400;
+  font-size: 1.8rem;
 }
 
 @media(max-width: 1200px) {
@@ -163,5 +239,7 @@ p {
   .header > div > h2 {
     font-size: 1.75rem;
   }
+  
+  
 }
 

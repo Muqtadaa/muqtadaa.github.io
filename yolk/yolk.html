@@ -17,6 +17,9 @@
     <link rel="icon" type="image/png" href="images/minimal_logo_no_text.png">
     <script src="https://kit.fontawesome.com/e7950dacfd.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="script.js" type="text/javascript"></script>
     
   </head>
 
@@ -61,35 +64,37 @@
         </div>
         
       </div>
-      
-      <div class="flexContainer row">
 
-        <div class="container prototype one-third column">
+        <!--<div class="container prototype one-third column">
 
           <iframe width="100%" height="100%" class="xdEmbed" src="https://xd.adobe.com/embed/a204235f-bc9c-4937-bc59-2a1cbb4a178c-f757/?fullscreen" frameborder="0" style="border-radius:10px" allowfullscreen></iframe>
 
-        </div>
+        </div>-->
 
-        <div class="container two-thirds column firstText">
+        <div class="frame row">
           
           <div class="titlebar">
 
             <h2>What is Yolk?</h2>
 
           </div>
-          
-          <div class="bodytext">
-          
-            <p>In the winter of 2019, my dear friend from high school, Shelby Johnson (Clinical Psychology, PhD candidate at Washington State), was finishing a post-graduate research essay. Put simply, she wrote about how multi-lingual people have a larger and more colorful emotional vocabulary, and built her essay around research that showed that the more articulate one is with describing how they feel, the easier it is for them to process those feelings.</p>
-            
-            <p>I had a brainwave, then, as someone who speaks multiple languages myself, and decided to make my graduating Capstone a user-experience that served as a multi-lingual emotional vernacular dictionary, to allow people to educate themselves and increase their own emotional intelligence. I rushed to speak to my professors about it, and though they thought the idea had merit, I was gently-but-firmly reminded that I ought not get too ambitious.</p>
-            
-            <p>It was Professor Cassini Nazir (formerly of UT Dallas, now at SMU) who pointed me in a new direction. We'd spoken in class about Dr. Robert Plutchik, a man who studied color theory as it related to emotional responses, and from there I had to sit down and figure out what exactly I was trying to make.</p>
-            
-          </div>
 
         </div>
         
+        <div class="bodytext row">
+          
+          <img class="one-half column mockup1" src="../images/Google Pixel 4 XL (4).png" alt="Yolk Mockup Part One">
+          <img class="one-half column mockup2" src="../images/mockup2.png" alt="Yolk Mockup Part Two">
+          
+          <div class="twelve columns">
+            <p>In the winter of 2019, my dear friend from high school, Shelby Johnson (Clinical Psychology, PhD candidate at Washington State), was finishing a post-graduate research essay. Put simply, she wrote about how multi-lingual people have a larger and more colorful emotional vocabulary, and built her essay around research that showed that the more articulate one is with describing how they feel, the easier it is for them to process those feelings.</p>
+
+            <p>I had a brainwave, then, as someone who speaks multiple languages myself, and decided to make my graduating Capstone a user-experience that served as a multi-lingual emotional vernacular dictionary, to allow people to educate themselves and increase their own emotional intelligence. I rushed to speak to my professors about it, and though they thought the idea had merit, I was gently-but-firmly reminded that I ought not get too ambitious.</p>
+
+            <p>It was Professor Cassini Nazir (formerly of UT Dallas, now at SMU) who pointed me in a new direction. We'd spoken in class about Dr. Robert Plutchik, a man who studied color theory as it related to emotional responses, and from there I had to sit down and figure out what exactly I was trying to make.</p>
+            
+          </div>
+            
       </div>
       
       <div class="frame row">
@@ -102,7 +107,7 @@
         
       </div>
       
-      <div class="frameText">
+      <div class="frameText row">
       
         <p>I am a firm believer in using <a href="https://www.designkit.org/methods/frame-your-design-challenge" target="_blank">IDEO's Frame Your Design Kit</a> at the beginning of every project, to help clarify purpose, scope, and goalposts. The process gave me the following:</p>
         
@@ -196,15 +201,11 @@
           
         </div>
       
-        <div class="chart1 twelve columns">
+        <div class="chart row">
         
-          <iframe width="390" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTNuLBeEuWqHZ06a1YppvCalJlobnVyWJrlj0a1GkAGX4M1W2KUb7vsfIPDow8ATZUziNiAb9ntU3ID/pubchart?oid=656918021&amp;format=interactive"></iframe>
-        
-        </div>
-        
-        <div class="chart2 twelve columns">
-        
-          <iframe width="390" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTNuLBeEuWqHZ06a1YppvCalJlobnVyWJrlj0a1GkAGX4M1W2KUb7vsfIPDow8ATZUziNiAb9ntU3ID/pubchart?oid=1377525315&amp;format=interactive"></iframe>
+          <div id="chart_div1" class="chart six columns"></div>
+          
+          <div id="chart_div2" class="chart six columns"></div>
         
         </div>
         
@@ -214,7 +215,7 @@
           
           <p>Users also responded with their preferred methods of relaxing and improving their mood. The full list of responses <a href="https://docs.google.com/forms/d/1ZYuDpI0phvhht4lFQR2bxl4gvaCNO-W9eFgkiTkB-1I/viewanalytics" target="_blank">can be found here.</a></p>
           
-          <p>My major takeaways were the following:
+          <p>My major takeaways were the following:</p>
             
             <ul>
               
@@ -224,9 +225,507 @@
           
             </ul>
           
-          </p>
+        </div>
+      
+      </div>  
+    
+      <div class="frame row">
+      
+        <div class="titlebar">
+
+          <h2>User Personas</h2>
+
+        </div>
+        
+      </div>
+    
+      <div class="userPersona row">
+      
+        <p>I ended up polling the same audience about their demographics, trying to understand who was interested in a product to help navigate their daily emotional well-being, and came across the following insights:</p>
+    
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>Demographic:</th>
+
+              <th>Who are they?</th>
+
+              <th>What is their main goal?</th>
+
+              <th>What are their major obstacles?</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr>
+
+              <td>13-18 year-old Americans, often female</td>
+
+              <td>Identifies as a High School Student</td>
+
+              <td>They want to learn how to control their emotions and not let their feelings overwhelm them. When they fail, their mental health can get in the way of school, social outings, and extracurriculars</td>
+
+              <td>Youth and inexperience, lack of time management skills, poor impulse control</td>
+
+            </tr>
+
+            <tr>
+
+              <td>19-25 year-old Americans, gender non-specific</td>
+
+              <td>Identifies as a College Student</td>
+
+              <td>They need a method to destress without destabilizing themselves. They need to be able to focus on school without losing their mind, while also inevitably dealing with the consequences of acting in a larger world as an adult for the first time</td>
+
+              <td>Busy schedules, critical life choices/lack of counseling extreme future-anxiety, easy access to/presence of substances that can be abused as a crutch</td>
+
+            </tr>
+
+            <tr>
+
+              <td>25-55 year-old Americans, gender non-specific</td>
+
+              <td>Identifies as a Working Professional</td>
+
+              <td>They want to keep on top of their mental health while staying on top of their professional game as well, allowing them to maintain a healthy work-life balance and generally being happy</td>
+
+              <td>Demanding jobs, demands of family life, pride/ego, age-related lack of mental flexibility</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+        <br><br>
+
+        <p>I derived the above table by aggregating the common responses to the poll. These three age-groups sort of grouped themselves up by responding very similarly. I took note of that, and developed the following user personas.</p>
+
+      </div>
+      
+      <div class="persona jackie twelve columns"  style="font-size:75%">
+        
+        <div class="one-third column left" style="text-align: center">
+
+          <div class="row">
+
+            <div class="profilePhoto"><img src="../images/jackie.jpg" alt="Jackie Persona Photo"></div>
+
+          </div>
+          
+          <br>
+
+          <div class="name row">
+
+            <h1 style="font-weight: 300">Jackie Villareal</h1>
+
+          </div>
+
+          <div class="caption row">
+
+            <h5><strong>High School Student</strong></h5>
+
+          </div>
+
+          <div class="quote row">
+
+            <p><em>“I have to finish my homework during lunch because after class I have volleyball practice, then I work from 6 to 10 and I have to FaceTime my boyfriend while he’s on the bus home from his tournament, and don’t even get me started on when I’ll find time to study for the Physics test on Friday, plus Julia thinks she’s gonna wear the same color as me to Homecoming, please, as if!”</em></p>
+
+            <p>17 y.o. Female Latina-American from Mesa, Arizona</p>
+
+          </div>
+
+        </div>
+
+        <div class="two-thirds column right">
+
+          <h3 style="font-weight:700">About Jackie</h3>
+
+          <p style="font-size:115%">Jackie is a high-achieving junior in high-school who works part-time, plays on the school volleyball team, and is preparing to apply for colleges. Jackie is navigating young-adult life in the USA on her own, her parents are immigrants, and she doesn’t have older siblings or cousins who have gone through the system. She’s figuring out college apps, financial aid, scholarships, and more all on her own. On top of that, money is tight at home, so she works part-time to help out. Her boyfriend takes a chunk of her time every day, and her family monopolizes what’s left. </p>
+
+          <p style="font-size: 115%">Jackie often feels like she has no time left for herself anymore. She knows things will calm down when she’s not in such a whirlwind in a few months’ time, but right now she feels like she’s on the verge of a breakdown. She wants to make sure she doesn’t drop the ball with regards to any aspect of her life.</p>
+
+          <p></p>
+
+          <div class="row">
+
+            <div class="one-half column">
+
+              <h4>Rational Needs:</h4>
+
+              <ul>
+
+                <li>Orderly schedule</li>
+
+                <li>Way to organize her thoughts</li>
+
+                <li>Good grades</li>
+
+                <li>Directions for the future</li>
+
+              </ul>
+
+              <h4>Emotional Needs:</h4>
+
+              <ul>
+
+                <li>Love and support from family and friends</li>
+
+                <li>Time to relax</li>
+
+                <li>Tools to overcome feeling overwhelmed</li>
+
+                <li>The chance to be independent</li>
+
+              </ul>
+
+            </div>
+
+            <div class="one-half column">
+
+              <h4>Pain Points:</h4>
+
+              <ul>
+
+                <li>Financial pressure</li>
+
+                <li>Lack of knowledge on self-care</li>
+
+                <li>Lack of time for self</li>
+
+                <li>Poor self-reflection skills</li>
+
+              </ul>
+
+              <h4>Must-Haves:</h4>
+
+              <ul>
+
+                <li>A fast and easy means of recording thoughts and feelings</li>
+
+                <li>An intuitive way to step back and relax</li>
+
+                <li>Tools to help change her mood when it's too much</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <h6 class="twelve columns" style="text-align:center;margin-top:1rem;margin-bottom:0;">Most Used Apps: <i class="fab fa-tiktok"></i>&nbsp;&nbsp;<i class="fa fa-instagram"></i>&nbsp;&nbsp;<i class="fa fa-snapchat-ghost"></i>&nbsp;&nbsp;<i class="fa fa-whatsapp"></i></h6>
+
+      </div>
+      
+      <div class="persona skyler twelve columns"  style="font-size:75%">
+        
+        <div class="one-third column left" style="text-align: center">
+
+          <div class="row">
+
+            <div class="profilePhoto"><img src="../images/skyler.jpg" alt="Skyler Persona Photo"></div>
+
+          </div>
+          
+          <br>
+
+          <div class="name row">
+
+            <h1 style="font-weight: 300">Skyler Matsui</h1>
+
+          </div>
+
+          <div class="caption row">
+
+            <h5><strong>College Student</strong></h5>
+
+          </div>
+
+          <div class="quote row">
+
+            <p><em>“I can’t afford to get high this weekend, both financially and in terms of schedule. I’ve got the biology lab report to do, and I just went to the Math Lab so thank god my calculus homework is done. But my parents are gonna be visiting this weekend, and I can’t use with them around. Plus, I’m pretty much broke till they arrive. They’re gonna be pissed because I’m thinking about changing my major, this late into the degree plan. I just don’t know that I want to sit in an office playing code-monkey forever, you know?”</em></p>
+
+            <p>21 y.o. Japanese-American Gender Non-Binary from Austin, Texas</p>
+
+          </div>
+
+        </div>
+
+        <div class="two-thirds column right">
+
+          <h3 style="font-weight:700">About Skyler</h3>
+
+          <p style="font-size:115%">Skyler is a junior in college who doubts their choice to become a software engineer. There’s pressure from their parents to succeed, but they want to pursue something more creative. They’re having trouble with keeping up with some of their classes, but honestly the biggest issue they face is the number of days they use weed or cheap booze to deal with their crushing anxiety. Though they have access to university-sponsored support networks, they don’t feel comfortable going to them for some reason. </p>
+
+          <p style="font-size: 115%">They want to work but their parents won’t allow it, and they often feel like their life will never be decided by their own choices, but rather by the whims of all the authority figures around them. Sometimes they feel like they’re being pushed into feeling a million things at once, and just want to find clarity. Skyler wants to feel like they’re in control and know where they’re going.</p>
+
+          <p></p>
+
+          <div class="row">
+
+            <div class="one-half column">
+
+              <h4>Rational Needs:</h4>
+
+              <ul>
+
+                <li>Creative expression</li>
+
+                <li>Career and academic counseling</li>
+
+                <li>Good grades</li>
+
+                <li>Control over life</li>
+
+              </ul>
+
+              <h4>Emotional Needs:</h4>
+
+              <ul>
+
+                <li>Space from parents</li>
+
+                <li>Better coping mechanisms</li>
+
+                <li>Greater self-awareness</li>
+
+                <li>A way to improve without revealing their struggles</li>
+
+              </ul>
+
+            </div>
+
+            <div class="one-half column">
+
+              <h4>Pain Points:</h4>
+
+              <ul>
+
+                <li>Financial pressure</li>
+
+                <li>Overbearing parents</li>
+
+                <li>Lack of autonomy</li>
+
+                <li>Poor self-reflection skills</li>
+
+              </ul>
+
+              <h4>Must-Haves:</h4>
+
+              <ul>
+
+                <li>A fast and easy means of identifying feelings</li>
+
+                <li>A private means of self-reflection</li>
+
+                <li>Constructive tools to deal with anxiety</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <h6 class="twelve columns" style="text-align:center;margin-top:1rem;margin-bottom:0;">Most Used Apps: <i class="fab fa-tiktok"></i>&nbsp;&nbsp;<i class="fa fa-instagram"></i>&nbsp;&nbsp;<i class="fab fa-facebook-square"></i>&nbsp;&nbsp;<i class="fa fa-whatsapp"></i></h6>
+
+      </div>
+      
+      <div class="persona john twelve columns"  style="font-size:75%">
+        
+        <div class="one-third column left" style="text-align: center">
+
+          <div class="row">
+
+            <div class="profilePhoto"><img src="../images/john.jpg" alt="John Persona Photo"></div>
+
+          </div>
+          
+          <br>
+
+          <div class="name row">
+
+            <h1 style="font-weight: 300">John Silverstein</h1>
+
+          </div>
+
+          <div class="caption row">
+
+            <h5><strong>Working Professional</strong></h5>
+
+          </div>
+
+          <div class="quote row">
+
+            <p><em>“Yeah, work is good, up for a promotion but there are a few good men up for the same role so, fingers crossed, I guess. The wife is expecting again, so there’s that. I’m trying to figure out if it makes sense to have a third kid almost a decade after the first two, but she’s so excited and happy, I can’t talk to her about it. That HR guy that transferred in seems to have it in for me, he’s constantly trying to catch me out on one thing or another. Getting on my nerves in a big way, that is. I feel like I’ve found a solid groove, I’m just worried I’m in a rut. Maybe that’s why the baby bothers me so much, maybe it’s because it upends my previously well-established plans for the future. Maybe that’s a good thing?”</em></p>
+
+            <p>38 y.o. Caucasian-American Male from Chicago, Illinois</p>
+
+          </div>
+
+        </div>
+
+        <div class="two-thirds column right">
+
+          <h3 style="font-weight:700">About John</h3>
+
+          <p style="font-size:115%">John worked hard in high school and college, landed a solid job in sales, and has worked his way to a lower-level executive position. He has continuing career aspirations, so he continues to devote time to his job, even as his youngest child is finishing elementary school. He recently found out he’s having another child, something that is rocking his boat a fair bit. His wife and parents are all excited, but he has these niggling doubts that can’t put words to. He’s concerned about the affordability of another child, even though he’s pretty financially stable.</p>
+
+          <p style="font-size: 115%">He feels like he isn’t taking much time to take care of himself, and it’s beginning to show. John wants to reconnect with himself and his roots, get back into the swing of life, and be the go-getter he remembers being.</p>
+
+          <p></p>
+
+          <div class="row">
+
+            <div class="one-half column">
+
+              <h4>Rational Needs:</h4>
+
+              <ul>
+
+                <li>Time for self-care</li>
+
+                <li>Career growth</li>
+
+                <li>Financial stability</li>
+
+                <li>Get out of the daily rut</li>
+
+              </ul>
+
+              <h4>Emotional Needs:</h4>
+
+              <ul>
+
+                <li>Place to speak freely about misgivings</li>
+
+                <li>Means of calming down when frustrated</li>
+
+                <li>Means of energizing self</li>
+
+              </ul>
+
+            </div>
+
+            <div class="one-half column">
+
+              <h4>Pain Points:</h4>
+
+              <ul>
+
+                <li>Family pressure</li>
+
+                <li>Demanding job</li>
+
+                <li>Difficult coworkers</li>
+
+                <li>Inability to articulate emotions</li>
+
+              </ul>
+
+              <h4>Must-Haves:</h4>
+
+              <ul>
+
+                <li>A way to privately record thoughts</li>
+
+                <li>A means of channeling emotion productively</li>
+
+                <li>Constructive tools to deal with anxiety</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <h6 class="twelve columns" style="text-align:center;margin-top:1rem;margin-bottom:0;">Most Used Apps: <i class="fab fa-facebook-square"></i>&nbsp;&nbsp;<i class="fa fa-twitter"></i>&nbsp;&nbsp;<i class="fa fa-instagram"></i>&nbsp;&nbsp;<i class="fa fa-slack"></i></h6>
+
+      </div>
+      
+      <div class="frame row">
+      
+        <div class="titlebar">
+
+          <h2>First Wireframes</h2>
+
+        </div>
+        
+      </div>
+      
+      <div class="wireframes row">
+      
+        <img class="five columns" src="../images/wireframes.jpg" alt="Initial Wireframes">
+        
+        <div class="seven columns">
+        
+          <p>I used the Crazy Eights design sprint method to generate a series of initial wireframes to serve as a starting point in terms of functionality. From my research and development of user personas, I had identified a number of <strong>key features</strong> that I wanted to implement.</p>
+
+          <ul>
+            
+            <li>Mood logging and tracking (based off the color wheel)</li>
+
+            <li>A private journal for logging thoughts and feelings</li>
+            
+            <li>A meditation guide for centering and relaxing the self</li>
+            
+            <li>Mood music, to cultivate certain feelings and redirect from others</li>
+            
+            <li>A social aspect, to remind users that they are not alone in their feelings</li>
+
+          </ul>
+          
+          <p>With these key features in mind, I generated eight wireframes in about eight minutes, trying out a variety of design styles. Some with headers, some with search bars, some with scroll wheels and color sliders. I presented these to a group of 15 users and asked the following:</p>
+          
+          <ol>
+          
+            <li>Where would you look on the screen for your current mood?</li>
+            
+            <li>Where would you look on the screen to set a current mood?</li>
+            
+            <li>Which of the 'set mood' interactions appeals most to you?</li>
+            
+            <li>Where would you look on the screen for the most recent mood?</li>
+            
+            <li>Was your instinct to check if homepage scrolls? Should it?</li>
+            
+            <li>Where would you look on the screen to navigate through the app?</li>
+            
+          </ol>
+
+        </div>
+        
+        <p>The answers that I received to these questions informed of greatly. The feedback indicated that a rotating wheel of emotions was highly interactive and eye-catching, which serves the key feature of selecting a mood well. Users indicated they did not expect a scrolling page, as based on the pitch they expected a lifestyle app with a relatively static homepage, not a dynamic scrolling feed like a social media app.</p>
+        
+        <p>Overall this user testing session guided me towards which of the features off the different wireframes could be adapted and fit together into an interactive prototype.</p>
+        
+      </div>
+      
+      <br><br><br>
+      
+      <hr>
+      
+      <div class="bottom row">
+        
+        <div class="contact u-pull-left">
+          
+          Wanna chat? You can find me at <a href="mailto:muqdara95@gmail.com?body=Hey%2C%20I'm%20reaching%20out%20after%20having%20looked%20at%20your%20portfolio!">muqdara95@gmail.com</a>.
           
         </div>
+        
+        <div class="footer u-pull-right">©2020 Muqtadaa M. Miandara</div>
         
       </div>
         
