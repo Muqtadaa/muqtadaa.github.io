@@ -19,6 +19,10 @@ $(document).ready(function(){
     
     });
     
+    $("#closeWarning").on("click", function() {
+      $(".warning").slideToggle();
+    });
+    
   });
   
 });
