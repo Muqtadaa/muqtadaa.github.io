@@ -385,4 +385,8 @@ a {
     margin-bottom: 1.5rem;
   }
   
+  .warning {
+    text-align: center;
+  }
+  
 }
