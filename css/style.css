@@ -74,16 +74,25 @@ a {
   box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
 }
 
-.resume a {
+.resume{
   color: black;
   font-weight: 600;
-  transition: auto;
+  text-align: center;
+}
+
+.resume:hover {
+  color: #1EAEDB;
+  cursor: pointer;
+}
+
+.resume a{
+  color: black;
+  font-weight: 600;
 }
 
 .resume a:hover {
   color: #1EAEDB;
   cursor: pointer;
-  transition: auto;
 }
 
 .titlebar, .titlebar h2{
@@ -387,6 +396,15 @@ a {
   
   .warning {
     text-align: center;
+  }
+  
+  .resume h3 {
+    font-size: 2rem;
+  }
+  
+  .resume:hover {
+    background-color: rgba(30,174,219,0.25);
+    border-radius: 2rem;
   }
   
 }

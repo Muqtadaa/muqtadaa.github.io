@@ -19,6 +19,10 @@ p {
   font-weight: normal;
 }
 
+caption {
+  text-align: center;
+}
+
 .header {
   background-color: white;
   border-radius: 0 0 50px 50px;
@@ -141,6 +145,12 @@ p {
   display: none;
 }
 
+.captions {
+  text-align: center;
+  width: 100%;
+  font-weight: 300;
+}
+
 .afterCap {
   margin-top: 1.5rem;
 }
@@ -220,6 +230,7 @@ p {
 
 .wireframes img {
   border-radius: 2rem;
+  margin-bottom: 2rem;
 }
 
 .onboarding {
@@ -286,7 +297,30 @@ p {
   box-shadow: 0px 0px 0px 11px #1f1f1f, 0px 0px 0px 13px #191919, 0px 0px 0px 20px #111, 8px 8px 40px #000;
   overflow: hidden;
   
-/**  &:before,
+}
+
+@media (max-width: 550px) {
+  
+  .header > div > h2 {
+    font-size: 1.75rem;
+  }
+
+  .ux > a, .skills > div > div, .other > div {
+    margin-bottom: 1.5rem;
+  }
+  
+  .warning {
+    text-align: center;
+  }
+  
+  .resume a {
+    font-size: 1rem;
+  }
+  
+}
+  
+/**  
+  &:before,
   &:after{
     content: '';
     position: absolute;
