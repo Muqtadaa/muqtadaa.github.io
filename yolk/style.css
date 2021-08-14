@@ -298,7 +298,11 @@ caption {
   
 }
 
-@media (max-width: 550px) {
+.mobile {
+  display: none !important;
+}
+
+@media (max-width: 787px) {
   
   .header > div > h2 {
     font-size: 1.75rem;
@@ -314,6 +318,19 @@ caption {
   
   .resume a {
     font-size: 1rem;
+  }
+  
+  .contact, .footer {
+    text-align: center;
+    
+  }
+  
+  .desktop {
+    display: none !important;
+  }
+  
+  .mobile {
+    display: block !important;
   }
   
 }
