@@ -1,6 +1,7 @@
 $(document).ready(function() {
   
   $(function(){
+    
     $("#whatIsYolk").on("click", function() {
       $("#whatIsYolk1").toggleClass("fa-chevron-right fa-chevron-down");
       $(".bodytext").slideToggle();
@@ -49,4 +50,4 @@ $(document).ready(function() {
     
   });
   
-});
+});// JavaScript Document

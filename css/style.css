@@ -367,6 +367,7 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
+  display: none;
 }
 
 .warning a {
@@ -384,7 +385,11 @@ a {
   transform: translateY(3px);
 }
 
-@media (max-width: 550px) {
+.mobile {
+  display: none !important;
+}
+
+@media (max-width: 787px) {
   
   .header > div > h2 {
     font-size: 1.75rem;
@@ -407,4 +412,16 @@ a {
     border-radius: 2rem;
   }
   
+  .contact, .footer {
+    text-align: center;
+    
+  }
+  
+  .desktop {
+    display: none !important;
+  }
+  
+  .mobile {
+    display: block !important;
+  }
 }

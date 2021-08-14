@@ -1,4 +1,6 @@
 /* CSS Document */
+
+/* CSS Document */
 *{
   transition: 0.2s;
 }
@@ -9,6 +11,11 @@ body {
 
 h1 {
   font-weight: 1000;
+}
+
+h1 a {
+  text-decoration: none;
+  font-size: 1.25em;
 }
 
 h4 {
@@ -133,112 +140,12 @@ caption {
   border-radius: 25px;
   padding: 2.5rem;
   box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
-  display: none;
 }
 
-.researchText {
-  background-color: white;
-  border-radius: 25px;
-  padding: 2.5rem;
-  box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
-  display: none;
-}
-
-.captions {
+.frameText > img {
   text-align: center;
   width: 100%;
-  font-weight: 300;
-}
-
-.afterCap {
-  margin-top: 1.5rem;
-}
-
-.userResearch {
-  background-color: white;
-  border-radius: 25px;
-  padding: 2.5rem;
-  box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
-  display: none;
-}
-
-.userResearch ul {
-  width: 90%;
-  margin: auto;
-  font-weight: 400;
-}
-
-.chart {
-  text-align: center;
-}
-
-.userPersona {
-  background-color: white;
-  border-radius: 25px;
-  padding: 2.5rem;
-  box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
-  font-weight: 400;
-  display: none;
-}
-
-.persona {
-  border-radius: 25px;
-  padding: 2rem;
-  box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
-  margin-top: 5rem;
-  font-weight: 400;
-  display: none;
-}
-
-.jackie {
-  background-color: #fbf2ff;
-  color: #725e7a;
-}
-
-.skyler {
-  background-color: #f2fff5;
-  color: #607d67;
-}
-
-.john {
-  background-color: #fff2f2;
-  color: #7a5e5e;
-  margin-bottom: 10rem;
-}
-
-.persona .left {
-}
-
-.profilePhoto {
-  text-align: center;
-}
-
-.profilePhoto img {
-  width: 75%;
-  border-radius: 100%;
-}
-
-.wireframes {
-  background-color: white;
-  border-radius: 25px;
-  padding: 2.5rem;
-  box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
-  font-weight: 400;
-  display: none;
-}
-
-.wireframes img {
-  border-radius: 2rem;
-  margin-bottom: 2rem;
-}
-
-.onboarding {
-  background-color: white;
-  border-radius: 25px;
-  padding: 2.5rem;
-  box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
-  font-weight: 400;
-  display: none;
+  border-radius: 2.5rem;
 }
 
 .final {
@@ -247,7 +154,6 @@ caption {
   padding: 2.5rem;
   box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
   font-weight: 400;
-  display: none;
 }
 
 .acknowledgements {
@@ -289,8 +195,8 @@ caption {
 #iphone-x, #iphone-x2, #iphone-x3 {
   position: relative;
   margin: 40px auto;
-  width: 412px;
-  height: 870px;
+  width: 360px;
+  height: 780px;
   border-radius: 40px;
   background-color: #1f1f1f;
   box-shadow: 0px 0px 0px 11px #1f1f1f, 0px 0px 0px 13px #191919, 0px 0px 0px 20px #111, 8px 8px 40px #000;
