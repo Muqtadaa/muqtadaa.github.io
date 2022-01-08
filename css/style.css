@@ -49,12 +49,13 @@ a {
 }
 
 .name {
+  color: #1EAEDB;
   font-weight: 600;
   cursor: pointer;
 }
 
 .name:hover {
-  color: #1EAEDB;
+  color: black;
 }
 
 .photo {
@@ -74,24 +75,16 @@ a {
   box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
 }
 
-.resume{
-  color: black;
-  font-weight: 600;
-  text-align: center;
+.resume a h4 {
+  font-weight: 600!important;
 }
 
-.resume:hover {
+.resume a {
   color: #1EAEDB;
-  cursor: pointer;
-}
-
-.resume a{
-  color: black;
-  font-weight: 600;
 }
 
 .resume a:hover {
-  color: #1EAEDB;
+  color: black;
   cursor: pointer;
 }
 
@@ -172,53 +165,49 @@ a {
   box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
   border-radius: 3rem;
   padding: 1.5rem;
+  font-weight: 500;
 }
 
-.skillsArrow {
-  text-align: center;
-  padding: 5rem 5rem 0rem 5rem;
-  color: black;
-  cursor: pointer;
+.skills h2 {
+  font-weight: 700;
 }
 
-.skillsArrow:hover {
-  color: #1EAEDB;
-}
-
-#upBTN {
-  display: none;
-  transition: auto;
-}
-
-#downBTN {
-  transition: auto;
+.uxdesign {
+  background-color: #FFD9C7;
+  color: #FF7231;
+  border-radius: 1.5rem;
 }
 
 .uxdesign > .icon {
-  background-color: #FFD9C7;
-  color: #FF7231;
   text-align: center;
   height: auto;
   width: auto;
   margin: auto;
   padding: 1.5rem;
+}
+
+.engineering {
+  background-color: #E1C8Ef;
+  color: #8132AD;
   border-radius: 1.5rem;
 }
 
 .engineering > .icon {
-  background-color: #E1C8Ef;
-  color: #8132AD;
   text-align: center;
   height: auto;
   width: auto;
   margin: auto;
   padding: 1.5rem;
+  border-radius: 1.5rem;
+}
+
+.uidesign {
+  background-color: #CCD5FF;
+  color: #4263FF;
   border-radius: 1.5rem;
 }
 
 .uidesign > .icon {
-  background-color: #CCD5FF;
-  color: #4263FF;
   text-align: center;
   height: auto;
   width: auto;
@@ -227,9 +216,13 @@ a {
   border-radius: 1.5rem;
 }
 
-.marketing > .icon {
+.marketing {
   background-color: #B6EDDE;
   color: #32c89f;
+  border-radius: 1.5rem;
+}
+
+.marketing > .icon {
   text-align: center;
   height: auto;
   width: auto;
@@ -300,7 +293,6 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 25px;
   box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
 }
 
@@ -389,10 +381,15 @@ a {
   display: none !important;
 }
 
+.hide {
+  display: none!important;
+}
+
+
 @media (max-width: 787px) {
   
   .header > div > h2 {
-    font-size: 1.75rem;
+    font-size: 2.5rem;
   }
 
   .ux > a, .skills > div > div, .other > div {
@@ -403,9 +400,6 @@ a {
     text-align: center;
   }
   
-  .resume h3 {
-    font-size: 2rem;
-  }
   
   .resume:hover {
     background-color: rgba(30,174,219,0.25);

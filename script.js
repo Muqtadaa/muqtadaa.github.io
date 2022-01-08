@@ -34,13 +34,43 @@ $(document).ready(function(){
     
     });
     
-    $("#skillsBtn").on("click", function(){
+    $("body > div:nth-child(2) > div.skills.row > div > div.uxdesign.three.columns > h2").on("click", function(){
     
-      $("#downBTN").slideToggle();
+      $("body > div:nth-child(2) > div.skills.row > div > div.uxdesign.three.columns > div:nth-child(3)").slideToggle();
       
-      $("#infoRow").slideToggle();
+      $("body > div:nth-child(2) > div.skills.row > div > div.uxdesign.three.columns > h2 > i").toggleClass("fa-caret-down");
       
-      $("#upBTN").slideToggle();
+      $("body > div:nth-child(2) > div.skills.row > div > div.uxdesign.three.columns > h2 > i").toggleClass("fa-caret-up");
+    
+    });
+    
+    $("body > div:nth-child(2) > div.skills.row > div > div.engineering.three.columns > h2").on("click", function(){
+    
+      $("body > div:nth-child(2) > div.skills.row > div > div.engineering.three.columns > div:nth-child(3)").slideToggle();
+      
+      $("body > div:nth-child(2) > div.skills.row > div > div.engineering.three.columns > h2 > i").toggleClass("fa-caret-down");
+      
+      $("body > div:nth-child(2) > div.skills.row > div > div.engineering.three.columns > h2 > i").toggleClass("fa-caret-up");
+    
+    });
+    
+    $("body > div:nth-child(2) > div.skills.row > div > div.uidesign.three.columns > h2").on("click", function(){
+    
+      $("body > div:nth-child(2) > div.skills.row > div > div.uidesign.three.columns > div:nth-child(3)").slideToggle();
+      
+      $("body > div:nth-child(2) > div.skills.row > div > div.uidesign.three.columns > h2 > i").toggleClass("fa-caret-down");
+      
+      $("body > div:nth-child(2) > div.skills.row > div > div.uidesign.three.columns > h2 > i").toggleClass("fa-caret-up");
+    
+    });
+    
+    $("body > div:nth-child(2) > div.skills.row > div > div.marketing.three.columns > h2").on("click", function(){
+    
+      $("body > div:nth-child(2) > div.skills.row > div > div.marketing.three.columns > div:nth-child(3)").slideToggle();
+      
+      $("body > div:nth-child(2) > div.skills.row > div > div.marketing.three.columns > h2 > i").toggleClass("fa-caret-down");
+      
+      $("body > div:nth-child(2) > div.skills.row > div > div.marketing.three.columns > h2 > i").toggleClass("fa-caret-up");
     
     });
     
