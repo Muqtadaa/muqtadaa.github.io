@@ -25,7 +25,6 @@ window.onload = function () {
   var sentinalEl = document.querySelector("#intersect");
 
   function handler(entries) {
-    console.log(entries);
     // entries is an array of observed dom nodes
     // we're only interested in the first one at [0]
     // because that's our .sentinal node.

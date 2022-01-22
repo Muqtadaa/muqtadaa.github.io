@@ -197,14 +197,42 @@ caption {
   
 }
 
+.hide {
+  display: none!important;
+}
+
 .mobile {
   display: none !important;
 }
 
+#fixedNav {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#fixedNav .header {
+  padding-bottom: 0rem;
+}
+
+#fixedNav .header .topbar {
+  margin-bottom: 0px;
+}
+
 @media (max-width: 787px) {
   
+  #fixedNav .header {
+    padding-bottom: 20px;
+  }
+  
+  #fixedNav h2 {
+    display: none;
+  }
+  
   .header > div > h2 {
-    font-size: 1.75rem;
+    font-size: 2.5rem;
   }
 
   .ux > a, .skills > div > div, .other > div {
@@ -309,11 +337,4 @@ caption {
   }
 }
 
-@media(max-width: 550px) {
-  .header > div > h2 {
-    font-size: 1.75rem;
-  }
-  
-  
-}
 
