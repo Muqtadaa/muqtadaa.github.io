@@ -378,6 +378,14 @@ a {
   display: none;
 }
 
+.warning p {
+  -ms-overflow-style: none;
+}
+
+.warning p::-webkit-scrollbar {
+  display: none;
+}
+
 .warning a {
   font-weight: 800;
   font-size: 110%;
