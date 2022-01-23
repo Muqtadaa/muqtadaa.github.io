@@ -1,17 +1,17 @@
 const images = [
-  'url("./art/batman.jpg")',
-  'url("./art/dragonborn.png")',
-  'url("./art/eyepencil.jpg")',
-  'url("./art/galaxy.jpg")',
-  'url("./art/greenlantern.jpg")',
-  'url("./art/joker.png")',
-  'url("./art/obama.png")',
-  'url("./art/robot.jpg")',
-  'url("./art/selfportrait.jpg")',
-  'url("./art/spiderman.png")',
-  'url("./art/superman.png")',
-  'url("./art/theflash.jpg")',
-  'url("./art/womanpencil.jpg")'
+  './art/batman.jpg',
+  './art/dragonborn.png',
+  './art/eyepencil.jpg',
+  './art/galaxy.jpg',
+  './art/greenlantern.jpg',
+  './art/joker.png',
+  './art/obama.png',
+  './art/robot.jpg',
+  './art/selfportrait.jpg',
+  './art/spiderman.png',
+  './art/superman.png',
+  './art/theflash.jpg',
+  './art/womanpencil.jpg'
 ];
 
 window.onload = function () {
@@ -37,23 +37,25 @@ window.onload = function () {
 
   var modal = document.getElementById('modal');
 
-  var modalClose = document.getElementById('modal');
+  var modalClose = document.getElementById('modal-close');
   modalClose.addEventListener('click', function () {
     modal.style.display = "none";
   });
 
-  document.addEventListener('click', function (e) { 
+  document.addEventListener('click', function (e) {
     if (e.target.className.indexOf('gallery-image') !== -1) {
-        var img = e.target;
-        var modalImg = document.getElementById("modal-content");
-        var captionText = document.getElementById("modal-caption");
-        modal.style.display = "block";
-        modalImg.src = img.src;
-        captionText.innerHTML = img.alt;
-     }
+      var img = e.target;
+      var modalImg = document.getElementById("modal-content");
+      var captionText = document.getElementById("modal-caption");
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      captionText.innerHTML = img.alt;
+    }
   });
 }
 
+
+
 $(document).ready(function () {
-  $('body').on('contextmenu', 'img', function(e){     return false; });
+  $('body').on('contextmenu', 'img', function (e) { return false; });
 });
