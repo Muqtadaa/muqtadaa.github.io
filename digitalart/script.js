@@ -37,7 +37,7 @@ window.onload = function () {
 
   var modal = document.getElementById('modal');
 
-  var modalClose = document.getElementById('modal-close');
+  var modalClose = document.getElementById('modal');
   modalClose.addEventListener('click', function () {
     modal.style.display = "none";
   });
