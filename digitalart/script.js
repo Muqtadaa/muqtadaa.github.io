@@ -113,8 +113,8 @@ window.onload = function () {
       startY,
       distX,
       distY,
-      threshold = 150, //required min distance traveled to be considered swipe
-      restraint = 100, // maximum distance allowed at the same time in perpendicular direction
+      threshold = 50, //required min distance traveled to be considered swipe
+      restraint = 200, // maximum distance allowed at the same time in perpendicular direction
       allowedTime = 300, // maximum time allowed to travel that distance
       elapsedTime,
       startTime,
