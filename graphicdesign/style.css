@@ -161,7 +161,8 @@ img.gallery-image:hover {
 }
 
 .modal-content,
-.modal-caption {
+.modal-caption,
+.modal-instruction {
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.6s;
     animation-name: zoom;
@@ -195,7 +196,8 @@ img.gallery-image:hover {
     }
 }
 
-.modal-close {
+.modal-close,
+.modal-instruction {
     position: absolute;
     top: 15px;
     right: 35px;
