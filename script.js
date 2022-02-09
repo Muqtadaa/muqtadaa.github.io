@@ -89,6 +89,7 @@ window.onload = function () {
   }
   
   document.querySelector('.sparkles').addEventListener('click',function() {
+    document.querySelector('.sparkles').classList.toggle('on');
     if(trailSwitch) {
       trailSwitch = false;
     } else {
