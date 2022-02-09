@@ -87,8 +87,13 @@ a {
 }
 
 .sparkles.on {
-  background-color: darkblue;
+  background-color: blue;
   color: white;
+}
+
+.sparkles.on:hover {
+  background-color: darkblue;
+  padding: 20px;
 }
 
 .trail {
