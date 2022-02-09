@@ -64,6 +64,35 @@ a {
   font-size: 4rem;
 }
 
+.sparkles {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  padding: 10px;
+  border-radius: 50px;
+  background-color: pink;
+}
+
+.trail {
+  position: absolute;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  opacity = 1;
+}
+
+@keyframes trail {
+  from
+  {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to
+  {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+}
+
 .name {
   color: #1EAEDB;
   font-weight: 600;
