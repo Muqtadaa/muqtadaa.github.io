@@ -68,9 +68,22 @@ a {
   position: fixed;
   bottom: 25px;
   right: 25px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px;
-  border-radius: 50px;
+  border-radius: 100px;
   background-color: pink;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.sparkles.on {
+  background-color: darkblue;
+  color: white;
 }
 
 .trail {
