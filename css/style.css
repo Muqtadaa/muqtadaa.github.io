@@ -81,6 +81,11 @@ a {
   cursor: pointer;
 }
 
+.sparkles:hover {
+  padding: 20px;
+  background-color: salmon;
+}
+
 .sparkles.on {
   background-color: darkblue;
   color: white;
