@@ -1,19 +1,3 @@
-const images = [
-  './art/batman.jpg',
-  './art/dragonborn.png',
-  './art/eyepencil.jpg',
-  './art/galaxy.jpg',
-  './art/greenlantern.jpg',
-  './art/joker.png',
-  './art/obama.png',
-  './art/robot.jpg',
-  './art/selfportrait.jpg',
-  './art/spiderman.png',
-  './art/superman.png',
-  './art/theflash.jpg',
-  './art/womanpencil.jpg'
-];
-
 window.onload = function () {
   var headerEl = document.querySelector("#fixedNav");
   var sentinalEl = document.querySelector("#intersect");
@@ -37,7 +21,7 @@ window.onload = function () {
 
   var modal = document.getElementById('modal');
 
-  var modalClose = document.getElementById('modal');
+  var modalClose = document.getElementById('modal-close');
   modalClose.addEventListener('click', function () {
     modal.style.display = "none";
   });
