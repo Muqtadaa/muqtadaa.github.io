@@ -101,7 +101,7 @@ a {
   position: absolute;
   border-radius: 50%;
   aspect-ratio: 1/1;
-  opacity = 1;
+  opacity: 1;
   z-index: -1;
 }
 
@@ -423,9 +423,10 @@ a {
   background-color: black;
   color: white;
   padding: 1rem;
+  margin-top: 1rem;
   margin-bottom: 0;
   position: fixed;
-  z-index: 99;
+  z-index: 999;
   bottom: 0;
   left: 0;
   right: 0;
@@ -447,11 +448,19 @@ a {
 
 #closeWarning {
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  color: white;
+  border-color: white;
+  margin-top: 1rem;
 }
 
 #closeWarning:hover {
-  font-size: 115%;
   color: #1EAEDB;
+  border: 2px solid #1EAED8;
   transform: translateY(3px);
 }
 
@@ -477,6 +486,27 @@ a {
 
 #fixedNav .header .topbar {
   margin-bottom: 0px;
+}
+
+.celebration {
+  position: fixed;
+  top: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: auto;
+  z-index: 999;
+  background-color: #1EAED8;
+  color: black;
+  padding: 2rem;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0px 0px 25px rgba(0,0,0,0.5);
+  display: none;
+}
+
+.celebration p {
+  height: 100%;
+  margin: auto;
 }
 
 
@@ -518,5 +548,9 @@ a {
   .graphicdesign, .digitalart, .dnd {
     width: 100%;
     margin-bottom: 10px;
+  }
+
+  #closeWarning {
+    margin: auto;
   }
 }
