@@ -21,6 +21,9 @@ $(document).ready(function() {
   observer.observe(sentinalEl);
 
   $(function(){
+    $('.nav-link h5').on('click', function () {
+      $('.nav-menu').slideToggle();
+    });
     
     google.load("visualization", "1", {packages:["corechart"]});
     

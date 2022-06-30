@@ -165,6 +165,10 @@ $(document).ready(function () {
 
     });
 
+    $('.nav-link h5').on('click', function () {
+      $('.nav-menu').slideToggle();
+    });
+
   });
 
 });

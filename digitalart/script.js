@@ -36,7 +36,7 @@ window.onload = function () {
       captionText.innerHTML = img.alt;
     }
   });
-  
+
   var imageArr = document.querySelectorAll('.gallery-image');
 
   function leftHandler() {
@@ -139,7 +139,7 @@ window.onload = function () {
   swipedetect(modal, function (swipedir) {
     if (swipedir == 'left') {
       rightHandler();
-    } else if(swipedir == 'right') {
+    } else if (swipedir == 'right') {
       leftHandler();
     } else {
       modal.style.display = 'none';
@@ -152,4 +152,8 @@ window.onload = function () {
 
 $(document).ready(function () {
   $('body').on('contextmenu', 'img', function (e) { return false; });
+
+  $('.nav-link h5').on('click', function () {
+    $('.nav-menu').slideToggle();
+  });
 });

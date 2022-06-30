@@ -21,6 +21,9 @@ $(document).ready(function() {
   observer.observe(sentinalEl);
   
   $(function(){
+    $('.nav-link h5').on('click', function () {
+      $('.nav-menu').slideToggle();
+    });
     
     $("#whatIsYolk").on("click", function() {
       $("#whatIsYolk1").toggleClass("fa-chevron-right fa-chevron-down");

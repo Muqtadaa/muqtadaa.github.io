@@ -173,4 +173,7 @@ window.onload = function () {
 
 $(document).ready(function () {
   $('body').on('contextmenu', 'img', function (e) { return false; });
+  $('.nav-link h5').on('click', function () {
+    $('.nav-menu').slideToggle();
+  });
 });

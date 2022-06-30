@@ -36,6 +36,62 @@ caption {
   box-shadow: 0px 10px 5rem 0px rgba(0, 85, 204, 0.2);
 }
 
+.nav-link {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.nav-link h5 {
+  font-weight: 500;
+}
+
+#fixedNav .nav-menu {
+  margin-top: 0;
+  left: 50px;
+}
+
+.nav-menu {
+  position: absolute;
+  left: 0;
+  background: white;
+  z-index: 99;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0px 20px 20px 0px rgb(0 85 204 / 20%);
+  display: none;
+  transition: cubic-bezier(1, 0, 0, 1);
+  list-style-type: "\21c0";
+  list-style-position: inside;
+  margin-top: -20px;
+}
+
+.nav-item {
+  width: 75%;
+  padding: 10px;
+  list-style-position: outside;
+  font-weight: 400;
+  text-indent: 0;
+  margin-left: 10px;
+}
+
+.nav-item a {
+  color: black;
+  text-decoration: none;
+  font-weight:500;
+}
+
+.nav-item a.active {
+  color: #1EAEDB;
+}
+
+.nav-item a:hover {
+  border-top: 1px #1EAEDB;
+  border-bottom: 1px #1EAEDB;
+}
+
+.nav-item:hover {
+  background-color: #F2F8FF;
+}
+
 .topbar {
   margin-bottom: 75px;
 }
