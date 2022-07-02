@@ -18,6 +18,18 @@ window.onload = function () {
   var observer = new window.IntersectionObserver(handler);
   // give the observer some dom nodes to keep an eye on
   observer.observe(sentinalEl);
+  
+  var gallery = document.querySelectorAll('.gallery-item');
+  var galleryMod = gallery.length % 3;
+  if (galleryMod == 1) {
+    gallery[gallery.length-1].style.gridColumn = '1 / -1';
+    gallery[gallery.length-1].style.height = '400px';
+  } else if (galleryMod == 2) {
+    gallery[gallery.length-2].style.gridColumn = '1 / 2';
+    gallery[gallery.length-2].style.height = '400px';
+    gallery[gallery.length-1].style.gridColumn = '2 / -1';
+    gallery[gallery.length-1].style.height = '400px';
+  }
 
   function captionHandler() {
     if (document.querySelector("#modal-content").getAttribute('src').indexOf("woc.png") !== -1) {
