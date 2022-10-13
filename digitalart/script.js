@@ -19,7 +19,7 @@ window.onload = function () {
   // give the observer some dom nodes to keep an eye on
   observer.observe(sentinalEl);
 
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth >= 768) {
     var gallery = document.querySelectorAll('.gallery-item');
     var galleryMod = gallery.length % 3;
     if (galleryMod == 1) {
