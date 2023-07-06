@@ -33,31 +33,39 @@ window.onload = function () {
     }
   }
 
-  var videos = ['./art/Blue_Dragon.mp4','./art/Eye_To_Eye_On_A_Mountaintop.mp4'];
-
   var modal = document.getElementById('modal');
+  var modalContent = document.getElementById('modal-content');
+  var modalCaption = document.getElementById('modal-caption');
 
   var modalClose = document.getElementById('modal-close');
   modalClose.addEventListener('click', function () {
-    modal.style.display = "none";
+    modal.classList.add("hide");
   });
 
   document.addEventListener('click', function (e) {
     if (e.target.className.indexOf('gallery-image') !== -1) {
       var img = e.target;
+      var currentSrc = img.src;
       var modalImg = document.getElementById("modal-content");
-      var modalVid = document.getElementById("modal-video");
+      var modalVid = document.querySelectorAll("#modal-video-0,#modal-video-1");
       var captionText = document.getElementById("modal-caption");
-      modal.style.display = "block";
+      modal.classList.remove('hide');
       modalImg.src = img.src;
-      var imgPath = modalImg.src.substring(modalImg.src.lastIndexOf('/')+1, modalImg.src.lastIndexOf('.'));
-      let videoSrc = videos[0].indexOf(imgPath) != -1 ? videos[0] : videos[1].indexOf(imgPath) != -1  ? videos[1] : ''; 
-      if(videoSrc != '') {
-        modalVid.querySelector('source').src = videoSrc;
-        modalVid.classList.remove('hide');
+      if(currentSrc.indexOf('Eye_To_Eye') != -1) {
+        modalVid[1].classList.remove('hide');
         modalImg.classList.add('hide');
+        modalVid[0].classList.add('hide');
+        modalVid[0].pause();
+      } else if(currentSrc.indexOf('Blue_Dragon') != -1) {
+        modalVid[0].classList.remove('hide');
+        modalImg.classList.add('hide');
+        modalVid[1].classList.add('hide');
+        modalVid[1].pause();
       } else {
-        modalVid.classList.add('hide');
+        modalVid.forEach(e => {
+          e.classList.add('hide');
+          e.pause();
+        })
         modalImg.classList.remove('hide');
       }
       captionText.innerHTML = img.alt;
@@ -67,7 +75,7 @@ window.onload = function () {
   var imageArr = document.querySelectorAll('.gallery-image');
 
   function leftHandler() {
-    if (document.querySelector('#modal').style.display === 'block') {
+    if (!document.querySelector('#modal').classList.contains('hide')) {
       var currentSrc = document.querySelector('#modal-content').getAttribute('src');
       for (var i = 0; i < imageArr.length; i++) {
         var compareSrc = imageArr[i].getAttribute('src').split('./').splice(1);
@@ -81,11 +89,31 @@ window.onload = function () {
           }
         }
       }
+      currentSrc = document.querySelector('#modal-content').getAttribute('src');
+      var modalVid = document.querySelectorAll("#modal-video-0,#modal-video-1");
+      var modalImg = document.getElementById("modal-content");
+      if(currentSrc.indexOf('Eye_To_Eye') != -1) {
+        modalVid[1].classList.remove('hide');
+        modalImg.classList.add('hide');
+        modalVid[0].classList.add('hide');
+        modalVid[0].pause();
+      } else if(currentSrc.indexOf('Blue_Dragon') != -1) {
+        modalVid[0].classList.remove('hide');
+        modalImg.classList.add('hide');
+        modalVid[1].classList.add('hide');
+        modalVid[1].pause();
+      } else {
+        modalVid.forEach(e => {
+          e.classList.add('hide');
+          e.pause();
+        })
+        modalImg.classList.remove('hide');
+      }
     }
   }
 
   function rightHandler() {
-    if (document.querySelector('#modal').style.display === 'block') {
+    if (!document.querySelector('#modal').classList.contains('hide')) {
       var currentSrc = document.querySelector('#modal-content').getAttribute('src');
       for (var i = 0; i < imageArr.length; i++) {
         var compareSrc = imageArr[i].getAttribute('src').split('./').splice(1);
@@ -99,6 +127,26 @@ window.onload = function () {
           }
         }
       }
+      currentSrc = document.querySelector('#modal-content').getAttribute('src');
+      var modalVid = document.querySelectorAll("#modal-video-0,#modal-video-1");
+      var modalImg = document.getElementById("modal-content");
+      if(currentSrc.indexOf('Eye_To_Eye') != -1) {
+        modalVid[1].classList.remove('hide');
+        modalImg.classList.add('hide');
+        modalVid[0].classList.add('hide');
+        modalVid[0].pause();
+      } else if(currentSrc.indexOf('Blue_Dragon') != -1) {
+        modalVid[0].classList.remove('hide');
+        modalImg.classList.add('hide');
+        modalVid[1].classList.add('hide');
+        modalVid[1].pause();
+      } else {
+        modalVid.forEach(e => {
+          e.classList.add('hide');
+          e.pause();
+        })
+        modalImg.classList.remove('hide');
+      }
     }
   }
 
@@ -111,7 +159,7 @@ window.onload = function () {
         rightHandler();
         break;
       case 27:
-        modal.style.display = 'none';
+        modal.classList.add('hide');
         break;
     }
   };
@@ -163,13 +211,23 @@ window.onload = function () {
     }, false)
   }
 
-  swipedetect(modal, function (swipedir) {
+  swipedetect(modalContent, function (swipedir) {
     if (swipedir == 'left') {
       rightHandler();
     } else if (swipedir == 'right') {
       leftHandler();
-    } else {
-      modal.style.display = 'none';
+    } else if(swipedir == 'down') {
+      modal.classList.add('hide');
+    }
+  });
+
+  swipedetect(modalCaption, function (swipedir) {
+    if (swipedir == 'left') {
+      rightHandler();
+    } else if (swipedir == 'right') {
+      leftHandler();
+    } else if(swipedir == 'down') {
+      modal.classList.add('hide');
     }
   });
 
