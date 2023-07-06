@@ -33,6 +33,8 @@ window.onload = function () {
     }
   }
 
+  var videos = ['./art/Blue_Dragon.mp4','./art/Eye_To_Eye_On_A_Mountaintop.mp4'];
+
   var modal = document.getElementById('modal');
 
   var modalClose = document.getElementById('modal-close');
@@ -44,9 +46,20 @@ window.onload = function () {
     if (e.target.className.indexOf('gallery-image') !== -1) {
       var img = e.target;
       var modalImg = document.getElementById("modal-content");
+      var modalVid = document.getElementById("modal-video");
       var captionText = document.getElementById("modal-caption");
       modal.style.display = "block";
       modalImg.src = img.src;
+      var imgPath = modalImg.src.substring(modalImg.src.lastIndexOf('/')+1, modalImg.src.lastIndexOf('.'));
+      let videoSrc = videos[0].indexOf(imgPath) != -1 ? videos[0] : videos[1].indexOf(imgPath) != -1  ? videos[1] : ''; 
+      if(videoSrc != '') {
+        modalVid.querySelector('source').src = videoSrc;
+        modalVid.classList.remove('hide');
+        modalImg.classList.add('hide');
+      } else {
+        modalVid.classList.add('hide');
+        modalImg.classList.remove('hide');
+      }
       captionText.innerHTML = img.alt;
     }
   });
