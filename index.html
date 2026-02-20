@@ -1,25 +1,17 @@
+---
+layout: null
+title: "Muqtadaa Miandara - Portfolio"
+description: "Muqtadaa Miandara's Portfolio Website"
+assetPrefix: "."
+pageStylesheet: "css/style.css"
+globalScript: "script.js"
+activePage: "home"
+---
 <!doctype html>
 <html>
   
-  <head>
-    
-    <meta charset="utf-8">
-    <title>Muqtadaa Miandara - Portfolio</title>
-    <meta name="description" content="Muqtadaa Miandara's Portfolio Website">
-    <meta name="author" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.gstatic.com">  
-    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/skeleton.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/png" href="images/minimal_logo_no_text.png">
-    <script src="https://kit.fontawesome.com/2302c6499f.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="script.js"></script>
-    
-  </head>
+    {% include "partials/head.njk" %}
+
 
   <body>
     
@@ -41,21 +33,7 @@
   
               <h5>Menu&nbsp;<i class="fa-solid fa-caret-down"></i></h5>
   
-              <ul class="nav-menu">
-  
-                <li class="nav-item"><a href='./yolk/yolk.html'>Yolk</a></li>
-  
-                <li class="nav-item"><a href='./porto/porto.html'>Porto's</a></li>
-  
-                <li class="nav-item"><a href='./via/via.html'>Via</a></li>
-  
-                <li class="nav-item"><a href='./graphicdesign/graphicdesign.html'>Graphic Design</a></li>
-  
-                <li class="nav-item"><a href='./digitalart/digitalart.html'>Digital Art</a></li>
-  
-                <li class="nav-item">D&D Canon</li>
-  
-              </ul>
+              {% include "partials/nav-menu.njk" %}
   
               </h5>
   
@@ -63,7 +41,7 @@
   
           </div>
   
-          <h2 style="text-align:center; padding-left: 25px;padding-top:10px;" class="u-pull-left">Hi, I'm
+          <h2 class="u-pull-left text-center pl-25 pt-10">Hi, I'm
             <strong>Muqtadaa Miandara</strong>&nbsp;&nbsp;<a class="u-full-width" href="files/resume_ux.pdf" target="_blank"><i class="fal fa-file-download"></i></a>
           </h2>
   
@@ -99,21 +77,7 @@
   
               <h5>Menu&nbsp;<i class="fa-solid fa-caret-down"></i></h5>
   
-              <ul class="nav-menu">
-  
-                <li class="nav-item"><a href='./yolk/yolk.html'>Yolk</a></li>
-  
-                <li class="nav-item"><a href='./porto/porto.html'>Porto's</a></li>
-  
-                <li class="nav-item"><a href='./via/via.html'>Via</a></li>
-  
-                <li class="nav-item"><a href='./graphicdesign/graphicdesign.html'>Graphic Design</a></li>
-  
-                <li class="nav-item"><a href='./digitalart/digitalart.html'>Digital Art</a></li>
-  
-                <li class="nav-item">D&D Canon</li>
-  
-              </ul>
+              {% include "partials/nav-menu.njk" %}
   
               </h5>
   
@@ -149,7 +113,7 @@
           
           <br>
           
-          <div style="text-align: center" class="resume u-full-width">
+          <div class="text-center resume u-full-width">
             <a class="u-full-width" href="files/resume_ux.pdf" target="_blank">
               <h4><i class="fal fa-file-download"></i>&nbsp;&nbsp;My Résumé.</h4> 
             </a>
@@ -199,14 +163,14 @@
             
             <h2 class="icon container"><i class="fas fa-caret-down"></i></h2>
               
-            <div class="icon container" style="display:none;">
+            <div class="icon container show-none">
               
               <p>UX Research seeks to understand the behavior of users through site-testing and user-studies. I use an iterative design process depending on the area of research. I have experience with A/B tools such as Optimizely, VWO, and Google Optimize; I have also conducted user studies using UserZoom.</p>
               
               <div class="skillsIcons row">
               
-                <img src="images/Optimizely_Logo.png" style="background-color: white;" width="25px" alt="Optimizely Icon">
-                <img src="images/userzoomIcon.png" style="background-color: white;" width="25px" alt="UserZoom Icon">
+                <img src="images/Optimizely_Logo.png" class="bg-white w-25px" alt="Optimizely Icon">
+                <img src="images/userzoomIcon.png" class="bg-white w-25px" alt="UserZoom Icon">
                 <img src="images/vwoIcon.jpg" width="25px" alt="VWO Icon">
                 <img src="images/miroLogo.png" width="25px" alt="Miro Icon">
                 
@@ -226,7 +190,7 @@
             
             <h2 class="icon container"><i class="fas fa-caret-down"></i></h2>
             
-            <div class="icon container" style="display:none;">
+            <div class="icon container show-none">
               
               <p class="row">Software Engineering is the systematic approach of designing, building, and testing software applications. I have experience with front-end development cycles, using HTML/CSS/JS (including JQuery and REACT), some PHP, and SQL, managed in a ticketing/workflow platform like JIRA.</p>
               
@@ -236,7 +200,7 @@
                 <img src="images/cssIcon.png" width="25px" alt="CSS3 Icon">
                 <img src="images/jsIcon.png" width="25px" alt="Javascript Icon">
                 <img src="images/reactLogo.png" width="25px" alt="React Icon">
-                <img src="images/jiralogo.png" style="background-color: white;" width="25px" alt="Jira Icon">
+                <img src="images/jiralogo.png" class="bg-white w-25px" alt="Jira Icon">
                 
               </div>
               
@@ -254,7 +218,7 @@
             
             <h2 class="icon container"><i class="fas fa-caret-down"></i></h2>
             
-            <div class="icon container row" style="display:none;">
+            <div class="icon container row show-none">
               
               <p class="row">UI Design is the process of making interfaces in software with a focus on heuristics and aesthetics. Users should be able to intuitively understand how to use the product. I focus on structure, hierarchy, typography and colours. I have experience turning research insights into applicable features and designs.</p>
               
@@ -283,14 +247,14 @@
             
             <h2 class="icon container"><i class="fas fa-caret-down"></i></h2>
             
-            <div class="icon container" style="display:none;">
+            <div class="icon container show-none">
               
               <p class="row">Data Analytics and Marketing includes the process of generating and processing data to identify, anticipate, and satisfy customers’ needs. I have experience with data layer tagging and developing reporting architecture as well as implementing paid social media marketing through tools like GCP.</p>
               
               <div class="skillsIcons row">
               
                 <img src="images/gtm-logo.png" width="25px" alt="Google Tag Manager Icon">
-                <img src="images/analyticsIcon.png" style="background-color: white;" width="25px" alt="Google Analytics Icon">
+                <img src="images/analyticsIcon.png" class="bg-white w-25px" alt="Google Analytics Icon">
                 <img src="images/dataStudioIcon.png" width="25px" alt="Google Data Studio Icon">
                 <img src="images/Facebook-Business-Manager-Logo.png" width="25px" alt="FB Business Manager Icon">
                 
@@ -363,14 +327,14 @@
     
     <div class="warning u-max-full-width row">
       
-      <p class="u-pull-left eight columns offset-by-one" style="overflow:scroll;max-height: 150px; padding: 0 10px;">Hey, thanks for stopping by! This website is still under construction (I'm still in the process of making a whole page dedicated to my work experience with Rent-A-Center)! I am building this site completely from scratch, and halfway through building it I learned ReactJS, so now I want to rebuild it again using that <i class="fa-thin fa-face-smile-upside-down"></i>.
+      <p class="u-pull-left eight columns offset-by-one overflow-scroll max-h-150 px-10">Hey, thanks for stopping by! This website is still under construction (I'm still in the process of making a whole page dedicated to my work experience with Rent-A-Center)! I am building this site completely from scratch, and halfway through building it I learned ReactJS, so now I want to rebuild it again using that <i class="fa-thin fa-face-smile-upside-down"></i>.
       <br /> <br />
       This site should be fully functional soon, but in the meanwhile, please consider it a presentation of my development and design skills (again, I built it from scratch). If you're on desktop, click the button on the bottom right of the screen to activate celebration mode! I added this button to commemorate being employed in my field for more than a year <i class="fa-thin fa-face-sad-cry"></i>. I'm incredibly grateful to be here, and I'm so glad you're checking out my work!</p>
       
       <div class="two columns">
         <button id="closeWarning">
-          <i style="font-size:22px;font-weight:700;text-align:center;" class="fa-thin fa-circle-check"></i>&nbsp;
-          <p style="line-height:22px">Cool, got it!</p>
+          <i class="fa-thin fa-circle-check fs-22 fw-700 text-center"></i>&nbsp;
+          <p class="lh-22">Cool, got it!</p>
         </button>
       </div>
       

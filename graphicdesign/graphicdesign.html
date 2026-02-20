@@ -1,29 +1,18 @@
+---
+layout: null
+title: "Muqtadaa Miandara - Graphic Design"
+description: "Graphic Design - Muqtadaa Miandara's Portfolio Website"
+assetPrefix: ".."
+pageStylesheet: "graphicdesign/style.css"
+globalScript: "graphicdesign/script.js"
+activePage: "graphicdesign"
+---
 <!doctype html>
 
 <html>
 
-  <head>
+    {% include "partials/head.njk" %}
 
-    <meta charset="utf-8">
-    <title>Muqtadaa Miandara - Graphic Design</title>
-    <meta name="description" content="Via Voting App Prototype - Muqtadaa Miandara's Portfolio Website">
-    <meta name="author" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/skeleton.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="../images/minimal_logo_no_text.png">
-    <script src="https://kit.fontawesome.com/2302c6499f.js" crossorigin="anonymous"></script>
-        <script src="https://www.google.com/jsapi" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="../assets/js/shared.min.js" defer></script>
-    <script src="../assets/js/graphicdesign.min.js" defer></script>
-
-  </head>
 
   <body>
 
@@ -45,21 +34,7 @@
   
               <h5 data-toggle-target=".nav-menu">Menu&nbsp;<i class="fa-solid fa-caret-down"></i></h5>
   
-              <ul class="nav-menu">
-  
-                <li class="nav-item"><a href='../yolk/yolk.html'>Yolk</a></li>
-  
-                <li class="nav-item"><a href='../porto/porto.html'>Porto's</a></li>
-  
-                <li class="nav-item"><a href='../via/via.html'>Via</a></li>
-  
-                <li class="nav-item"><a class="active" href='#'>Graphic Design</a></li>
-  
-                <li class="nav-item"><a href='../digitalart/digitalart.html'>Digital Art</a></li>
-  
-                <li class="nav-item">D&D Canon</li>
-  
-              </ul>
+              {% include "partials/nav-menu.njk" %}
   
               </h5>
   
@@ -67,7 +42,7 @@
   
           </div>
 
-          <h2 style="text-align:center; padding-left: 25px;padding-top:10px;" class="u-pull-left">Hey, check out my
+          <h2 class="u-pull-left text-center pl-25 pt-10">Hey, check out my
             <strong>Graphic Design</strong>&nbsp;&nbsp;<a class="u-full-width" href="../files/resume_ux.pdf"
               target="_blank"><i class="fal fa-file-download"></i></a>
           </h2>
@@ -88,14 +63,14 @@
 
     <div id="modal" class="modal">
 
-      <div id="modal-instruction" class="modal-instruction" style="text-align:center;font-size:1rem;left:0;right:0;">
+      <div id="modal-instruction" class="modal-instruction modal-close modal-instruction-center">
 
         <img src="https://img.icons8.com/pastel-glyph/48/000000/swipe-right-gesture.png"
-          style="display:inline;vertical-align:middle;"> &nbsp;&nbsp;&nbsp;OR&nbsp;&nbsp;&nbsp;
+          class="center-inline"> &nbsp;&nbsp;&nbsp;OR&nbsp;&nbsp;&nbsp;
 
-        <i class="fas fa-arrow-alt-square-left" style="font-size:3rem;vertical-align:middle;"></i> &nbsp;
+        <i class="fas fa-arrow-alt-square-left fs-3rem middle"></i> &nbsp;
 
-        <i class="fas fa-arrow-alt-square-right" style="font-size:3rem;vertical-align:middle;"></i>
+        <i class="fas fa-arrow-alt-square-right fs-3rem middle"></i>
 
       </div>
 
@@ -127,21 +102,7 @@
   
               <h5 data-toggle-target=".nav-menu">Menu&nbsp;<i class="fa-solid fa-caret-down"></i></h5>
   
-              <ul class="nav-menu">
-  
-                <li class="nav-item"><a href='../yolk/yolk.html'>Yolk</a></li>
-  
-                <li class="nav-item"><a href='../porto/porto.html'>Porto's</a></li>
-  
-                <li class="nav-item"><a href='../via/via.html'>Via</a></li>
-  
-                <li class="nav-item"><a class="active" href='#'>Graphic Design</a></li>
-  
-                <li class="nav-item"><a href='../digitalart/digitalart.html'>Digital Art</a></li>
-  
-                <li class="nav-item">D&D Canon</li>
-  
-              </ul>
+              {% include "partials/nav-menu.njk" %}
   
               </h5>
   
@@ -173,7 +134,7 @@
 
       <!--<div class="container prototype one-third column">
 
-            <iframe width="100%" height="100%" class="xdEmbed" src="https://xd.adobe.com/embed/a204235f-bc9c-4937-bc59-2a1cbb4a178c-f757/?fullscreen" frameborder="0" style="border-radius:10px" allowfullscreen></iframe>
+            <iframe width="100%" height="100%" class="xdEmbed" src="https://xd.adobe.com/embed/a204235f-bc9c-4937-bc59-2a1cbb4a178c-f757/?fullscreen" frameborder="0" class="xdEmbed" allowfullscreen></iframe>
 
           </div>-->
 

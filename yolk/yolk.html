@@ -1,27 +1,17 @@
+---
+layout: null
+title: "Muqtadaa Miandara - Yolk"
+description: "Yolk Recipe App - Muqtadaa Miandara's Portfolio Website"
+assetPrefix: ".."
+pageStylesheet: "yolk/style.css"
+globalScript: "yolk/script.js"
+activePage: "yolk"
+---
 <!doctype html>
 <html>
   
-  <head>
-    
-    <meta charset="utf-8">
-    <title>Muqtadaa Miandara - Yolk</title>
-    <meta name="description" content="Yolk UTD ATEC Capstone UX Prototype - Muqtadaa Miandara's Portfolio Website">
-    <meta name="author" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.gstatic.com">  
-    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/skeleton.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="../images/minimal_logo_no_text.png">
-    <script src="https://kit.fontawesome.com/2302c6499f.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.google.com/jsapi" type="text/javascript"></script>
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="script.js" type="text/javascript"></script>
-    
-  </head>
+    {% include "partials/head.njk" %}
+
 
   <body>
     
@@ -43,21 +33,7 @@
   
               <h5>Menu&nbsp;<i class="fa-solid fa-caret-down"></i></h5>
   
-              <ul class="nav-menu">
-  
-                <li class="nav-item"><a class="active" href='#'>Yolk</a></li>
-  
-                <li class="nav-item"><a href='../porto/porto.html'>Porto's</a></li>
-  
-                <li class="nav-item"><a href='../via/via.html'>Via</a></li>
-  
-                <li class="nav-item"><a href='../graphicdesign/graphicdesign.html'>Graphic Design</a></li>
-  
-                <li class="nav-item"><a href='../digitalart/digitalart.html'>Digital Art</a></li>
-  
-                <li class="nav-item">D&D Canon</li>
-  
-              </ul>
+              {% include "partials/nav-menu.njk" %}
   
               </h5>
   
@@ -65,7 +41,7 @@
   
           </div>
           
-          <h2 style="text-align:center; padding-left: 25px;padding-top:10px;" class="u-pull-left">Hey, thanks for checking out <strong>Yolk</strong>&nbsp;&nbsp;<a class="u-full-width" href="../files/resume_ux.pdf" target="_blank"><i class="fal fa-file-download"></i></a></h2>
+          <h2 class="u-pull-left text-center pl-25 pt-10">Hey, thanks for checking out <strong>Yolk</strong>&nbsp;&nbsp;<a class="u-full-width" href="../files/resume_ux.pdf" target="_blank"><i class="fal fa-file-download"></i></a></h2>
           
           <div class="socials u-pull-right">
             
@@ -99,21 +75,7 @@
   
               <h5>Menu&nbsp;<i class="fa-solid fa-caret-down"></i></h5>
   
-              <ul class="nav-menu">
-  
-                <li class="nav-item"><a class="active" href='#'>Yolk</a></li>
-  
-                <li class="nav-item"><a href='../porto/porto.html'>Porto's</a></li>
-  
-                <li class="nav-item"><a href='../via/via.html'>Via</a></li>
-  
-                <li class="nav-item"><a href='../graphicdesign/graphicdesign.html'>Graphic Design</a></li>
-  
-                <li class="nav-item"><a href='../digitalart/digitalart.html'>Digital Art</a></li>
-  
-                <li class="nav-item">D&D Canon</li>
-  
-              </ul>
+              {% include "partials/nav-menu.njk" %}
   
               </h5>
   
@@ -145,7 +107,7 @@
 
   <!--<div class="container prototype one-third column">
 
-          <iframe width="100%" height="100%" class="xdEmbed" src="https://xd.adobe.com/embed/a204235f-bc9c-4937-bc59-2a1cbb4a178c-f757/?fullscreen" frameborder="0" style="border-radius:10px" allowfullscreen></iframe>
+          <iframe width="100%" height="100%" class="xdEmbed" src="https://xd.adobe.com/embed/a204235f-bc9c-4937-bc59-2a1cbb4a178c-f757/?fullscreen" frameborder="0" class="xdEmbed" allowfullscreen></iframe>
 
         </div>-->
 
@@ -211,7 +173,7 @@
         
         <h4>Rephrase the Question:</h4>
         
-        <h5 style="font-weight:400;text-align:center">How might people self-actualize through the use of healthy and accessible coping mechanisms?</h5>
+        <h5 class="fw-400 text-center">How might people self-actualize through the use of healthy and accessible coping mechanisms?</h5>
         
       </div>
       
@@ -231,7 +193,7 @@
         
           <p>My research began with Dr. Robert Plutchik's Color Wheel of Emotions. This would serve as the foundation of my user experience. His research indicated that emotion consists of five components:</p>
           
-          <ol style="font-weight:400;">
+          <ol class="fw-400">
           
             <li>Emotion Component: where an individual simply experiences the feelings.</li>
             
@@ -315,7 +277,7 @@
         
       </div>
     
-      <div class="userPersona row" style="overflow-x: auto;">
+      <div class="userPersona row overflow-x-auto">
       
         <p>I ended up polling the same audience about their demographics, trying to understand who was interested in a product to help navigate their daily emotional well-being, and came across the following insights:</p>
     
@@ -385,9 +347,9 @@
 
       </div>
       
-      <div class="persona jackie twelve columns"  style="font-size:75%">
+      <div class="persona jackie twelve columns fs-75">
         
-        <div class="one-third column left" style="text-align: center">
+        <div class="one-third column left text-center">
 
           <div class="row">
 
@@ -399,7 +361,7 @@
 
           <div class="name row">
 
-            <h1 style="font-weight: 300">Jackie Villareal</h1>
+            <h1 class="fw-300">Jackie Villareal</h1>
 
           </div>
 
@@ -421,11 +383,11 @@
 
         <div class="two-thirds column right">
 
-          <h3 style="font-weight:700">About Jackie</h3>
+          <h3 class="fw-700">About Jackie</h3>
 
-          <p style="font-size:115%">Jackie is a high-achieving junior in high-school who works part-time, plays on the school volleyball team, and is preparing to apply for colleges. Jackie is navigating young-adult life in the USA on her own, her parents are immigrants, and she doesn’t have older siblings or cousins who have gone through the system. She’s figuring out college apps, financial aid, scholarships, and more all on her own. On top of that, money is tight at home, so she works part-time to help out. Her boyfriend takes a chunk of her time every day, and her family monopolizes what’s left. </p>
+          <p class="fs-115">Jackie is a high-achieving junior in high-school who works part-time, plays on the school volleyball team, and is preparing to apply for colleges. Jackie is navigating young-adult life in the USA on her own, her parents are immigrants, and she doesn’t have older siblings or cousins who have gone through the system. She’s figuring out college apps, financial aid, scholarships, and more all on her own. On top of that, money is tight at home, so she works part-time to help out. Her boyfriend takes a chunk of her time every day, and her family monopolizes what’s left. </p>
 
-          <p style="font-size: 115%">Jackie often feels like she has no time left for herself anymore. She knows things will calm down when she’s not in such a whirlwind in a few months’ time, but right now she feels like she’s on the verge of a breakdown. She wants to make sure she doesn’t drop the ball with regards to any aspect of her life.</p>
+          <p class="fs-115">Jackie often feels like she has no time left for herself anymore. She knows things will calm down when she’s not in such a whirlwind in a few months’ time, but right now she feels like she’s on the verge of a breakdown. She wants to make sure she doesn’t drop the ball with regards to any aspect of her life.</p>
 
           <p></p>
 
@@ -497,13 +459,13 @@
 
         </div>
 
-        <h6 class="twelve columns" style="text-align:center;margin-top:1rem;margin-bottom:0;">Most Used Apps: <i class="fab fa-tiktok"></i>&nbsp;&nbsp;<i class="fa fa-instagram"></i>&nbsp;&nbsp;<i class="fa fa-snapchat-ghost"></i>&nbsp;&nbsp;<i class="fa fa-whatsapp"></i></h6>
+        <h6 class="twelve columns text-center mt-1 mb-0">Most Used Apps: <i class="fab fa-tiktok"></i>&nbsp;&nbsp;<i class="fa fa-instagram"></i>&nbsp;&nbsp;<i class="fa fa-snapchat-ghost"></i>&nbsp;&nbsp;<i class="fa fa-whatsapp"></i></h6>
 
       </div>
       
-      <div class="persona skyler twelve columns"  style="font-size:75%">
+      <div class="persona skyler twelve columns jackie fs-75">
         
-        <div class="one-third column left" style="text-align: center">
+        <div class="one-third column left text-center">
 
           <div class="row">
 
@@ -515,7 +477,7 @@
 
           <div class="name row">
 
-            <h1 style="font-weight: 300">Skyler Matsui</h1>
+            <h1 class="fw-300">Skyler Matsui</h1>
 
           </div>
 
@@ -537,11 +499,11 @@
 
         <div class="two-thirds column right">
 
-          <h3 style="font-weight:700">About Skyler</h3>
+          <h3 class="fw-700">About Skyler</h3>
 
-          <p style="font-size:115%">Skyler is a junior in college who doubts their choice to become a software engineer. There’s pressure from their parents to succeed, but they want to pursue something more creative. They’re having trouble with keeping up with some of their classes, but honestly the biggest issue they face is the number of days they use weed or cheap booze to deal with their crushing anxiety. Though they have access to university-sponsored support networks, they don’t feel comfortable going to them for some reason. </p>
+          <p class="fs-115">Skyler is a junior in college who doubts their choice to become a software engineer. There’s pressure from their parents to succeed, but they want to pursue something more creative. They’re having trouble with keeping up with some of their classes, but honestly the biggest issue they face is the number of days they use weed or cheap booze to deal with their crushing anxiety. Though they have access to university-sponsored support networks, they don’t feel comfortable going to them for some reason. </p>
 
-          <p style="font-size: 115%">They want to work but their parents won’t allow it, and they often feel like their life will never be decided by their own choices, but rather by the whims of all the authority figures around them. Sometimes they feel like they’re being pushed into feeling a million things at once, and just want to find clarity. Skyler wants to feel like they’re in control and know where they’re going.</p>
+          <p class="fs-115">They want to work but their parents won’t allow it, and they often feel like their life will never be decided by their own choices, but rather by the whims of all the authority figures around them. Sometimes they feel like they’re being pushed into feeling a million things at once, and just want to find clarity. Skyler wants to feel like they’re in control and know where they’re going.</p>
 
           <p></p>
 
@@ -613,13 +575,13 @@
 
         </div>
 
-        <h6 class="twelve columns" style="text-align:center;margin-top:1rem;margin-bottom:0;">Most Used Apps: <i class="fab fa-tiktok"></i>&nbsp;&nbsp;<i class="fa fa-instagram"></i>&nbsp;&nbsp;<i class="fab fa-facebook-square"></i>&nbsp;&nbsp;<i class="fa fa-whatsapp"></i></h6>
+        <h6 class="twelve columns text-center mt-1 mb-0">Most Used Apps: <i class="fab fa-tiktok"></i>&nbsp;&nbsp;<i class="fa fa-instagram"></i>&nbsp;&nbsp;<i class="fab fa-facebook-square"></i>&nbsp;&nbsp;<i class="fa fa-whatsapp"></i></h6>
 
       </div>
       
-      <div class="persona john twelve columns"  style="font-size:75%">
+      <div class="persona john twelve columns jackie fs-75">
         
-        <div class="one-third column left" style="text-align: center">
+        <div class="one-third column left text-center">
 
           <div class="row">
 
@@ -631,7 +593,7 @@
 
           <div class="name row">
 
-            <h1 style="font-weight: 300">John Silverstein</h1>
+            <h1 class="fw-300">John Silverstein</h1>
 
           </div>
 
@@ -653,11 +615,11 @@
 
         <div class="two-thirds column right">
 
-          <h3 style="font-weight:700">About John</h3>
+          <h3 class="fw-700">About John</h3>
 
-          <p style="font-size:115%">John worked hard in high school and college, landed a solid job in sales, and has worked his way to a lower-level executive position. He has continuing career aspirations, so he continues to devote time to his job, even as his youngest child is finishing elementary school. He recently found out he’s having another child, something that is rocking his boat a fair bit. His wife and parents are all excited, but he has these niggling doubts that can’t put words to. He’s concerned about the affordability of another child, even though he’s pretty financially stable.</p>
+          <p class="fs-115">John worked hard in high school and college, landed a solid job in sales, and has worked his way to a lower-level executive position. He has continuing career aspirations, so he continues to devote time to his job, even as his youngest child is finishing elementary school. He recently found out he’s having another child, something that is rocking his boat a fair bit. His wife and parents are all excited, but he has these niggling doubts that can’t put words to. He’s concerned about the affordability of another child, even though he’s pretty financially stable.</p>
 
-          <p style="font-size: 115%">He feels like he isn’t taking much time to take care of himself, and it’s beginning to show. John wants to reconnect with himself and his roots, get back into the swing of life, and be the go-getter he remembers being.</p>
+          <p class="fs-115">He feels like he isn’t taking much time to take care of himself, and it’s beginning to show. John wants to reconnect with himself and his roots, get back into the swing of life, and be the go-getter he remembers being.</p>
 
           <p></p>
 
@@ -727,7 +689,7 @@
 
         </div>
 
-        <h6 class="twelve columns" style="text-align:center;margin-top:1rem;margin-bottom:0;">Most Used Apps: <i class="fab fa-facebook-square"></i>&nbsp;&nbsp;<i class="fa fa-twitter"></i>&nbsp;&nbsp;<i class="fa fa-instagram"></i>&nbsp;&nbsp;<i class="fa fa-slack"></i></h6>
+        <h6 class="twelve columns text-center mt-1 mb-0">Most Used Apps: <i class="fab fa-facebook-square"></i>&nbsp;&nbsp;<i class="fa fa-twitter"></i>&nbsp;&nbsp;<i class="fa fa-instagram"></i>&nbsp;&nbsp;<i class="fa fa-slack"></i></h6>
 
       </div>
       
@@ -803,7 +765,7 @@
       
         <p class="twelve columns">I ended up focusing a fair amount of my time in developing the onboarding experience. For this user experience to truly help users, it needs to know a fair bit about them. For it to customize the experience to the individual user, that means collecting data in onboarding without it being a hindrance.</p>
         
-        <h3 style="text-align:center">First Pass</h3>
+        <h3 class="text-center">First Pass</h3>
         
         <div id="main">
         
