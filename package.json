@@ -2,6 +2,7 @@
   "name": "muqtadaa-portfolio",
   "private": true,
   "scripts": {
+    "build:css": "node tools/minify-css.mjs"
     "build": "eleventy",
     "start": "eleventy --serve"
   },
