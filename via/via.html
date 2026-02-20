@@ -17,10 +17,10 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="../images/minimal_logo_no_text.png">
     <script src="https://kit.fontawesome.com/2302c6499f.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+        <script src="https://www.google.com/jsapi" type="text/javascript"></script>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="script.js" type="text/javascript"></script>
+    <script src="../assets/js/shared.min.js" defer></script>
+    <script src="../assets/js/via.min.js" defer></script>
     
   </head>
 
@@ -42,7 +42,7 @@
   
             <div class="row nav-link">
   
-              <h5>Menu&nbsp;<i class="fa-solid fa-caret-down"></i></h5>
+              <h5 data-toggle-target=".nav-menu">Menu&nbsp;<i class="fa-solid fa-caret-down"></i></h5>
   
               <ul class="nav-menu">
   
@@ -98,7 +98,7 @@
   
             <div class="row nav-link">
   
-              <h5>Menu&nbsp;<i class="fa-solid fa-caret-down"></i></h5>
+              <h5 data-toggle-target=".nav-menu">Menu&nbsp;<i class="fa-solid fa-caret-down"></i></h5>
   
               <ul class="nav-menu">
   
@@ -146,7 +146,7 @@
 
         <div class="titlebar">
 
-          <h2 id="whatIsYolk"><i class="fas fa-chevron-down" id="whatIsYolk1"></i> &nbsp;What is Via? </h2>
+          <h2 id="whatIsYolk" data-toggle-target=".bodytext" data-toggle-icon="#whatIsYolk1"><i class="fas fa-chevron-down" id="whatIsYolk1"></i> &nbsp;What is Via? </h2>
 
         </div>
 
@@ -169,7 +169,7 @@
       
         <div class="titlebar">
 
-          <h2 id="framingTheDesign"><i id="framingTheDesign1" class="fas fa-chevron-down"></i> &nbsp;2x2 Matrix</h2>
+          <h2 id="framingTheDesign" data-toggle-target=".frameText" data-toggle-icon="#framingTheDesign1"><i id="framingTheDesign1" class="fas fa-chevron-down"></i> &nbsp;2x2 Matrix</h2>
 
         </div>
         
@@ -189,7 +189,7 @@
       
         <div class="titlebar">
 
-          <h2 id="final"><i id="final1" class="fas fa-chevron-down"></i> &nbsp;Final Prototype</h2>
+          <h2 id="final" data-toggle-target=".final" data-toggle-icon="#final1"><i id="final1" class="fas fa-chevron-down"></i> &nbsp;Final Prototype</h2>
 
         </div>
         
