@@ -25,10 +25,13 @@ $(document).ready(function() {
       $('.nav-menu').slideToggle();
     });
     
-    google.load("visualization", "1", {packages:["corechart"]});
     
-    google.setOnLoadCallback(drawChart1);
-    
+    google.charts.load('current', { packages: ['corechart'] });
+    google.charts.setOnLoadCallback(function () {
+      drawChart1();
+      drawChart2();
+    });
+
     function drawChart1() {
     
         var data = new google.visualization.DataTable();
@@ -58,9 +61,6 @@ $(document).ready(function() {
     
     }
 
-    google.load("visualization", "1", {packages:["corechart"]});
-    
-    google.setOnLoadCallback(drawChart2);
     
     function drawChart2() {
     
