@@ -1,0 +1,28 @@
+{
+  "name": "muqtadaa.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static portfolio site tooling",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "lint": "npm run lint:js && npm run lint:styles && npm run lint:format",
+    "lint:js": "eslint .",
+    "lint:styles": "stylelint \"**/*.{css,scss}\"",
+    "lint:format": "prettier --check \"**/*.{html,css,scss,js,json,md,yml,yaml}\"",
+    "format": "prettier --write \"**/*.{html,css,scss,js,json,md,yml,yaml}\"",
+    "size:report": "node scripts/asset-size-report.mjs",
+    "size:check": "node scripts/asset-size-report.mjs --check"
+  },
+  "assetBudget": {
+    "maxJsBytes": 120000,
+    "maxCssBytes": 120000
+  },
+  "devDependencies": {
+    "eslint": "^9.21.0",
+    "globals": "^15.15.0",
+    "prettier": "^3.5.2",
+    "stylelint": "^16.15.0",
+    "stylelint-config-standard": "^37.0.0"
+  },
+  "type": "module"
+}
