@@ -1,0 +1,15 @@
+<ul class="nav-menu">
+  {% for item in menu %}
+    <li class="nav-item">
+      {% if item.href %}
+        {% if activePage == item.key %}
+          <a class="active" href="#">{{ item.label }}</a>
+        {% else %}
+          <a href="{{ item.href }}">{{ item.label }}</a>
+        {% endif %}
+      {% else %}
+        {{ item.label }}
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
