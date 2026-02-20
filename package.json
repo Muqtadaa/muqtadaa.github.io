@@ -3,5 +3,15 @@
   "private": true,
   "scripts": {
     "build:css": "node tools/minify-css.mjs"
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  "name": "muqtadaa.github.io",
+  "private": true,
+  "description": "Development tooling for the portfolio site",
+  "devDependencies": {
+    "less": "^4.3.0"
   }
 }

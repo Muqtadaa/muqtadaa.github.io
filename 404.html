@@ -1,25 +1,17 @@
+---
+layout: null
+title: "Muqtadaa Miandara - Portfolio"
+description: "Muqtadaa Miandara's Portfolio Website"
+assetPrefix: "."
+pageStylesheet: "css/style.css"
+globalScript: "script.js"
+activePage: "none"
+---
 <!doctype html>
 <html>
   
-  <head>
-    
-    <meta charset="utf-8">
-    <title>Muqtadaa Miandara - Portfolio</title>
-    <meta name="description" content="Muqtadaa Miandara's Portfolio Website">
-    <meta name="author" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.gstatic.com">  
-    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/skeleton.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="icon" type="image/png" href="/images/minimal_logo_no_text.png">
-    <script src="https://kit.fontawesome.com/2302c6499f.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/script.js"></script>
-    
-  </head>
+    {% include "partials/head.njk" %}
+
 
   <body>
     
@@ -41,21 +33,7 @@
   
               <h5>Menu&nbsp;<i class="fa-solid fa-caret-down"></i></h5>
   
-              <ul class="nav-menu">
-  
-                <li class="nav-item"><a href='../yolk/yolk.html'>Yolk</a></li>
-  
-                <li class="nav-item"><a href='../porto/porto.html'>Porto's</a></li>
-  
-                <li class="nav-item"><a href='../via/via.html'>Via</a></li>
-  
-                <li class="nav-item"><a href='../graphicdesign/graphicdesign.html'>Graphic Design</a></li>
-  
-                <li class="nav-item"><a href='../digitalart/digitalart.html'>Digital Art</a></li>
-  
-                <li class="nav-item">D&D Canon</li>
-  
-              </ul>
+              {% include "partials/nav-menu.njk" %}
   
               </h5>
   
@@ -97,21 +75,7 @@
   
               <h5>Menu&nbsp;<i class="fa-solid fa-caret-down"></i></h5>
   
-              <ul class="nav-menu">
-  
-                <li class="nav-item"><a href='../yolk/yolk.html'>Yolk</a></li>
-  
-                <li class="nav-item"><a href='../porto/porto.html'>Porto's</a></li>
-  
-                <li class="nav-item"><a href='../via/via.html'>Via</a></li>
-  
-                <li class="nav-item"><a href='../graphicdesign/graphicdesign.html'>Graphic Design</a></li>
-  
-                <li class="nav-item"><a href='../digitalart/digitalart.html'>Digital Art</a></li>
-  
-                <li class="nav-item">D&D Canon</li>
-  
-              </ul>
+              {% include "partials/nav-menu.njk" %}
   
               </h5>
   
