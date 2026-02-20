@@ -1,0 +1,4 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "ignoreFiles": ["less.js-master/**", "dist/**", "node_modules/**"]
+}
