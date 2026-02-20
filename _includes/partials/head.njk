@@ -1,0 +1,22 @@
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css">
+  <link rel="stylesheet" href="/{{ pageStylesheet }}">
+  <link rel="icon" type="image/png" href="/images/minimal_logo_no_text.png">
+  <script src="https://kit.fontawesome.com/2302c6499f.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  {% if extraScripts %}
+    {% for script in extraScripts %}
+  <script src="{{ script }}"></script>
+    {% endfor %}
+  {% endif %}
+  <script src="/{{ globalScript }}"></script>
+</head>

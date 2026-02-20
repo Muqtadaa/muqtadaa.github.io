@@ -1,0 +1,24 @@
+.text-center { text-align: center; }
+.pt-10 { padding-top: 10px; }
+.pl-25 { padding-left: 25px; }
+.overflow-x-auto { overflow-x: auto; }
+.overflow-scroll { overflow: scroll; }
+.max-h-150 { max-height: 150px; }
+.px-10 { padding: 0 10px; }
+.fw-300 { font-weight: 300; }
+.fw-400 { font-weight: 400; }
+.fw-700 { font-weight: 700; }
+.fs-75 { font-size: 75%; }
+.fs-115 { font-size: 115%; }
+.fs-1rem { font-size: 1rem; }
+.fs-3rem { font-size: 3rem; }
+.fs-22 { font-size: 22px; }
+.lh-22 { line-height: 22px; }
+.mt-1 { margin-top: 1rem; }
+.mb-0 { margin-bottom: 0; }
+.center-inline { display: inline; vertical-align: middle; }
+.middle { vertical-align: middle; }
+.show-none { display: none; }
+.bg-white { background-color: #fff; }
+.w-25px { width: 25px; }
+.left-0-right-0 { left: 0; right: 0; }
