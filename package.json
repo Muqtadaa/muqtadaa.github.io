@@ -2,6 +2,7 @@
   "name": "muqtadaa-portfolio",
   "private": true,
   "scripts": {
+    "build:js": "less.js-master/node_modules/.bin/uglifyjs src/js/shared.js -c -m -o assets/js/shared.min.js && less.js-master/node_modules/.bin/uglifyjs src/js/pages/via.js -c -m -o assets/js/via.min.js && less.js-master/node_modules/.bin/uglifyjs src/js/pages/porto.js -c -m -o assets/js/porto.min.js && less.js-master/node_modules/.bin/uglifyjs src/js/pages/graphicdesign.js -c -m -o assets/js/graphicdesign.min.js && less.js-master/node_modules/.bin/uglifyjs src/js/pages/digitalart.js -c -m -o assets/js/digitalart.min.js"
     "build:css": "node tools/minify-css.mjs"
     "build": "eleventy",
     "start": "eleventy --serve"
