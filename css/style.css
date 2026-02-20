@@ -189,12 +189,10 @@ a {
 }
 
 .profilepic {
-  background: url("../images/muq_beach.jpg");
-  background-position: center;
-  background-size: cover;
   border-radius: 25rem;
   height: 22rem;
   width: 22rem;
+  object-fit: cover;
   text-align: center;
   margin: auto;
   margin-bottom:1.5rem;
