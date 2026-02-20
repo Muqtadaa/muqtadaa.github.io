@@ -1,0 +1,8 @@
+.card-surface {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-soft);
+}
+.prototype-frame,
+.xdEmbed { border-radius: var(--radius-md); }

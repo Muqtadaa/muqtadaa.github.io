@@ -1,0 +1,14 @@
+:root {
+  --color-bg: #f2f8ff;
+  --color-surface: #fff;
+  --color-text: #000;
+  --color-accent: #1eaedb;
+  --color-muted: #6e819c;
+  --color-shadow: rgba(0, 85, 204, 0.2);
+  --radius-header: 0 0 50px 50px;
+  --radius-md: 10px;
+  --radius-lg: 25px;
+  --space-md: 1rem;
+  --space-lg: 2.5rem;
+  --shadow-soft: 0 10px 5rem 0 var(--color-shadow);
+}
