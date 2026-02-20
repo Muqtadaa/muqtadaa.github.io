@@ -7,5 +7,10 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1"
+  "name": "muqtadaa.github.io",
+  "private": true,
+  "description": "Development tooling for the portfolio site",
+  "devDependencies": {
+    "less": "^4.3.0"
   }
 }
