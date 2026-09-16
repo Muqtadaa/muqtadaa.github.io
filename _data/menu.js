@@ -1,4 +1,4 @@
-module.exports = [
+export default [
   { key: 'yolk', label: 'Yolk', href: '/yolk/yolk.html' },
   { key: 'porto', label: "Porto's", href: '/porto/porto.html' },
   { key: 'via', label: 'Via', href: '/via/via.html' },

@@ -88,19 +88,22 @@ window.onload = function () {
     document.body.appendChild(trail);
   }
   
-  document.querySelector('.sparkles').addEventListener('click',function() {
-    document.querySelector('.sparkles').classList.toggle('on');
-    
-    if(trailSwitch) {
-      trailSwitch = false;
-    } else {
-      trailSwitch = true;
-      $('.celebration').fadeToggle();
-      setTimeout(function() {
+  var sparklesEl = document.querySelector('.sparkles');
+  if (sparklesEl) {
+    sparklesEl.addEventListener('click',function() {
+      sparklesEl.classList.toggle('on');
+
+      if(trailSwitch) {
+        trailSwitch = false;
+      } else {
+        trailSwitch = true;
         $('.celebration').fadeToggle();
-      },2500);
-    }
-  });
+        setTimeout(function() {
+          $('.celebration').fadeToggle();
+        },2500);
+      }
+    });
+  }
 }
 
 $(document).ready(function () {
