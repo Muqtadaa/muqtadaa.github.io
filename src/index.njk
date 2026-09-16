@@ -1,0 +1,208 @@
+---
+layout: layouts/base.njk
+title: Muqtadaa Miandara
+description: Digital artist, designer and dungeon master. Drawings, logos, a homebrew D&D world, and a summary of my CRO work at CRO Together.
+---
+{% import "macros/section-header.njk" as headers %}
+{% import "macros/stat.njk" as stats %}
+
+{#- Hero -#}
+<section class="section" data-bg="linen" data-py="hero">
+  <div class="container split">
+    <div class="hero__copy">
+      <p class="eyebrow-wide c-sage">Digital artist · Designer · Dungeon master · CRO consultant</p>
+      <h1 class="h1 hero__title">I make things for people. Lately: drawings, logos, and a <em>homebrew world.</em></h1>
+      <p class="body-lg hero__lead">Hi, I'm Muqtadaa. This is the personal side of my work: digital art, graphic design for friends and community, and the D&amp;D world my group has been building for years. If you're here for the growth and experimentation work, that lives at <a href="{{ site.links.cro }}">CRO Together</a>.</p>
+      <div class="cluster-3">
+        <a class="btn btn--primary" href="/art/">See the art</a>
+        <a class="btn btn--outline" href="{{ site.links.croContact }}">Work with me</a>
+      </div>
+    </div>
+    <div class="hero__portrait">
+      {% image site.portrait, site.portraitAlt, { widths: [320, 640, 800], sizes: "(min-width: 64em) 24rem, (min-width: 40em) 22rem, 80vw", loading: "eager", decoding: "sync", fetchpriority: "high" } %}
+    </div>
+  </div>
+</section>
+
+{#-
+  Gallery teasers. `galleries.art` / `galleries.design` come from
+  src/_data/galleries.js (a stub until P2b). Each item is expected to carry
+  `slug`, `title`, `alt`, `thumb` (URL), `srcset`, `width` and `height`,
+  newest first; until then the section renders its header and link only.
+-#}
+<section class="section" data-bg="bone" data-py="lg">
+  <div class="container stack-8">
+    <div class="row-between">
+      {{ headers.sectionHeader(eyebrow="Digital art", title="Recent drawings", description="Fan art, portraits and maps for the table. Mostly Procreate, sometimes a pencil.") }}
+      <a class="link-arrow nav-link" href="/art/">All drawings <span class="arrow-char" aria-hidden="true">→</span></a>
+    </div>
+    {%- set artItems = galleries.art | limit(6) %}
+    {%- if artItems.length %}
+    <ul class="grid grid-3" role="list">
+      {%- for item in artItems %}
+      <li>
+        <a class="tile" href="/art/#{{ item.slug }}">
+          <div class="tile__media"><img src="{{ item.thumb }}" srcset="{{ item.srcset }}" sizes="(min-width: 64em) 33vw, (min-width: 40em) 50vw, 100vw" width="{{ item.width }}" height="{{ item.height }}" alt="{{ item.alt }}" loading="lazy" decoding="async"></div>
+          <p class="tile__title">{{ item.title }}</p>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+    {%- else %}
+    <p class="empty-note">The drawings are on their way; the full gallery lives at <a href="/art/">/art/</a>.</p>
+    {%- endif %}
+  </div>
+</section>
+
+<section class="section" data-bg="bone" data-py="lg" data-border="top">
+  <div class="container stack-8">
+    <div class="row-between">
+      {{ headers.sectionHeader(eyebrow="Graphic design", title="Design for people I care about", description="Logos, flyers and social graphics for my mosque's youth group, classmates and the odd client. Made with care, usually for free.") }}
+      <a class="link-arrow nav-link" href="/design/">All design work <span class="arrow-char" aria-hidden="true">→</span></a>
+    </div>
+    {%- set designItems = galleries.design | limit(6) %}
+    {%- if designItems.length %}
+    <ul class="grid grid-3" role="list">
+      {%- for item in designItems %}
+      <li>
+        <a class="tile" href="/design/#{{ item.slug }}">
+          <div class="tile__media"><img src="{{ item.thumb }}" srcset="{{ item.srcset }}" sizes="(min-width: 64em) 33vw, (min-width: 40em) 50vw, 100vw" width="{{ item.width }}" height="{{ item.height }}" alt="{{ item.alt }}" loading="lazy" decoding="async"></div>
+          <p class="tile__title">{{ item.title }}</p>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+    {%- else %}
+    <p class="empty-note">The design work is on its way; the full gallery lives at <a href="/design/">/design/</a>.</p>
+    {%- endif %}
+  </div>
+</section>
+
+{#- The table: D&D. collections.dndPost arrives in P3. -#}
+<section class="section" data-bg="linen" data-py="lg">
+  <div class="container stack-8">
+    <div class="row-between">
+      {{ headers.sectionHeader(eyebrow="Dungeons & Dragons", title="The table", description="My group has been playing in the same homebrew world for years. The lore, the campaigns and the characters are finally getting written down, one post at a time.") }}
+      <a class="link-arrow nav-link" href="/dnd/">Enter the canon <span class="arrow-char" aria-hidden="true">→</span></a>
+    </div>
+    <div class="split split--even split--start">
+      <a class="tile" href="/dnd/">
+        <div class="tile__media">
+          {#- P2b moves this file to gallery/art/agdaron.png; update the path then. -#}
+          {% image "digitalart/art/agdaron.png", "Hand-drawn map of Agdaron, the homebrew world my D&D group plays in", { widths: [480, 960], sizes: "(min-width: 64em) 40rem, 100vw" } %}
+        </div>
+        <p class="tile__title">Agdaron, the world map</p>
+        <p class="tile__meta">Drawn for the table, redrawn every time the party breaks something.</p>
+      </a>
+      <div class="stack-4">
+        {%- set posts = (collections.dndPost | reverse | limit(3)) if collections.dndPost else [] %}
+        {%- if posts.length %}
+        <ul class="post-list" role="list">
+          {%- for post in posts %}
+          <li class="post-list__item">
+            <p class="post-list__eyebrow eyebrow-wide">{{ post.data.type }}{% if post.date %} · <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>{% endif %}</p>
+            <p class="post-list__title"><a href="{{ post.url }}">{{ post.data.title }}</a></p>
+            {%- if post.data.summary %}<p class="post-list__summary">{{ post.data.summary }}</p>{% endif %}
+          </li>
+          {%- endfor %}
+        </ul>
+        {%- else %}
+        <p class="empty-note">The first lore, campaign and character posts are being written. Until then, the map will have to do.</p>
+        {%- endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{#- The day job: one teaser stat, four links to crotogether.com, no client names. -#}
+<section class="section" data-bg="ink" data-py="xl">
+  <div class="container split">
+    <div class="stack-8">
+      {{ headers.sectionHeader(eyebrow="The day job", title="By day, I run experiments.", variant="dark", size="xl") }}
+      <div class="stack-4 body-lg">
+        <p>I'm the founder of <a href="{{ site.links.cro }}">CRO Together</a>, a boutique conversion-rate-optimisation consultancy. I help growth teams find where their funnels leak, decide what's actually worth testing, run the experiments, and read the results honestly.</p>
+        <p>It's the same instinct as the drawings, really: look closely, notice what people do rather than what they say, and make the thing better. If that sounds like what your team needs, the proof, the services and the free tools all live on the other site.</p>
+      </div>
+      {{ stats.stat(value="$15.1M", label="Incremental revenue from experimentation in 2025", variant="dark", size="xl") }}
+    </div>
+    <ul class="link-list" role="list">
+      <li><a href="{{ site.links.croProof }}">Results <span class="link-list__hint">the numbers behind that stat</span></a></li>
+      <li><a href="{{ site.links.croServices }}">Services <span class="link-list__hint">from diagnostic to fractional CRO</span></a></li>
+      <li><a href="{{ site.links.croTools }}">Free Optimizely tools <span class="link-list__hint">two Chrome extensions</span></a></li>
+      <li><a href="{{ site.links.croContact }}">Get in touch <span class="link-list__hint">answered within 24 hours</span></a></li>
+    </ul>
+  </div>
+</section>
+
+{#- Earlier work: three UX case studies (P2c restyles the pages). -#}
+<section class="section" data-bg="bone" data-py="lg">
+  <div class="container stack-8">
+    <div class="row-between">
+      {{ headers.sectionHeader(eyebrow="UX case studies", title="Earlier work: three UX case studies", description="From before the CRO years: a capstone app, a civic-tech concept, and a restaurant ordering flow I designed while managing the counter.") }}
+      <a class="link-arrow nav-link" href="/work/">All case studies <span class="arrow-char" aria-hidden="true">→</span></a>
+    </div>
+    <div class="grid grid-3">
+      <a class="card" href="/work/yolk/">
+        <p class="card__eyebrow eyebrow-wide">2019 · Mobile app</p>
+        <p class="card__title">Yolk</p>
+        <p class="card__body">A mood-tracking app concept built on Plutchik's wheel of emotions. My UT Dallas capstone.</p>
+      </a>
+      <a class="card" href="/work/via/">
+        <p class="card__eyebrow eyebrow-wide">2020 · Civic tech</p>
+        <p class="card__title">Via</p>
+        <p class="card__body">If the security problem were solved, what would voting from your phone have to feel like?</p>
+      </a>
+      <a class="card" href="/work/port-of-peri-peri/">
+        <p class="card__eyebrow eyebrow-wide">Restaurant · Ordering flow</p>
+        <p class="card__title">Port of Peri Peri</p>
+        <p class="card__body">Fixing a restaurant's ordering funnel from behind the counter, where I could watch every order get stuck.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+{#- What I work with: text chips only, no logo images. -#}
+<section class="section" data-bg="oat" data-py="lg" data-border="top">
+  <div class="container stack-8">
+    {{ headers.sectionHeader(eyebrow="Toolbox", title="What I work with", size="md") }}
+    <div class="grid grid-2">
+      <div class="chip-group">
+        <p class="chip-group__label label">Experimentation</p>
+        <ul class="chips" role="list">
+          <li class="chip">Optimizely</li>
+          <li class="chip">VWO</li>
+          <li class="chip">RICE</li>
+          <li class="chip">MDE / power planning</li>
+        </ul>
+      </div>
+      <div class="chip-group">
+        <p class="chip-group__label label">Research</p>
+        <ul class="chips" role="list">
+          <li class="chip">UserTesting</li>
+          <li class="chip">Medallia</li>
+          <li class="chip">Maze</li>
+        </ul>
+      </div>
+      <div class="chip-group">
+        <p class="chip-group__label label">Analytics and build</p>
+        <ul class="chips" role="list">
+          <li class="chip">GA4</li>
+          <li class="chip">GTM</li>
+          <li class="chip">Looker Studio</li>
+          <li class="chip">HTML / CSS / JS</li>
+          <li class="chip">React</li>
+        </ul>
+      </div>
+      <div class="chip-group">
+        <p class="chip-group__label label">Design and art</p>
+        <ul class="chips" role="list">
+          <li class="chip">Figma</li>
+          <li class="chip">Photoshop</li>
+          <li class="chip">Illustrator</li>
+          <li class="chip">After Effects</li>
+          <li class="chip">Procreate</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

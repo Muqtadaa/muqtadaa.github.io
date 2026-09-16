@@ -1,0 +1,42 @@
+---
+layout: layouts/base.njk
+breadcrumbs:
+  - name: Work
+    url: /work/
+pageScripts:
+  - /assets/js/xd-embed.js
+---
+{#
+  Case studies (src/work/<slug>/index.njk, P2c). Front matter:
+    title, year, type, role, question (the framing question, shown as the lead),
+    glance: [{ label, value }]  ->  the "At a glance" aside
+    xd: { url, title, poster }  ->  rendered through partials/xd-embed.njk
+  The body is static <section class="case-section"> blocks with h2s.
+#}
+{% import "macros/section-header.njk" as headers %}
+{% set meta = [year, type, role] | join(" · ") %}
+<section class="section" data-bg="linen" data-py="hero">
+  <div class="container">
+    {{ headers.sectionHeader(title=title, eyebrow=meta, description=question, as="h1", size="xl") }}
+  </div>
+</section>
+<section class="section" data-bg="bone" data-py="lg">
+  <div class="container case-layout">
+    <div class="prose">
+{{ content | safe }}
+    </div>
+    {% if glance %}
+    <aside class="case-layout__aside">
+      <div class="glance">
+        <p class="glance__title eyebrow-wide">At a glance</p>
+        <dl>
+          {%- for item in glance %}
+          <dt>{{ item.label }}</dt>
+          <dd>{{ item.value }}</dd>
+          {%- endfor %}
+        </dl>
+      </div>
+    </aside>
+    {% endif %}
+  </div>
+</section>

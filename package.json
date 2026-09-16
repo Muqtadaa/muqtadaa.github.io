@@ -7,11 +7,14 @@
     "node": ">=22"
   },
   "scripts": {
-    "build": "eleventy",
-    "start": "eleventy --serve"
+    "build": "node scripts/contrast.mjs && eleventy",
+    "start": "eleventy --serve",
+    "contrast": "node scripts/contrast.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "3.1.6",
-    "@11ty/eleventy-img": "7.0.0"
+    "@11ty/eleventy-img": "7.0.0",
+    "@fontsource-variable/manrope": "5.3.0",
+    "@fontsource-variable/newsreader": "5.3.0"
   }
 }

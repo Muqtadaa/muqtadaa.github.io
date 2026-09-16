@@ -1,0 +1,20 @@
+{#
+  Adobe XD prototype embed, click to load. Set `xd` before including:
+    {% set xd = { url: "https://xd.adobe.com/view/...", title: "Yolk prototype", poster: "/work/yolk/poster.jpg" } %}
+    {% include "partials/xd-embed.njk" %}
+  Without JavaScript only the "Open in Adobe XD" link shows; with it,
+  /assets/js/xd-embed.js reveals the button and swaps in the <iframe> on click.
+#}
+<figure class="xd-embed" data-xd-url="{{ xd.url }}" data-xd-title="{{ xd.title }}">
+  <div class="xd-embed__frame">
+    {%- if xd.poster %}
+    <img src="{{ xd.poster }}" alt="" loading="lazy" decoding="async">
+    {%- else %}
+    <p class="xd-embed__placeholder" aria-hidden="true">{{ xd.placeholder or xd.title }}</p>
+    {%- endif %}
+  </div>
+  <figcaption class="xd-embed__actions">
+    <button class="btn btn--primary xd-embed__load" type="button" hidden>Load prototype</button>
+    <a class="btn btn--outline" href="{{ xd.url }}" target="_blank" rel="noopener">Open in Adobe XD</a>
+  </figcaption>
+</figure>

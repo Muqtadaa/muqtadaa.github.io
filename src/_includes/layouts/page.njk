@@ -1,0 +1,14 @@
+---
+layout: layouts/base.njk
+---
+{% import "macros/section-header.njk" as headers %}
+<section class="section" data-bg="linen" data-py="hero">
+  <div class="container{% if not wide %} container-narrow{% endif %}">
+    {{ headers.sectionHeader(title=title, eyebrow=eyebrow, description=lead, as="h1", size="xl") }}
+  </div>
+</section>
+<section class="section" data-bg="bone" data-py="lg">
+  <div class="container{% if not wide %} container-narrow{% endif %} prose">
+{{ content | safe }}
+  </div>
+</section>

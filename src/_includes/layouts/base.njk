@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="{{ site.language }}">
+{% include "partials/head.njk" %}
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include "partials/nav.njk" %}
+  <main id="main" tabindex="-1">
+{{ content | safe }}
+  </main>
+  {% include "partials/footer.njk" %}
+  <script src="/assets/js/nav.js" defer></script>
+  {%- if pageScripts %}
+  {%- for script in pageScripts %}
+  <script src="{{ script }}" defer></script>
+  {%- endfor %}
+  {%- endif %}
+</body>
+</html>

@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+breadcrumbs:
+  - name: D&D
+    url: /dnd/
+---
+{#
+  One D&D post (src/dnd/posts/*.md, P3). Front matter: title, type
+  (lore | campaign | character), summary, date, tags, cover (gallery filename).
+  P3 adds the cover image, "Related art", prev/next and Article JSON-LD.
+#}
+<article>
+  <header class="section" data-bg="linen" data-py="hero">
+    <div class="container container-narrow stack-4">
+      <p class="eyebrow-wide c-sage">{{ type }}{% if date %} · <time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>{% endif %}</p>
+      <h1 class="h2-fluid">{{ title }}</h1>
+      {% if summary %}<p class="body-lg c-body">{{ summary }}</p>{% endif %}
+    </div>
+  </header>
+  <div class="section" data-bg="bone" data-py="lg">
+    <div class="container container-narrow prose">
+{{ content | safe }}
+    </div>
+  </div>
+</article>

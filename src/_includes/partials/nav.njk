@@ -1,0 +1,19 @@
+<nav class="nav" aria-label="Primary" data-open="false">
+  <div class="container nav__inner">
+    <a class="nav__brand" href="/">{{ site.name }}</a>
+    <button class="nav__toggle" type="button" aria-controls="site-menu" aria-expanded="false">
+      <span class="sr-only">Menu</span>
+      <span class="nav__bar" aria-hidden="true"></span>
+      <span class="nav__bar" aria-hidden="true"></span>
+      <span class="nav__bar" aria-hidden="true"></span>
+    </button>
+    <div class="nav__menu" id="site-menu">
+      <ul class="nav__links" role="list">
+        {%- for item in nav %}
+        <li><a class="nav__link nav-link" href="{{ item.href }}"{% if page.url | isActive(item.href) %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        {%- endfor %}
+      </ul>
+      <a class="nav__cta" href="{{ site.links.croContact }}">Work with me</a>
+    </div>
+  </div>
+</nav>
