@@ -153,22 +153,21 @@ parses the file and fails the build if any body-text pair drops below 7:1
   changed images are resized on CI. Only the derivatives the build asked for
   are copied from `.cache/img` to `_site/img`, so a restored cache never
   ships derivatives of deleted or renamed images.
-- **deploy** runs only when `github.ref == 'refs/heads/main'` **and** the
-  repository variable `PAGES_DEPLOY` is `true`. It publishes the artifact with
-  `actions/deploy-pages`.
+- **deploy** runs on every push to `main`. Pull requests stop after the build
+  job. Its first step sets the repository's Pages build type to `workflow`
+  through the API, then `actions/deploy-pages` publishes the artifact. That
+  first step matters: while Pages is set to "Deploy from a branch" the
+  deployment fails and the repository instead runs Jekyll over the source,
+  which cannot compile the Nunjucks templates. (`actions/configure-pages` does
+  not cover this. It returns early when a Pages site already exists, so it only
+  sets the build type when Pages is off entirely.) The call is idempotent and
+  needs only the `pages: write` permission the job already has.
 
-Two one-time manual steps make the deploy job live; until they are done the
-build still proves every PR without a failing deploy:
-
-1. **Settings → Pages → Build and deployment → Source = GitHub Actions.**
-   (The previous "Deploy from a branch" mode ran Jekyll over the repository
-   and could not build the Nunjucks templates.)
-2. **Settings → Secrets and variables → Actions → Variables → New repository
-   variable** `PAGES_DEPLOY` = `true`.
+If that step is ever refused, the run fails rather than publishing nothing, and
+the setting can be changed by hand at **Settings → Pages → Build and deployment
+→ Source = GitHub Actions**.
 
 Rollback is `git revert` and a push; Pages redeploys the previous artifact.
-Switching the Pages source back to a branch also restores the last good
-branch deployment.
 
 The output includes `.nojekyll`, `sitemap.xml`, `robots.txt`, `llms.txt`,
 `404.html`, and meta-refresh stubs at the old `.html` addresses

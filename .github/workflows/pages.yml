@@ -48,11 +48,9 @@ jobs:
         with:
           path: _site
 
-  # Only runs on main once the owner has switched Settings > Pages > Source to
-  # "GitHub Actions" and set the repository variable PAGES_DEPLOY=true.
-  # Until then, pushes and PRs still prove the build without a failing deploy.
+  # Publishes on every push to main. Pull requests stop after the build job.
   deploy:
-    if: github.ref == 'refs/heads/main' && vars.PAGES_DEPLOY == 'true'
+    if: github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     permissions:
@@ -65,5 +63,22 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # Pages must be set to build from this workflow, or the deployment below
+      # fails and the repository keeps running Jekyll over the source (which
+      # cannot compile the Nunjucks templates). actions/configure-pages does
+      # not cover this: its findOrCreatePagesSite() returns early when a Pages
+      # site already exists, so it only sets the build type when Pages is off
+      # entirely. Set it explicitly. The call is idempotent, needs only the
+      # pages: write permission this job already has, and fails the run if it
+      # is refused rather than deploying nothing.
+      - name: Build Pages from this workflow
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --method PUT "repos/${{ github.repository }}/pages" \
+            -f build_type=workflow \
+          || gh api --method POST "repos/${{ github.repository }}/pages" \
+            -f build_type=workflow
+
       - id: deployment
         uses: actions/deploy-pages@v4
