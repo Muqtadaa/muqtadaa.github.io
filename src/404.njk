@@ -1,0 +1,21 @@
+---
+layout: layouts/base.njk
+title: Page not found
+description: That page isn't here. It may have moved when the site was rebuilt.
+permalink: 404.html
+noindex: true
+eleventyExcludeFromCollections: true
+---
+{% import "macros/section-header.njk" as headers %}
+<section class="section" data-bg="linen" data-py="xl">
+  <div class="container container-narrow stack-8">
+    {{ headers.sectionHeader(eyebrow="404", title="That page isn't here.", description="It may have moved when I rebuilt the site. Everything worth seeing is one of these:", as="h1", size="xl") }}
+    <ul class="footer__links" role="list">
+      <li><a class="link-arrow" href="{{ '/' | absoluteUrl(site.url) }}">Home <span class="arrow-char" aria-hidden="true">→</span></a></li>
+      {%- for item in nav %}
+      <li><a class="link-arrow" href="{{ item.href | absoluteUrl(site.url) }}">{{ item.label }} <span class="arrow-char" aria-hidden="true">→</span></a></li>
+      {%- endfor %}
+      <li><a class="link-arrow" href="{{ site.links.cro }}">CRO Together <span class="arrow-char" aria-hidden="true">→</span></a></li>
+    </ul>
+  </div>
+</section>

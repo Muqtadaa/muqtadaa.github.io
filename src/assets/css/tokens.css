@@ -1,0 +1,198 @@
+/*
+ * tokens.css: the design-token contract for muqtadaa.github.io.
+ *
+ * The roles mirror CRO Together's src/styles/theme.css one to one so every
+ * component there maps to a component here; only the values change (Forest &
+ * moss instead of navy & gold). Each colour line names its theme.css origin.
+ * scripts/contrast.mjs parses this file and asserts the WCAG ratios in CI, so
+ * keep colour tokens on single lines in the form `--name: #rrggbb;`.
+ *
+ * Rules of the palette:
+ *   - body text pairs are >= 7:1 (AAA);
+ *   - --oat-light is a surface colour only, never behind text;
+ *   - --moss is an accent on ink / ink-mid only, never text on a light
+ *     background (1.3:1 on bone);
+ *   - moss on sage-dark (6.7:1) is for large text only.
+ */
+
+:root {
+  /* ── Colour (role: theme.css origin) ───────────────────────────────── */
+  --ink: #0b1f17;                /* navy #060e1a: headings, dark sections */
+  --ink-mid: #1c2f27;            /* navy-mid #1c2430: alternate dark section */
+  --bone: #f4f1e8;               /* cream #f5f0e8: page background */
+  --linen: #ebe7dc;              /* beige #ede8e0: alternate light sections */
+  --oat: #efece4;                /* tan #f1ede8: footer */
+  --oat-light: #e8e5dd;          /* tan-light #ebe8e3: surfaces only */
+  --moss: #c8dcae;               /* gold #ffddb1: accent on dark only */
+  --sage: #375234;               /* slate #43617c: eyebrows, links, secondary text */
+  --sage-dark: #2f4a2d;          /* slate-dark #46647e: badge text, filled buttons */
+  --badge: #d9e7c6;              /* badge-blue #c1e0ff: pill badges, text = sage-dark */
+  --text-dark: #161b17;          /* text-dark #1c1c19 */
+  --text-body: #3d463f;          /* text-body #45474c */
+  --text-muted: #3f4f46;         /* text-muted #434c5e: muted on light */
+  --text-muted-invert: #b1bfb2;  /* text-muted-invert #9aa3b2: muted on dark */
+  --white: #ffffff;              /* white: text on ink / ink-mid / sage-dark */
+
+  /* Derived surfaces and rules */
+  --hairline: rgba(0, 0, 0, 0.06);            /* border-[rgba(0,0,0,0.06)] */
+  --hairline-strong: rgba(0, 0, 0, 0.1);      /* border-[rgba(0,0,0,0.08-0.1)] */
+  --hairline-invert: rgba(255, 255, 255, 0.1); /* border-[rgba(255,255,255,0.1)] */
+  --accent-rule: rgba(55, 82, 52, 0.3);       /* sage at 30 %, decorative rules */
+  --lightbox-scrim: rgba(11, 31, 23, 0.92);   /* ink at 92 %, lightbox caption bar */
+
+  /* ── Type ───────────────────────────────────────────────────────────── */
+  --font-serif: 'Newsreader Variable', 'Newsreader Fallback', Georgia, serif;
+  --font-sans: 'Manrope Variable', 'Manrope Fallback', system-ui, sans-serif;
+
+  /* ── Layout (PageSection py-12/16/20/24/32, max-w-[1280px]/[768px]) ─── */
+  --space-section-sm: 3rem;
+  --space-section-md: 4rem;
+  --space-section-hero: 5rem;
+  --space-section-lg: 6rem;
+  --space-section-xl: 8rem;
+  --container: 80rem;
+  --container-narrow: 48rem;
+  --gutter: 1rem;
+
+  /* ── Shape, depth, motion ───────────────────────────────────────────── */
+  --radius: 0.625rem;                                   /* theme.css --radius */
+  --shadow-card: 0 24px 60px -28px rgba(11, 31, 23, 0.35);
+  --ease: cubic-bezier(0.25, 1, 0.5, 1);                /* delight.css */
+  --dur-press: 0.15s;
+  --dur-reveal: 0.55s;
+}
+
+@media (min-width: 40em) {
+  :root { --gutter: 1.5rem; }
+}
+
+@media (min-width: 64em) {
+  :root { --gutter: 2rem; }
+}
+
+/* ── Focus ────────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--sage);
+  outline-offset: 2px;
+}
+
+[data-bg="ink"] :focus-visible,
+[data-bg="ink-mid"] :focus-visible {
+  outline-color: var(--moss);
+}
+
+/* ── Type presets (values copied from CRO Together's typography.ts) ───── */
+.h1 {
+  font-family: var(--font-serif);
+  font-weight: 200;
+  font-size: clamp(48px, 6.5vw, 96px);
+  line-height: 1;
+  letter-spacing: -2.4px;
+}
+
+.h1-bold {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(48px, 7vw, 96px);
+  line-height: 1;
+  letter-spacing: -2.4px;
+}
+
+.h2-fluid {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(36px, 4.5vw, 60px);
+  line-height: 1.05;
+}
+
+.h2 {
+  font-family: var(--font-serif);
+  font-weight: 200;
+  font-size: 36px;
+  line-height: 1.1;
+}
+
+.h2-md {
+  font-family: var(--font-serif);
+  font-weight: 200;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.2;
+}
+
+.h3 {
+  font-family: var(--font-serif);
+  font-weight: 200;
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.body-lg {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.body {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 1.625;
+}
+
+.body-sm {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.eyebrow,
+.eyebrow-wide {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.eyebrow-wide {
+  letter-spacing: 2px;
+}
+
+.label {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 1.2px;
+}
+
+.nav-link {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+}
+
+.cta {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 16px;
+  letter-spacing: 0.4px;
+}
+
+.stat-xl,
+.stat-lg,
+.stat-fluid,
+.stat-md {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.stat-xl { font-size: 64px; }
+.stat-lg { font-size: 48px; }
+.stat-fluid { font-size: clamp(32px, 3.5vw, 52px); }
+.stat-md { font-size: 32px; }

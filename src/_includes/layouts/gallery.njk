@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+---
+{#
+  Gallery pages (src/art/index.njk, src/design/index.njk). The page body holds
+  the <ul class="gallery">, the <dialog class="lightbox"> and the gallery-data
+  script (P2b); this layout only frames it. Pages that need the lightbox set
+  `pageScripts: ["/assets/js/lightbox.js"]`.
+#}
+{% import "macros/section-header.njk" as headers %}
+<section class="section" data-bg="linen" data-py="hero">
+  <div class="container">
+    {{ headers.sectionHeader(title=title, eyebrow=eyebrow, description=lead, as="h1", size="xl") }}
+  </div>
+</section>
+<section class="section" data-bg="bone" data-py="lg">
+  <div class="container stack-8">
+{{ content | safe }}
+  </div>
+</section>

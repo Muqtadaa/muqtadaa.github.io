@@ -1,0 +1,20 @@
+---
+permalink: sitemap.xml
+eleventyExcludeFromCollections: true
+---
+{#- <lastmod> only for pages with an explicit `date` in their front matter
+    (the D&D posts); everywhere else Eleventy's fallback is the file's mtime,
+    which is the checkout time on CI and would mark every page as changed. -#}
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for item in collections.all %}
+{%- if not item.data.noindex and not item.data.excludeFromSitemap %}
+  <url>
+    <loc>{{ item.url | absoluteUrl(site.url) }}</loc>
+    {%- if item.data.date %}
+    <lastmod>{{ item.date | isoDate }}</lastmod>
+    {%- endif %}
+  </url>
+{%- endif %}
+{%- endfor %}
+</urlset>

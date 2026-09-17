@@ -1,0 +1,58 @@
+---
+layout: layouts/case-study.njk
+title: "Via"
+year: "2020"
+type: "Civic tech concept"
+role: "UX design, student team"
+question: "If the security problem were solved, what would voting from your phone have to feel like?"
+description: "Via, a UX case study by Muqtadaa Miandara: a 2020 thought experiment on mobile voting, framed on a security-versus-accessibility matrix and prototyped in Adobe XD."
+keywords:
+  - UX design
+  - civic tech
+  - voting
+  - 2x2 matrix
+  - Adobe XD
+glance:
+  - label: Year
+    value: "Spring 2020"
+  - label: Type
+    value: "Civic tech concept (class project)"
+  - label: Role
+    value: "Research and prototyping, as one of a small student team"
+  - label: Brief
+    value: "Solve a problem with the UX design process (Prof. Cassini Nazir)"
+  - label: Method
+    value: "Market research, 2×2 matrix, high-fidelity prototype"
+  - label: Tools
+    value: "Adobe XD"
+---
+<section class="case-section" id="what-is-via">
+  <h2>What is Via?</h2>
+  <p>In the spring of 2020, Professor Cassini Nazir challenged us to solve a problem using the user experience design process.</p>
+  <p>My team and I took on the challenge. With the 2020 election cycle underway, we kept coming back to the same question: why does voting technology lag so far behind everything else on our phones?</p>
+  <p>We began with research. We looked into current voting technology as it pertained to mobile applications and discovered a lack of sufficient cyber-security measures that made app-based voting a fantasy for the moment. Our professor encouraged us to continue with the thought experiment, so we ended up looking into voting apps for reality television and online competitions, as they had implementations that were applicable to our goals, and began working towards a user experience operating under the assumption that the security research existed. That reframed the brief: if the security problem were solved, what would the experience have to be?</p>
+  {#- Owner to confirm (plan open question 4): the sentence below is a placeholder for Muqtadaa's specific role on the team. -#}
+  <h3 class="subhead">My role</h3>
+  <p>I worked on the research and the prototype as one of a small student team; the brief we were answering was "how do we create a secure and accessible voting experience for users?"</p>
+</section>
+
+<section class="case-section" id="matrix">
+  <h2>2×2 matrix</h2>
+  <div class="case-side">
+    <figure>
+      {% image "src/assets/img/work/via-matrix.png", "Two-by-two matrix with Security on one axis and Accessibility on the other, placing existing voting methods in the quadrants", { widths: [480, 960], sizes: "(min-width: 48em) 20rem, 100vw" } %}
+      <figcaption>Security against accessibility: the two spectra our research said mattered most.</figcaption>
+    </figure>
+    <div class="stack-4">
+      <p>We decided to develop a 2×2 matrix to develop a greater understanding of our goals and challenges. Developing the spectra of operation for the matrix took some debate, but we settled on security versus accessibility, our research having indicated that these two aspects of our design were paramount.</p>
+      <p>Using the insights gleaned from our market research and our spectra case study, we narrowed in on a paired set of applications, one for mobile, and the other for a tablet or kiosk with accompanying scanning software. Secure registration and account verification were prioritised as part of the sign-up and log-in process. We set the default screen to use location data to access and display current and upcoming locally registered elections and ballots.</p>
+    </div>
+  </div>
+</section>
+
+<section class="case-section" id="prototype">
+  <h2>Final prototype</h2>
+  <p>The maps page pins nearby polling locations, with different colours indicating the wait times at each. If the user is logged in on the device, a secure session is established, indicated by the lock icon in the upper right of the fixed header. If the user isn't logged in, they are prompted to do so, and cannot access ballots unless logged in. They can still access the map page and navigate to local polling stations. The kiosk offers much the same functionality as the mobile app, but has a larger focus on documentation for verification purposes.</p>
+  {% set xd = { url: "https://xd.adobe.com/embed/58e8f09a-9bfc-499f-779b-8e57b4e92a30-2ed9/", title: "Via final prototype (Adobe XD)", placeholder: "Via prototype", aspect: "phone" } %}
+  {% include "partials/xd-embed.njk" %}
+</section>

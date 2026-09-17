@@ -1,0 +1,174 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { generateHTML } from '@11ty/eleventy-img';
+import { IMAGE_DEFAULTS, producedFiles, resize } from './lib/image.js';
+import { structuredData } from './lib/jsonld.js';
+import { endExiftool } from './lib/exif.js';
+import { adjacentPosts, groupPosts, postsOfType, relatedArt, typeLabel } from './lib/dnd.js';
+
+// Eleventy 3 config for the site under src/ (plan WS-E). Gallery sources live
+// in gallery/, shared build helpers in lib/, pre-build checks in scripts/.
+
+export default function (eleventyConfig) {
+  eleventyConfig.setInputDirectory('src');
+  eleventyConfig.setOutputDirectory('_site');
+  eleventyConfig.setIncludesDirectory('_includes');
+  eleventyConfig.setDataDirectory('_data');
+
+  // Folder READMEs are authoring notes, not templates.
+  eleventyConfig.ignores.add('src/**/README.md');
+
+  // Static assets served as-is. src/assets/img/ is deliberately not copied:
+  // those files (the portrait, case-study figures) are build inputs for the
+  // image shortcode and only their derivatives under /img/ are published.
+  eleventyConfig.addPassthroughCopy({
+    'src/assets/css': 'assets/css',
+    'src/assets/fonts': 'assets/fonts',
+    'src/assets/js': 'assets/js',
+    'src/assets/favicon.svg': 'assets/favicon.svg'
+  });
+
+  // Gallery media that is never resized (video, PDF, animated GIF) is served
+  // from /media/<folder>/. Object globs flatten into the target, so map one
+  // folder at a time.
+  if (fs.existsSync('gallery')) {
+    for (const folder of fs.readdirSync('gallery', { withFileTypes: true })) {
+      if (!folder.isDirectory()) continue;
+      eleventyConfig.addPassthroughCopy({
+        [`gallery/${folder.name}/*.{mp4,webm,pdf,gif}`]: `media/${folder.name}`
+      });
+    }
+  }
+  eleventyConfig.addWatchTarget('gallery');
+
+  // ── Images ────────────────────────────────────────────────────────────
+  // eleventy-img derivatives go to .cache/img (persisted by actions/cache,
+  // never committed). eleventy.after copies to _site/img only the ones this
+  // build asked for (lib/image.js records them), so a restored cache cannot
+  // ship derivatives of deleted or renamed images; a passthrough copy would
+  // both race the shortcodes that write them and copy every cached file.
+  eleventyConfig.addShortcode('image', async function (src, alt, options = {}) {
+    if (typeof alt !== 'string') {
+      throw new Error(`image shortcode: alt text is required for ${src}`);
+    }
+    const metadata = await resize(src, { widths: options.widths || [480, 960] });
+    const attributes = {
+      alt,
+      sizes: options.sizes || '100vw',
+      loading: options.loading || 'lazy',
+      decoding: options.decoding || 'async'
+    };
+    if (options.class) attributes.class = options.class;
+    if (options.fetchpriority) attributes.fetchpriority = options.fetchpriority;
+    return generateHTML(metadata, attributes);
+  });
+
+  // URL of one derivative (used for og:image and JSON-LD `image`).
+  eleventyConfig.addAsyncFilter('imageUrl', async function (src, width = 960, format = 'jpeg') {
+    const metadata = await resize(src, { widths: [width], formats: [format] });
+    return metadata[format][0].url;
+  });
+
+  // ── Filters ───────────────────────────────────────────────────────────
+  eleventyConfig.addFilter('absoluteUrl', (value, base) => new URL(value, base).href);
+
+  // JSON for <script type="application/ld+json">: `<` is escaped so no
+  // string in the graph can close the script element.
+  const toJsonLd = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
+  eleventyConfig.addFilter('jsonld', toJsonLd);
+  eleventyConfig.addFilter('structuredData', (input) => toJsonLd(structuredData(input)));
+
+  eleventyConfig.addFilter('isActive', (pageUrl, href) =>
+    href === '/' ? pageUrl === '/' : pageUrl.startsWith(href)
+  );
+
+  eleventyConfig.addFilter('limit', (array, count) => (array || []).slice(0, count));
+
+  // Gallery items carrying one tag (e.g. the art tagged `dnd` on /dnd/).
+  eleventyConfig.addFilter('withTag', (items, tag) =>
+    (items || []).filter((item) => (item.tags || []).includes(tag))
+  );
+
+  // The D&D canon (lib/dnd.js): collections.dndPost grouped by type, the
+  // posts of one type, a post's neighbours within its type, the art related
+  // to a post, and the display label of a type id.
+  eleventyConfig.addFilter('dndGroups', groupPosts);
+  eleventyConfig.addFilter('dndOfType', postsOfType);
+  eleventyConfig.addFilter('dndAdjacent', adjacentPosts);
+  eleventyConfig.addFilter('dndRelatedArt', relatedArt);
+  eleventyConfig.addFilter('dndTypeLabel', typeLabel);
+
+  // The subset of a gallery item that src/assets/js/lightbox.js needs,
+  // embedded as <script type="application/json" id="gallery-data">.
+  eleventyConfig.addFilter('lightboxJson', (items) =>
+    toJsonLd(
+      (items || []).map((item) => ({
+        slug: item.slug,
+        type: item.type,
+        title: item.title,
+        caption: item.caption,
+        alt: item.alt,
+        full: item.full,
+        fullWebp: item.fullWebp,
+        width: item.fullWidth,
+        height: item.fullHeight,
+        video: item.video,
+        document: item.document
+      }))
+    )
+  );
+
+  eleventyConfig.addFilter('readableDate', (value) =>
+    new Date(value).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      timeZone: 'UTC'
+    })
+  );
+
+  eleventyConfig.addFilter('isoDate', (value) => new Date(value).toISOString().slice(0, 10));
+
+  // ── After build ───────────────────────────────────────────────────────
+  eleventyConfig.on('eleventy.after', async ({ directories }) => {
+    const outDir = directories?.output || '_site';
+    fs.mkdirSync(outDir, { recursive: true });
+
+    // GitHub Pages must not run Jekyll over the built output.
+    fs.writeFileSync(path.join(outDir, '.nojekyll'), '');
+
+    // Only the derivatives produced by this build, never the whole cache;
+    // anything else already under _site/img (a previous local build, since
+    // Eleventy does not empty the output directory) is removed.
+    const cacheDir = path.resolve(IMAGE_DEFAULTS.outputDir);
+    const imgDir = path.join(outDir, 'img');
+    const shipped = new Set();
+    for (const file of producedFiles) {
+      const source = path.resolve(file);
+      const relative = path.relative(cacheDir, source);
+      if (relative.startsWith('..') || path.isAbsolute(relative)) {
+        throw new Error(`image derivative ${file} is outside ${IMAGE_DEFAULTS.outputDir}`);
+      }
+      const target = path.join(imgDir, relative);
+      fs.mkdirSync(path.dirname(target), { recursive: true });
+      fs.copyFileSync(source, target);
+      shipped.add(target);
+    }
+    if (fs.existsSync(imgDir)) {
+      for (const entry of fs.readdirSync(imgDir, { recursive: true, withFileTypes: true })) {
+        if (!entry.isFile()) continue;
+        const file = path.join(entry.parentPath ?? entry.path, entry.name);
+        if (!shipped.has(file)) fs.rmSync(file);
+      }
+    }
+
+    // src/_data/galleries.js reads embedded captions through one exiftool
+    // process; it must be closed or the build never exits.
+    await endExiftool();
+  });
+
+  return {
+    htmlTemplateEngine: 'njk',
+    markdownTemplateEngine: 'njk'
+  };
+}

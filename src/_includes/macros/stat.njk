@@ -1,0 +1,11 @@
+{#
+  Large serif value + small label; same props as CRO Together's stat.tsx.
+    {{ stats.stat(value="$15.1M", label="Incremental revenue in 2025", variant="dark") }}
+    {{ stats.stat(value="+291%", label="Panel click-through", variant="light", size="sm", borderTop=true) }}
+#}
+{% macro stat(value, label, variant="dark", size="lg", borderTop=false, className="") %}
+<div class="stat{% if borderTop %} stat--border{% endif %}{% if className %} {{ className }}{% endif %}" data-variant="{{ variant }}">
+  <span class="stat__value" data-size="{{ size }}">{{ value }}</span>
+  <p class="stat__label body-sm">{{ label }}</p>
+</div>
+{% endmacro %}

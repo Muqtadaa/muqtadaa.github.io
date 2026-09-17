@@ -1,0 +1,18 @@
+{#
+  Eyebrow + heading + optional description; same props as CRO Together's
+  section-header.tsx. `title` and `description` may contain markup.
+    {{ headers.sectionHeader(title="Recent <em>drawings</em>", eyebrow="Digital art", size="lg") }}
+    {{ headers.sectionHeader(title="...", as="h1", size="xl", eyebrowBadge=true) }}
+    {{ headers.sectionHeader(title="...", variant="dark") }}   (white heading, moss eyebrow)
+#}
+{% macro sectionHeader(title, eyebrow="", eyebrowBadge=false, titleWeight=200, size="lg", description="", variant="light", as="h2", className="") %}
+<div class="section-header{% if className %} {{ className }}{% endif %}" data-variant="{{ variant }}">
+  {%- if eyebrow %}
+  <p class="section-header__eyebrow eyebrow-wide{% if eyebrowBadge %} section-header__eyebrow--badge{% endif %}">{{ eyebrow }}</p>
+  {%- endif %}
+  <{{ as }} class="section-header__title" data-size="{{ size }}" data-weight="{{ titleWeight }}">{{ title | safe }}</{{ as }}>
+  {%- if description %}
+  <p class="section-header__desc body-lg">{{ description | safe }}</p>
+  {%- endif %}
+</div>
+{% endmacro %}

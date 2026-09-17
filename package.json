@@ -1,18 +1,24 @@
 {
   "name": "muqtadaa-portfolio",
   "private": true,
+  "type": "module",
+  "description": "Source for muqtadaa.github.io, built with Eleventy and published through GitHub Actions",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
-    "build:js": "less.js-master/node_modules/.bin/uglifyjs src/js/shared.js -c -m -o assets/js/shared.min.js && less.js-master/node_modules/.bin/uglifyjs src/js/pages/via.js -c -m -o assets/js/via.min.js && less.js-master/node_modules/.bin/uglifyjs src/js/pages/porto.js -c -m -o assets/js/porto.min.js && less.js-master/node_modules/.bin/uglifyjs src/js/pages/graphicdesign.js -c -m -o assets/js/graphicdesign.min.js && less.js-master/node_modules/.bin/uglifyjs src/js/pages/digitalart.js -c -m -o assets/js/digitalart.min.js"
-    "build:css": "node tools/minify-css.mjs"
-    "build": "eleventy",
-    "start": "eleventy --serve"
+    "build": "node scripts/contrast.mjs && node scripts/check-gallery.mjs && eleventy",
+    "start": "eleventy --serve",
+    "contrast": "node scripts/contrast.mjs",
+    "check-gallery": "node scripts/check-gallery.mjs"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
-  "name": "muqtadaa.github.io",
-  "private": true,
-  "description": "Development tooling for the portfolio site",
-  "devDependencies": {
-    "less": "^4.3.0"
+    "@11ty/eleventy": "3.1.6",
+    "@11ty/eleventy-img": "7.0.0",
+    "@fontsource-variable/manrope": "5.3.0",
+    "@fontsource-variable/newsreader": "5.3.0",
+    "exiftool-vendored": "^38.1.0",
+    "js-yaml": "^4.3.2",
+    "sharp": "^0.35.4"
   }
 }

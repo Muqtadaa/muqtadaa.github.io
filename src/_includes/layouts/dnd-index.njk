@@ -1,0 +1,16 @@
+---
+layout: layouts/base.njk
+pageType: CollectionPage
+---
+{#
+  The D&D canon index (src/dnd/index.njk): ink hero with the moss eyebrow,
+  then the page body, which groups collections.dndPost by type and adds the
+  "From the sketchbook" strip of art tagged `dnd`.
+#}
+{% import "macros/section-header.njk" as headers %}
+<section class="section" data-bg="ink" data-py="hero">
+  <div class="container">
+    {{ headers.sectionHeader(title=title, eyebrow=eyebrow or "Campaign canon", description=lead, as="h1", size="xl", variant="dark") }}
+  </div>
+</section>
+{{ content | safe }}

@@ -1,0 +1,29 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="stack-4">
+        <a class="footer__brand" href="/">{{ site.name }}</a>
+        <p class="footer__blurb">Artist, designer, dungeon master, and the founder of CRO Together.</p>
+      </div>
+      <div class="stack-4">
+        <p class="footer__heading">Explore</p>
+        <div class="footer__links">
+          {%- for item in nav %}
+          <a href="{{ item.href }}">{{ item.label }}</a>
+          {%- endfor %}
+        </div>
+      </div>
+      <div class="stack-4">
+        <p class="footer__heading">Elsewhere</p>
+        <div class="footer__links">
+          <a href="{{ site.links.cro }}" rel="me">CRO Together</a>
+          <a href="{{ site.links.croContact }}">Work with me</a>
+          <a href="{{ site.links.linkedin }}" rel="me">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; {{ site.year }} {{ site.name }}</p>
+    </div>
+  </div>
+</footer>

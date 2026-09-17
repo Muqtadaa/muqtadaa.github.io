@@ -1,0 +1,73 @@
+---
+layout: layouts/base.njk
+title: Work
+description: The CRO and experimentation work at CRO Together in brief, and three UX case studies from before it (Yolk, Via, Port of Peri Peri) by Muqtadaa Miandara.
+---
+{% import "macros/section-header.njk" as headers %}
+{% import "macros/stat.njk" as stats %}
+
+<section class="section" data-bg="linen" data-py="hero">
+  <div class="container">
+    {{ headers.sectionHeader(eyebrow="Work", title="The day job, and the work that led to it.", description="Most of what I do now is conversion-rate optimisation and experimentation for growth teams, and that lives on the CRO Together site. The three UX case studies below are from before that, kept here because they show how I think.", as="h1", size="xl") }}
+  </div>
+</section>
+
+{#- CRO summary block: two paragraphs, one teaser stat, four links out. No client names, no further numbers. -#}
+<section class="section" data-bg="ink" data-py="xl">
+  <div class="container split">
+    <div class="stack-8">
+      {{ headers.sectionHeader(eyebrow="CRO Together", title="Experimentation, done honestly.", variant="dark", size="lg") }}
+      <div class="stack-4 body-lg">
+        <p>I founded <a href="{{ site.links.cro }}" rel="me">CRO Together</a>, a boutique conversion-rate-optimisation consultancy. The work runs from a conversion diagnostic and an experimentation roadmap through A/B testing and personalisation, UX research sprints, implementation on Optimizely and VWO, and fractional CRO leadership for teams that need someone to own the programme.</p>
+        <p>Every engagement starts with the same question as these case studies: what are people actually doing, and why? The difference is that now the answer gets tested against a control before anyone calls it a win.</p>
+      </div>
+      {{ stats.stat(value="$15.1M", label="Incremental revenue from experimentation in 2025", variant="dark", size="xl") }}
+    </div>
+    <ul class="link-list" role="list">
+      <li><a href="{{ site.links.croProof }}">Results <span class="link-list__hint">the numbers behind that stat</span></a></li>
+      <li><a href="{{ site.links.croServices }}">Services <span class="link-list__hint">from diagnostic to fractional CRO</span></a></li>
+      <li><a href="{{ site.links.croTools }}">Free Optimizely tools <span class="link-list__hint">two Chrome extensions</span></a></li>
+      <li><a href="{{ site.links.croContact }}">Work with me <span class="link-list__hint">answered within 24 hours</span></a></li>
+    </ul>
+  </div>
+</section>
+
+{#- Three UX case studies. The tile images are the legacy phone screenshots (src/assets/img/work/*-tile.png). -#}
+{%- set tileSizes = "(min-width: 64em) 26rem, (min-width: 40em) 50vw, 100vw" %}
+<section class="section" data-bg="bone" data-py="lg">
+  <div class="container stack-8">
+    {{ headers.sectionHeader(eyebrow="Earlier work", title="Three UX case studies", description="A capstone app, a civic-tech concept and a restaurant ordering flow. All three are from 2019 and 2020; the Adobe XD prototypes still load on request.") }}
+    <ul class="grid grid-3" role="list">
+      <li>
+        <a class="tile" href="/work/yolk/">
+          <div class="tile__media tile__media--tall tile__media--frame">
+            {% image "src/assets/img/work/yolk-tile.png", "Yolk home screen: the colour wheel of emotions with a mood selected", { widths: [480], sizes: tileSizes } %}
+          </div>
+          <p class="tile__meta eyebrow-wide">2019 · Mobile app concept</p>
+          <p class="tile__title">Yolk</p>
+          <p class="tile__meta">A mood-tracking app concept built on Plutchik's wheel of emotions. My UT Dallas capstone: research, personas, wireframes and two rounds of onboarding tests.</p>
+        </a>
+      </li>
+      <li>
+        <a class="tile" href="/work/via/">
+          <div class="tile__media tile__media--tall tile__media--frame">
+            {% image "src/assets/img/work/via-tile.png", "Via home screen: a map of nearby polling places with wait-time markers", { widths: [480], sizes: tileSizes } %}
+          </div>
+          <p class="tile__meta eyebrow-wide">2020 · Civic tech concept</p>
+          <p class="tile__title">Via</p>
+          <p class="tile__meta">If the security problem were solved, what would voting from your phone have to feel like? A team thought experiment framed on a security-versus-accessibility matrix.</p>
+        </a>
+      </li>
+      <li>
+        <a class="tile" href="/work/port-of-peri-peri/">
+          <div class="tile__media tile__media--tall tile__media--frame">
+            {% image "src/assets/img/work/port-of-peri-peri-tile.png", "Port of Peri Peri app home screen with the gift card banner and featured menu items", { widths: [480], sizes: tileSizes } %}
+          </div>
+          <p class="tile__meta eyebrow-wide">2019 · Restaurant ordering app</p>
+          <p class="tile__title">Port of Peri Peri</p>
+          <p class="tile__meta">An ordering and rewards app for the restaurant I was managing, designed from behind the counter where I could watch orders get stuck.</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>

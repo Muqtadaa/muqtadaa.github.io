@@ -1,0 +1,412 @@
+---
+layout: layouts/case-study.njk
+title: "Yolk"
+year: "2019"
+type: "Mobile app concept"
+role: "Solo designer and researcher"
+question: "How do we create an experience that allows and encourages users to self-actualize and build healthy and accessible coping mechanisms?"
+description: "Yolk, a UX case study by Muqtadaa Miandara: a mood-tracking app concept built on Plutchik's wheel of emotions (UT Dallas capstone, 2019), from framing and research through personas, wireframes, onboarding tests and the final Adobe XD prototype."
+keywords:
+  - UX design
+  - mood tracking
+  - Plutchik
+  - user research
+  - personas
+  - onboarding
+  - Adobe XD
+glance:
+  - label: Year
+    value: "Winter 2019 to graduation"
+  - label: Type
+    value: "Mobile app concept"
+  - label: Role
+    value: "Solo designer and researcher"
+  - label: Context
+    value: "Capstone, UT Dallas School of Arts, Technology, and Emerging Communication"
+  - label: Methods
+    value: "IDEO design-challenge framing, survey (n = 43), personas, Crazy Eights, two rounds of usability testing"
+  - label: Tools
+    value: "Adobe XD"
+---
+{#-
+  Survey results as two small multiples: one question each, one hue (sage,
+  7.7:1 on bone), counts labelled at the bar end, a shared scale so the two
+  charts compare. The table below the charts carries the same numbers for
+  screen readers and anyone who prefers them.
+-#}
+{%- macro bars(rows, max) -%}
+{%- set rowH = 26 -%}
+{%- set barH = 16 -%}
+{%- set x0 = 124 -%}
+{%- set scale = 190 / max -%}
+<svg viewBox="0 0 360 {{ rows.length * rowH + 4 }}" aria-hidden="true" focusable="false">
+  <line class="survey__axis" x1="{{ x0 }}" y1="0" x2="{{ x0 }}" y2="{{ rows.length * rowH }}"></line>
+  {%- for row in rows %}
+  {%- set y = loop.index0 * rowH + (rowH - barH) / 2 %}
+  {%- set w = (row[1] * scale) | round(1) %}
+  <text class="survey__label" x="{{ x0 - 8 }}" y="{{ y + barH / 2 }}" text-anchor="end" dominant-baseline="middle">{{ row[0] }}</text>
+  <path class="survey__bar" d="M{{ x0 }} {{ y }} h{{ (w - 4) | round(1) }} a4 4 0 0 1 4 4 v{{ barH - 8 }} a4 4 0 0 1 -4 4 h-{{ (w - 4) | round(1) }} z"><title>{{ row[0] }}: {{ row[1] }} of 43</title></path>
+  <text class="survey__value" x="{{ (x0 + w + 6) | round(1) }}" y="{{ y + barH / 2 }}" dominant-baseline="middle">{{ row[1] }}</text>
+  {%- endfor %}
+</svg>
+{%- endmacro -%}
+{%- set checkIn = [["Very infrequently", 1], ["Infrequently", 7], ["Sometimes", 12], ["Frequently", 14], ["Very frequently", 7]] -%}
+{%- set overwhelmed = [["Very infrequently", 1], ["Infrequently", 10], ["Sometimes", 13], ["Frequently", 14], ["Very frequently", 5]] -%}
+
+<section class="case-section" id="what-is-yolk">
+  <h2>What is Yolk?</h2>
+  <p class="pull">Yolk is a mood-tracking app concept built on Plutchik's wheel of emotions: notice what you feel, put a word to it, and reach for a healthier way through it.</p>
+  <div class="case-figures">
+    {% image "src/assets/img/work/yolk-mockup-1.png", "Phone mockup of the Yolk home screen: the colour wheel of emotions with a segment selected", { widths: [480, 960], sizes: "(min-width: 40em) 20rem, 100vw" } %}
+    {% image "src/assets/img/work/yolk-mockup-2.png", "Phone mockup of Yolk's journal screen with a mood entry and the day's notes", { widths: [480, 960], sizes: "(min-width: 40em) 20rem, 100vw" } %}
+  </div>
+  <p>In the winter of 2019, my dear friend from high school, Shelby Johnson (Clinical Psychology, PhD candidate at Washington State), was finishing a post-graduate research essay. Put simply, she wrote about how multilingual people have a larger and more colourful emotional vocabulary, and built her essay around research that showed that the more articulate one is with describing how they feel, the easier it is for them to process those feelings.</p>
+  <p>I had a brainwave, then, as someone who speaks multiple languages myself, and decided to make my graduating capstone a user experience that served as a multilingual emotional vernacular dictionary, to allow people to educate themselves and increase their own emotional intelligence. I rushed to speak to my professors about it, and though they thought the idea had merit, I was gently-but-firmly reminded that I ought not get too ambitious.</p>
+  <p>It was Professor Cassini Nazir (formerly of UT Dallas, now at UNT) who pointed me in a new direction. We'd spoken in class about Dr. Robert Plutchik, who studied colour theory as it related to emotional responses, and from there I had to sit down and figure out what exactly I was trying to make.</p>
+</section>
+
+<section class="case-section" id="framing">
+  <h2>Framing the design</h2>
+  <p>I am a firm believer in using <a href="https://www.designkit.org/methods/frame-your-design-challenge" rel="noopener">IDEO's Frame Your Design Challenge</a> at the beginning of every project, to help clarify purpose, scope, and goalposts. The process gave me the following:</p>
+  <h3 class="subhead">The problem</h3>
+  <p>Developing emotional self-awareness and improving emotional well-being.</p>
+  <h3 class="subhead">Framed as a question</h3>
+  <p>How might we encourage self-awareness and growth?</p>
+  <h3 class="subhead">The ultimate impact</h3>
+  <p>I want people to recognise what they're feeling, and have tools that they've learned to use in order to process those feelings.</p>
+  <h3 class="subhead">Potential solutions</h3>
+  <p>I found the following as usable tools in my research: increased emotional vocabulary, meditation, active awareness exercises, mood music, and intentional thought redirection.</p>
+  <h3 class="subhead">Context and constraints</h3>
+  <p>Emotions are uniquely individual to the individual, as redundant as that sounds. Any solution needs to be universally accessible to people of different backgrounds and education levels. I have to remember that I am attempting to complete a relatively large project for a single person, and not bite off more than I can chew.</p>
+  <h3 class="subhead">The question, rephrased</h3>
+  <p class="pull">How might people self-actualise through the use of healthy and accessible coping mechanisms?</p>
+</section>
+
+<section class="case-section" id="exploratory-research">
+  <h2>Exploratory research</h2>
+  <div class="case-side">
+    <figure>
+      {% image "src/assets/img/work/yolk-colorwheel.png", "Plutchik's wheel of emotions: eight petals of primary emotions, each shading from intense at the centre to mild at the edge", { widths: [480, 960], sizes: "(min-width: 48em) 20rem, 100vw" } %}
+      <figcaption>Colour Wheel of Emotions by Dr. Robert Plutchik.</figcaption>
+    </figure>
+    <div class="stack-4">
+      <p>My research began with Dr. Robert Plutchik's Colour Wheel of Emotions. This would serve as the foundation of my user experience. His research indicated that emotion consists of five components:</p>
+      <ol>
+        <li><strong>Emotion component:</strong> where an individual simply experiences the feelings.</li>
+        <li><strong>Action tendency component:</strong> wherein the body moves in reaction to the feelings. Some of these responses are autonomous, others are controlled by the individual.</li>
+        <li><strong>Appraisal component:</strong> this is where the individual thinks through the emotion, its source, related actions or stimuli, and so on. Here is where words are usually first put to the feelings within one's mind.</li>
+        <li><strong>Motor component:</strong> the communicative function of how to express the feelings being experienced, including facial expressions, hand gestures, body language.</li>
+        <li><strong>Physiological component:</strong> the chemical reactions undertaken by the body in response to emotional stimuli, such as the release of adrenaline, blood rushing to the head, jitters, shivers. Social factors often influence these responses (gender, culture, race, sexuality, and so on).</li>
+      </ol>
+      <p>So the goal is to objectify and understand our emotions, empathise with ourselves (validating the self), and then channel the emotion productively (changing mood or taking action). From here, I began to develop a concept for the user experience.</p>
+    </div>
+  </div>
+</section>
+
+<section class="case-section" id="user-research">
+  <h2>User research</h2>
+  <p>I started off asking a few questions I considered key to understanding my audience, in a short survey answered by 43 people. I gained a few key insights.</p>
+  <div class="survey">
+    <figure class="survey__chart">
+      <figcaption>How often do you check in with yourself emotionally?</figcaption>
+      {{ bars(checkIn, 14) }}
+    </figure>
+    <figure class="survey__chart">
+      <figcaption>How often do you feel overwhelmed by your emotions?</figcaption>
+      {{ bars(overwhelmed, 14) }}
+    </figure>
+  </div>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Survey responses, 43 people, by frequency">
+    <table>
+      <caption class="sr-only">Survey responses, 43 people, by frequency</caption>
+      <thead>
+        <tr>
+          <th scope="col">Frequency</th>
+          <th scope="col">Check in with yourself emotionally</th>
+          <th scope="col">Feel overwhelmed by your emotions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%- for row in checkIn %}
+        <tr>
+          <th scope="row">{{ row[0] }}</th>
+          <td>{{ row[1] }}</td>
+          <td>{{ overwhelmed[loop.index0][1] }}</td>
+        </tr>
+        {%- endfor %}
+        <tr>
+          <th scope="row">Total</th>
+          <td>43</td>
+          <td>43</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Based on a sample of 43, it seems that despite over 60% of people checking in with themselves at least frequently, the same proportion feel overwhelmed by their emotions with approximately the same frequency. This implies that a large number of people need help intuiting and processing their emotions on a regular basis, so I can safely say that my idea for a user experience has a definitive audience. My next step here is to identify specific user personas within that audience to model their <strong>behaviours and attitudes</strong> in relation to my intended user experience.</p>
+  <p>Respondents also described their preferred methods of relaxing and improving their mood. My major takeaways were the following:</p>
+  <ul>
+    <li>A little over <strong>50%</strong> of the polled audience were willing to use a product to help them keep track of their feelings better.</li>
+    <li>The respondents had a lot of crossover in how they dealt with their emotions, with several methods appearing over and over. These indicate <strong>key features</strong> to include in any user experience addressing the larger question.</li>
+  </ul>
+</section>
+
+<section class="case-section" id="personas">
+  <h2>User personas</h2>
+  <p>I ended up polling the same audience about their demographics, trying to understand who was interested in a product to help navigate their daily emotional well-being, and came across the following insights:</p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Survey demographics: who they are, their main goal and their major obstacles">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Demographic</th>
+          <th scope="col">Who are they?</th>
+          <th scope="col">What is their main goal?</th>
+          <th scope="col">What are their major obstacles?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>13 to 18 year-old Americans, often female</td>
+          <td>Identifies as a high school student</td>
+          <td>They want to learn how to control their emotions and not let their feelings overwhelm them. When they fail, their mental health can get in the way of school, social outings, and extracurriculars.</td>
+          <td>Youth and inexperience, lack of time management skills, poor impulse control</td>
+        </tr>
+        <tr>
+          <td>19 to 25 year-old Americans, gender non-specific</td>
+          <td>Identifies as a college student</td>
+          <td>They need a method to destress without destabilising themselves. They need to be able to focus on school without losing their mind, while also inevitably dealing with the consequences of acting in a larger world as an adult for the first time.</td>
+          <td>Busy schedules, critical life choices, lack of counselling, extreme future-anxiety, easy access to substances that can be abused as a crutch</td>
+        </tr>
+        <tr>
+          <td>25 to 55 year-old Americans, gender non-specific</td>
+          <td>Identifies as a working professional</td>
+          <td>They want to keep on top of their mental health while staying on top of their professional game as well, allowing them to maintain a healthy work-life balance and generally being happy.</td>
+          <td>Demanding jobs, demands of family life, pride and ego, age-related lack of mental flexibility</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>I derived the above table by aggregating the common responses to the poll. These three age groups sort of grouped themselves up by responding very similarly. I took note of that, and developed the following user personas.</p>
+
+  <article class="persona" aria-labelledby="persona-jackie">
+    <div class="persona__side">
+      <div class="persona__photo">{% image "src/assets/img/work/yolk-persona-jackie.jpg", "Portrait photo used for the Jackie persona: a teenage girl smiling outdoors", { widths: [224, 448], sizes: "7rem" } %}</div>
+      <h3 class="persona__name" id="persona-jackie">Jackie Villareal</h3>
+      <p class="persona__tag eyebrow-wide">High school student</p>
+      <p class="persona__facts">17, Latina-American, Mesa, Arizona</p>
+      <blockquote class="persona__quote">"I have to finish my homework during lunch because after class I have volleyball practice, then I work from 6 to 10 and I have to FaceTime my boyfriend while he's on the bus home from his tournament, and don't even get me started on when I'll find time to study for the physics test on Friday, plus Julia thinks she's gonna wear the same colour as me to Homecoming, please, as if!"</blockquote>
+    </div>
+    <div class="persona__body">
+      <p>Jackie is a high-achieving junior in high school who works part-time, plays on the school volleyball team, and is preparing to apply for colleges. Jackie is navigating young-adult life in the USA on her own: her parents are immigrants, and she doesn't have older siblings or cousins who have gone through the system. She's figuring out college apps, financial aid, scholarships, and more all on her own. On top of that, money is tight at home, so she works part-time to help out. Her boyfriend takes a chunk of her time every day, and her family monopolises what's left.</p>
+      <p>Jackie often feels like she has no time left for herself anymore. She knows things will calm down when she's not in such a whirlwind in a few months' time, but right now she feels like she's on the verge of a breakdown. She wants to make sure she doesn't drop the ball with regards to any aspect of her life.</p>
+      <div class="persona__lists">
+        <div>
+          <h4>Rational needs</h4>
+          <ul>
+            <li>Orderly schedule</li>
+            <li>Way to organise her thoughts</li>
+            <li>Good grades</li>
+            <li>Directions for the future</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Emotional needs</h4>
+          <ul>
+            <li>Love and support from family and friends</li>
+            <li>Time to relax</li>
+            <li>Tools to overcome feeling overwhelmed</li>
+            <li>The chance to be independent</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Pain points</h4>
+          <ul>
+            <li>Financial pressure</li>
+            <li>Lack of knowledge on self-care</li>
+            <li>Lack of time for self</li>
+            <li>Poor self-reflection skills</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Must-haves</h4>
+          <ul>
+            <li>A fast and easy means of recording thoughts and feelings</li>
+            <li>An intuitive way to step back and relax</li>
+            <li>Tools to help change her mood when it's too much</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="persona" aria-labelledby="persona-skyler">
+    <div class="persona__side">
+      <div class="persona__photo">{% image "src/assets/img/work/yolk-persona-skyler.jpg", "Portrait photo used for the Skyler persona: a young adult with short hair, looking at the camera", { widths: [224, 448], sizes: "7rem" } %}</div>
+      <h3 class="persona__name" id="persona-skyler">Skyler Matsui</h3>
+      <p class="persona__tag eyebrow-wide">College student</p>
+      <p class="persona__facts">21, Japanese-American, non-binary, Austin, Texas</p>
+      <blockquote class="persona__quote">"I can't afford to blow off this weekend, financially or in terms of schedule. I've got the biology lab report to do, and I just went to the Math Lab so thank god my calculus homework is done. But my parents are gonna be visiting this weekend, and I'm pretty much broke till they arrive. They're gonna be pissed because I'm thinking about changing my major, this late into the degree plan. I just don't know that I want to sit in an office playing code-monkey forever, you know?"</blockquote>
+    </div>
+    <div class="persona__body">
+      <p>Skyler is a junior in college who doubts their choice to become a software engineer. There's pressure from their parents to succeed, but they want to pursue something more creative. They're having trouble keeping up with some of their classes, but honestly the biggest issue they face is how often they lean on unhealthy coping habits when the anxiety spikes. Though they have access to university-sponsored support networks, they don't feel comfortable going to them for some reason.</p>
+      <p>They want to work but their parents won't allow it, and they often feel like their life will never be decided by their own choices, but rather by the whims of all the authority figures around them. Sometimes they feel like they're being pushed into feeling a million things at once, and just want to find clarity. Skyler wants to feel like they're in control and know where they're going.</p>
+      <div class="persona__lists">
+        <div>
+          <h4>Rational needs</h4>
+          <ul>
+            <li>Creative expression</li>
+            <li>Career and academic counselling</li>
+            <li>Good grades</li>
+            <li>Control over life</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Emotional needs</h4>
+          <ul>
+            <li>Space from parents</li>
+            <li>Better coping mechanisms</li>
+            <li>Greater self-awareness</li>
+            <li>A way to improve without revealing their struggles</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Pain points</h4>
+          <ul>
+            <li>Financial pressure</li>
+            <li>Overbearing parents</li>
+            <li>Lack of autonomy</li>
+            <li>Poor self-reflection skills</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Must-haves</h4>
+          <ul>
+            <li>A fast and easy means of identifying feelings</li>
+            <li>A private means of self-reflection</li>
+            <li>Constructive tools to deal with anxiety</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="persona" aria-labelledby="persona-john">
+    <div class="persona__side">
+      <div class="persona__photo">{% image "src/assets/img/work/yolk-persona-john.jpg", "Portrait photo used for the John persona: a man in his late thirties in a collared shirt", { widths: [224, 448], sizes: "7rem" } %}</div>
+      <h3 class="persona__name" id="persona-john">John Silverstein</h3>
+      <p class="persona__tag eyebrow-wide">Working professional</p>
+      <p class="persona__facts">38, Caucasian-American, Chicago, Illinois</p>
+      <blockquote class="persona__quote">"Yeah, work is good, up for a promotion but there are a few good men up for the same role so, fingers crossed, I guess. The wife is expecting again, so there's that. I'm trying to figure out if it makes sense to have a third kid almost a decade after the first two, but she's so excited and happy, I can't talk to her about it. That HR guy that transferred in seems to have it in for me, he's constantly trying to catch me out on one thing or another. Getting on my nerves in a big way, that is. I feel like I've found a solid groove, I'm just worried I'm in a rut. Maybe that's why the baby bothers me so much, maybe it's because it upends my previously well-established plans for the future. Maybe that's a good thing?"</blockquote>
+    </div>
+    <div class="persona__body">
+      <p>John worked hard in high school and college, landed a solid job in sales, and has worked his way to a lower-level executive position. He has continuing career aspirations, so he continues to devote time to his job, even as his youngest child is finishing elementary school. He recently found out he's having another child, something that is rocking his boat a fair bit. His wife and parents are all excited, but he has these niggling doubts that he can't put words to. He's concerned about the affordability of another child, even though he's pretty financially stable.</p>
+      <p>He feels like he isn't taking much time to take care of himself, and it's beginning to show. John wants to reconnect with himself and his roots, get back into the swing of life, and be the go-getter he remembers being.</p>
+      <div class="persona__lists">
+        <div>
+          <h4>Rational needs</h4>
+          <ul>
+            <li>Time for self-care</li>
+            <li>Career growth</li>
+            <li>Financial stability</li>
+            <li>Get out of the daily rut</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Emotional needs</h4>
+          <ul>
+            <li>Place to speak freely about misgivings</li>
+            <li>Means of calming down when frustrated</li>
+            <li>Means of energising self</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Pain points</h4>
+          <ul>
+            <li>Family pressure</li>
+            <li>Demanding job</li>
+            <li>Difficult coworkers</li>
+            <li>Inability to articulate emotions</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Must-haves</h4>
+          <ul>
+            <li>A way to privately record thoughts</li>
+            <li>A means of channelling emotion productively</li>
+            <li>Constructive tools to deal with anxiety</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section class="case-section" id="wireframes">
+  <h2>First wireframes</h2>
+  <div class="case-side">
+    <figure>
+      {% image "src/assets/img/work/yolk-wireframes.jpg", "Sheet of eight hand-drawn phone wireframes from the Crazy Eights session, with different placements for the mood wheel, search bar and navigation", { widths: [480, 960], sizes: "(min-width: 48em) 20rem, 100vw" } %}
+      <figcaption>Eight wireframes in about eight minutes.</figcaption>
+    </figure>
+    <div class="stack-4">
+      <p>I used the Crazy Eights design sprint method to generate a series of initial wireframes to serve as a starting point in terms of functionality. From my research and development of user personas, I had identified a number of <strong>key features</strong> that I wanted to implement.</p>
+      <ul>
+        <li>Mood logging and tracking (based off the colour wheel)</li>
+        <li>A private journal for logging thoughts and feelings</li>
+        <li>A meditation guide for centring and relaxing the self</li>
+        <li>Mood music, to cultivate certain feelings and redirect from others</li>
+        <li>A social aspect, to remind users that they are not alone in their feelings</li>
+      </ul>
+      <p>With these key features in mind, I generated eight wireframes in about eight minutes, trying out a variety of design styles. Some with headers, some with search bars, some with scroll wheels and colour sliders. I presented these to a group of 15 users and asked the following:</p>
+      <ol>
+        <li>Where would you look on the screen for your current mood?</li>
+        <li>Where would you look on the screen to set a current mood?</li>
+        <li>Which of the "set mood" interactions appeals most to you?</li>
+        <li>Where would you look on the screen for the most recent mood?</li>
+        <li>Was your instinct to check if the homepage scrolls? Should it?</li>
+        <li>Where would you look on the screen to navigate through the app?</li>
+      </ol>
+    </div>
+  </div>
+  <p>The answers that I received to these questions informed me greatly. The feedback indicated that a rotating wheel of emotions was highly interactive and eye-catching, which serves the key feature of selecting a mood well. Users indicated they did not expect a scrolling page, as based on the pitch they expected a lifestyle app with a relatively static homepage, not a dynamic scrolling feed like a social media app.</p>
+  <p>Overall this user testing session guided me towards which of the features off the different wireframes could be adapted and fit together into an interactive prototype.</p>
+</section>
+
+<section class="case-section" id="onboarding">
+  <h2>Onboarding</h2>
+  <p>I ended up focusing a fair amount of my time on developing the onboarding experience. For this user experience to truly help users, it needs to know a fair bit about them. For it to customise the experience to the individual user, that means collecting data in onboarding without it being a hindrance.</p>
+  <h3>First pass</h3>
+  {% set xd = { url: "https://xd.adobe.com/embed/df216132-3b76-4394-8a10-0ff5b2e75315-8a72/?fullscreen", title: "Yolk onboarding, first pass (Adobe XD)", placeholder: "Onboarding, first pass", aspect: "phone" } %}
+  {% include "partials/xd-embed.njk" %}
+  <p>This first pass did a very basic job of collecting user data. When I tested it with users, I observed the following:</p>
+  <ul>
+    <li>Various comments to the effect of "Oh, another page?" after the first screen.</li>
+    <li>Distaste at being asked to select their faith, music, and so on from a scrolling menu. Something about that rubbed them wrong.
+      <ul>
+        <li>When asked to clarify, some users said that it felt weird to have faith, music, and language all have the same level of importance on a screen.</li>
+        <li>When asked to clarify, some users said that they felt the dropdown menu was restrictive, and that it felt "outdated".</li>
+      </ul>
+    </li>
+  </ul>
+  <p>These comments helped me to refine my approach. I studied a number of other onboarding experiences to better understand their immersive and intuitive natures. The most prominent of these was Spotify, which is often lauded for its onboarding user experience. I won't go into detail about the choices made by their design team, though you can check out <a href="https://uxcademy.com/quizzes/spotify-onboarding/1" rel="noopener">this quiz</a> if you're curious to know more.</p>
+  <p>I decided to implement a few changes.</p>
+  <ol>
+    <li>Split up the onboarding into multiple steps, to avoid overwhelming users with content density.</li>
+    <li>Track the progress of the user through the onboarding, to avoid uncertainty.</li>
+    <li>Present options in cards to avoid a rolodex menu (which the users disliked very much).</li>
+  </ol>
+  <h3>Second pass</h3>
+  {% set xd = { url: "https://xd.adobe.com/embed/a204235f-bc9c-4937-bc59-2a1cbb4a178c-f757/?fullscreen", title: "Yolk onboarding, second pass (Adobe XD)", placeholder: "Onboarding, second pass", aspect: "phone" } %}
+  {% include "partials/xd-embed.njk" %}
+</section>
+
+<section class="case-section" id="final-prototype">
+  <h2>Final prototype</h2>
+  <p>The final experience includes a homepage where users can scroll through the colour wheel of emotions, select a colour off the spoke of the wheel they're looking at, and set their mood. They can see what people nearby have been doing with the app, and they can share to their own social media that they're using the app. The users can also access their journal, the guided music experience, and the meditation experience through that. I didn't have the opportunity to research and build out the guided music experience, although if I get the chance in the future I hope to do so.</p>
+  {% set xd = { url: "https://xd.adobe.com/embed/7164cfa1-a93c-4c17-a6a0-94b0b7708604-2437/?fullscreen", title: "Yolk final prototype (Adobe XD)", placeholder: "Yolk final prototype", aspect: "phone" } %}
+  {% include "partials/xd-embed.njk" %}
+</section>
+
+<section class="case-section" id="acknowledgements">
+  <h2>Acknowledgements</h2>
+  <p>This project was the culmination of my time as a student at the University of Texas at Dallas, in the School of Arts, Technology, and Emerging Communication. Thank you to Shelby Johnson, whose research essay started the whole thing; to Professor Cassini Nazir, who pointed me at Plutchik and taught me to think creatively and critically about interactions; and to my family, for understanding why I needed to switch paths and for their patience while I walked this one.</p>
+</section>

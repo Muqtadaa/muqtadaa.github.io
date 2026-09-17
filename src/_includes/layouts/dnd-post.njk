@@ -1,0 +1,85 @@
+---
+layout: layouts/base.njk
+breadcrumbs:
+  - name: D&D
+    url: /dnd/
+---
+{#
+  One D&D post (src/dnd/posts/*.md). Front matter: title, type (lore |
+  campaign | character), summary, date, tags, cover (a gallery/art/ filename),
+  placeholder. posts.11tydata.js validates `type`, resolves `cover` to the
+  gallery item (`coverItem`) and adds the Article JSON-LD that head.njk
+  renders. Below the body: "Related art" (gallery items sharing a tag with
+  the post, falling back to `dnd`) and previous/next within the type.
+#}
+{% import "macros/section-header.njk" as headers %}
+{%- set typeName = type | dndTypeLabel %}
+{%- set related = galleries.art | dndRelatedArt(tags, 6) %}
+{%- set neighbours = collections.dndPost | dndAdjacent(page.url) %}
+{%- set relatedSizes = "(min-width: 64em) 16rem, (min-width: 40em) 33vw, 50vw" %}
+<article>
+  <header class="section" data-bg="linen" data-py="hero">
+    <div class="container container-narrow stack-4">
+      <p class="eyebrow-wide c-sage">{{ typeName }}{% if date %} · <time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>{% endif %}</p>
+      <h1 class="h2-fluid">{{ title }}</h1>
+      {% if summary %}<p class="body-lg c-body">{{ summary }}</p>{% endif %}
+    </div>
+  </header>
+  <div class="section" data-bg="bone" data-py="lg">
+    <div class="container container-narrow stack-8">
+      {%- if placeholder %}
+      <p class="post-note body-sm" role="note">Placeholder text. The real write-up replaces this once it is written; the images, links and structure are the real thing.</p>
+      {%- endif %}
+      {%- if coverItem %}
+      <figure class="post-cover">
+        {% image "gallery/art/" + cover, coverItem.alt, { widths: [768, 1536], sizes: "(min-width: 48em) 48rem, 100vw", loading: "eager", decoding: "async", fetchpriority: "high" } %}
+        <figcaption class="post-cover__caption">{{ coverItem.title }}. <a href="/art/#{{ coverItem.slug }}">See it in the gallery</a></figcaption>
+      </figure>
+      {%- endif %}
+      <div class="prose">
+{{ content | safe }}
+      </div>
+    </div>
+  </div>
+</article>
+{%- if related.length %}
+<section class="section" data-bg="linen" data-py="lg" aria-labelledby="related-title">
+  <div class="container stack-8">
+    <div class="row-between">
+      {{ headers.sectionHeader(eyebrow="From the sketchbook", title='<span id="related-title">Related art</span>', size="md") }}
+      <a class="link-arrow nav-link" href="/art/">All drawings <span class="arrow-char" aria-hidden="true">→</span></a>
+    </div>
+    <ul class="grid grid-3 related-art" role="list">
+      {%- for item in related %}
+      <li>
+        <a class="tile" href="/art/#{{ item.slug }}">
+          <div class="tile__media"><picture><source type="image/webp" srcset="{{ item.webpSrcset }}" sizes="{{ relatedSizes }}"><img src="{{ item.thumb }}" srcset="{{ item.srcset }}" sizes="{{ relatedSizes }}" width="{{ item.width }}" height="{{ item.height }}" alt="{{ item.alt }}" loading="lazy" decoding="async"></picture></div>
+          <p class="tile__title">{{ item.title }}</p>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{%- endif %}
+<nav class="section" data-bg="oat" data-py="md" data-border="top" aria-label="More {{ typeName | lower }} posts">
+  <div class="container pager">
+    {%- if neighbours.older %}
+    <a class="pager__link pager__link--prev" href="{{ neighbours.older.url }}" rel="prev">
+      <span class="pager__label eyebrow-wide">Previous {{ typeName | lower }}</span>
+      <span class="pager__title">{{ neighbours.older.data.title }}</span>
+    </a>
+    {%- else %}
+    <span class="pager__link pager__link--prev pager__link--empty" aria-hidden="true"></span>
+    {%- endif %}
+    <a class="link-arrow nav-link pager__up" href="/dnd/">All of the canon <span class="arrow-char" aria-hidden="true">→</span></a>
+    {%- if neighbours.newer %}
+    <a class="pager__link pager__link--next" href="{{ neighbours.newer.url }}" rel="next">
+      <span class="pager__label eyebrow-wide">Next {{ typeName | lower }}</span>
+      <span class="pager__title">{{ neighbours.newer.data.title }}</span>
+    </a>
+    {%- else %}
+    <span class="pager__link pager__link--next pager__link--empty" aria-hidden="true"></span>
+    {%- endif %}
+  </div>
+</nav>

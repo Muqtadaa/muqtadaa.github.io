@@ -1,0 +1,71 @@
+{#
+  One gallery: the grid, the lightbox dialog and the JSON the lightbox reads.
+  `gallery` (set by the directory data file) names the galleries.* folder.
+  Without JavaScript every tile links to the full-size image, and the
+  timelapse / booklet links sit in the caption, so nothing is lost.
+#}
+{%- set items = galleries[gallery] %}
+{%- set tileSizes = "(min-width: 64em) 33vw, (min-width: 40em) 50vw, 100vw" %}
+<p class="gallery__count body-sm c-muted">{{ items.length }} piece{% if items.length != 1 %}s{% endif %}. Select one to see it large; arrow keys and swipes move between them.</p>
+<ul class="gallery" role="list">
+  {%- for item in items %}
+  <li>
+    <figure class="gallery__item" id="{{ item.slug }}" data-type="{{ item.type }}">
+      <a class="gallery__link" href="{{ item.href }}" data-lb-index="{{ loop.index0 }}" data-lb-type="{{ item.type }}">
+        <picture>
+          <source type="image/webp" srcset="{{ item.webpSrcset }}" sizes="{{ tileSizes }}">
+          <img src="{{ item.thumb }}" srcset="{{ item.srcset }}" sizes="{{ tileSizes }}" width="{{ item.width }}" height="{{ item.height }}" alt="{{ item.alt }}" loading="lazy" decoding="async">
+        </picture>
+        {%- if item.type == "video" %}
+        <span class="gallery__badge"><span class="gallery__badge-icon" aria-hidden="true">&#9654;</span>Timelapse</span>
+        {%- elif item.type == "animated" %}
+        <span class="gallery__badge">GIF</span>
+        {%- elif item.type == "document" %}
+        <span class="gallery__badge">PDF</span>
+        {%- endif %}
+      </a>
+      <figcaption class="gallery__caption">
+        <p class="gallery__title">{{ item.title }}</p>
+        <p class="gallery__text">{{ item.caption }}</p>
+        {%- if item.type == "video" %}
+        <p class="gallery__extra"><a href="{{ item.video.src }}">Watch the timelapse</a></p>
+        {%- elif item.type == "document" %}
+        <p class="gallery__extra"><a href="{{ item.document.url }}">{{ item.document.label }}</a></p>
+        {%- endif %}
+        {%- if item.tags.length %}
+        <ul class="chips chips--sm" role="list" aria-label="Tags">
+          {%- for tag in item.tags %}
+          <li class="chip">{% if tag == "dnd" %}<a href="/dnd/">D&amp;D</a>{% else %}{{ tag | replace("-", " ") }}{% endif %}</li>
+          {%- endfor %}
+        </ul>
+        {%- endif %}
+      </figcaption>
+    </figure>
+  </li>
+  {%- endfor %}
+</ul>
+
+<dialog class="lightbox" id="lightbox" aria-labelledby="lb-caption" data-bg="ink">
+  <div class="lightbox__bar">
+    <p class="lightbox__counter" id="lb-counter" aria-live="polite"></p>
+    <button type="button" class="lightbox__btn" data-lb-close>
+      <span class="sr-only">Close</span>
+      <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4l12 12M16 4L4 16"/></svg>
+    </button>
+  </div>
+  <div class="lightbox__stage" data-lb-stage></div>
+  <button type="button" class="lightbox__btn lightbox__nav lightbox__nav--prev" data-lb-prev>
+    <span class="sr-only">Previous</span>
+    <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l-7 7 7 7"/></svg>
+  </button>
+  <button type="button" class="lightbox__btn lightbox__nav lightbox__nav--next" data-lb-next>
+    <span class="sr-only">Next</span>
+    <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3l7 7-7 7"/></svg>
+  </button>
+  <div class="lightbox__caption">
+    <p class="lightbox__title" id="lb-caption"></p>
+    <p class="lightbox__text" data-lb-text></p>
+    <a class="lightbox__cta" data-lb-cta hidden></a>
+  </div>
+</dialog>
+<script type="application/json" id="gallery-data">{{ items | lightboxJson | safe }}</script>

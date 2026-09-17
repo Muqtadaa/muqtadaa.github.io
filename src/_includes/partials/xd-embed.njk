@@ -1,0 +1,27 @@
+{#
+  Adobe XD prototype embed, click to load. Set `xd` before including:
+    {% set xd = { url: "https://xd.adobe.com/embed/<id>/", title: "Yolk final prototype", aspect: "phone" } %}
+    {% include "partials/xd-embed.njk" %}
+  Fields: url (the /embed/ URL), title (iframe title), poster (optional image
+  URL shown before loading; otherwise the title is set in type), placeholder
+  (optional text instead of the title), aspect ("phone" for a portrait frame,
+  default landscape), open (optional share URL; defaults to the /view/ form of
+  the embed URL).
+  Without JavaScript only the "Open in Adobe XD" link shows; with it,
+  /assets/js/xd-embed.js reveals the button and swaps in the <iframe> on click.
+#}
+{%- set xdOpen = xd.open or (xd.url | replace("/embed/", "/view/") | replace("?fullscreen", "")) %}
+<figure class="xd-embed" data-xd-url="{{ xd.url }}" data-xd-title="{{ xd.title }}"{% if xd.aspect %} data-aspect="{{ xd.aspect }}"{% endif %}>
+  <div class="xd-embed__frame">
+    {%- if xd.poster %}
+    <img src="{{ xd.poster }}" alt="" loading="lazy" decoding="async">
+    {%- else %}
+    <p class="xd-embed__placeholder" aria-hidden="true">{{ xd.placeholder or xd.title }}</p>
+    {%- endif %}
+  </div>
+  <figcaption class="xd-embed__actions">
+    <button class="btn btn--primary xd-embed__load" type="button" hidden>Load prototype</button>
+    <a class="btn btn--outline" href="{{ xdOpen }}" target="_blank" rel="noopener">Open in Adobe XD</a>
+    <span class="xd-embed__note body-sm c-muted">Loads from xd.adobe.com.</span>
+  </figcaption>
+</figure>
