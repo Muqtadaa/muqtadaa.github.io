@@ -1,11 +1,62 @@
 ---
 layout: layouts/case-study.njk
-title: Port of Peri Peri
-year: "2018"
-type: Restaurant ordering flow
-role: UX design
-question: What would fix the ordering funnel I watched get stuck from behind the counter?
-description: Port of Peri Peri, a UX case study by Muqtadaa Miandara.
+title: "Port of Peri Peri"
+year: "2019"
+type: "Restaurant ordering app"
+role: "UX consultant (and restaurant manager)"
+question: "How do we deliver a quality dining customer experience via a mobile interface?"
+description: "Port of Peri Peri, a UX case study by Muqtadaa Miandara: research, decisions and a high-fidelity prototype for a restaurant ordering and rewards app, designed while managing the restaurant."
+keywords:
+  - UX design
+  - restaurant app
+  - online ordering
+  - competitive analysis
+  - Adobe XD
+glance:
+  - label: Year
+    value: "Summer 2019"
+  - label: Type
+    value: "Ordering and rewards app (iOS and Android)"
+  - label: Role
+    value: "Early UX consultant, while managing the restaurant"
+  - label: Client
+    value: "Port of Peri Peri, Frisco, Texas"
+  - label: Deliverables
+    value: "Competitive analysis, low-fidelity wireframes, high-fidelity prototype"
+  - label: Tools
+    value: "Adobe XD"
 ---
-{#- Placeholder: P2c writes the full case study here (plan WS-E step 5). -#}
-<p>This case study is being restyled and will be back shortly.</p>
+<section class="case-section" id="context">
+  <h2>Context</h2>
+  <p>In the summer of 2019 I was hired as a manager at a restaurant called the <a href="https://www.myperiperi.com/" rel="noopener">Port of Peri Peri</a> in Frisco, Texas. I was managing the restaurant, so I saw the ordering funnel from the counter: which regulars ordered the same thing every week, where phone orders went wrong, and how often a queue at the register turned into a lost sale.</p>
+  <p>My co-manager, a software engineer between jobs, had been commissioned by the owner of the business to develop an online ordering app for the restaurant. I came in as an early UX consultant, doing some preliminary research and competitive analysis, delivering low-fidelity wireframes, and designing a high-fidelity prototype to illustrate the look and general flow of the app.</p>
+  <p>The app aimed to serve as a customer portal, allowing for rewards account management, online ordering, payment management using the internal Apple Pay or Google Wallet API, gift card management, and more.</p>
+</section>
+
+<section class="case-section" id="research">
+  <h2>Research</h2>
+  <p>I started off by studying some similar apps. I browsed through DoorDash, Grubhub, UberEats, even the Starbucks app. They all shared certain similarities.</p>
+  <p>The first commonality I noticed was a masthead along the top, within which branding, primary account access, and settings access all remained consistently available. I noted that this same masthead could be used to contain internal navigation elements, separate from the main navigation used between primary screens. This is visible on the "Order" screen, in which the masthead contains the secondary navigation of the screen for the menu.</p>
+  <p>The fixed menu along the bottom was another commonality I observed, a design choice pushed primarily by iOS influence. This became the primary navigation between screens. The client asked for the logo to serve as the home icon.</p>
+</section>
+
+<section class="case-section" id="decisions">
+  <h2>Decisions</h2>
+  <p>The "front page" of the app follows similar principles to a number of restaurant apps. As the Port of Peri Peri was deploying their gift card system alongside the app, the service was given top billing in the information hierarchy.</p>
+  <p>The "Order Again" selection has very obvious functionality, as the restaurant has a number of regular customers who rarely deviate from ordering the same thing. In my prototype the "New Order" action was a small, compact plus icon that opened the checkout cart and pulled up the menu to make selections from.</p>
+  <p>Insofar as aesthetic, I followed the internal style guide provided by the company, and maintained clean lines and white space to create a bright, cheerful look when paired with the signature Port of Peri Peri red.</p>
+</section>
+
+<section class="case-section" id="prototype">
+  <h2>Prototype</h2>
+  <p>The high-fidelity prototype below illustrates the look and the general flow: the front page with gift cards on top, the order screen with its secondary navigation in the masthead, and the rewards account.</p>
+  {% set xd = { url: "https://xd.adobe.com/embed/2e624873-0247-4045-4916-783314243ee6-5853/", title: "Port of Peri Peri app prototype (Adobe XD)", placeholder: "Port of Peri Peri prototype", aspect: "phone" } %}
+  {% include "partials/xd-embed.njk" %}
+</section>
+
+<section class="case-section" id="what-shipped">
+  <h2>What shipped</h2>
+  <p>Later in the development cycle, the "Featured Menu Items" were cycled to a horizontally scrolling block on the front page, and the "New Order" control shipped as a labelled button rather than the compact icon.</p>
+  <p>Further on, delivery ordering was completely removed from the app. Instead DoorDash came to an agreement to allow users to make their selections in the Port of Peri Peri app, but complete delivery orders within their own payment portal. Before that, however, we were still advertising for users to download and install the DoorDash app as a companion to our own.</p>
+  <p>The restaurant, and the ordering it runs on, are at <a href="https://www.myperiperi.com/" rel="noopener">myperiperi.com</a>.</p>
+</section>

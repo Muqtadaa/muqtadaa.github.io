@@ -19,8 +19,15 @@ export default function (eleventyConfig) {
   eleventyConfig.ignores.add('src/js');
   eleventyConfig.ignores.add('src/**/README.md');
 
-  // Static assets served as-is.
-  eleventyConfig.addPassthroughCopy({ 'src/assets': 'assets' });
+  // Static assets served as-is. src/assets/img/ is deliberately not copied:
+  // those files (case-study figures) are build inputs for the image shortcode
+  // and only their derivatives under /img/ are published.
+  eleventyConfig.addPassthroughCopy({
+    'src/assets/css': 'assets/css',
+    'src/assets/fonts': 'assets/fonts',
+    'src/assets/js': 'assets/js',
+    'src/assets/favicon.svg': 'assets/favicon.svg'
+  });
 
   // Gallery media that is never resized (video, PDF, animated GIF) is served
   // from /media/<folder>/. Object globs flatten into the target, so map one

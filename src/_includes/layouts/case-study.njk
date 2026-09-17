@@ -7,14 +7,21 @@ pageScripts:
   - /assets/js/xd-embed.js
 ---
 {#
-  Case studies (src/work/<slug>/index.njk, P2c). Front matter:
+  Case studies (src/work/<slug>/index.njk). Front matter:
     title, year, type, role, question (the framing question, shown as the lead),
+    description (the meta description; also the CreativeWork description),
     glance: [{ label, value }]  ->  the "At a glance" aside
-    xd: { url, title, poster }  ->  rendered through partials/xd-embed.njk
-  The body is static <section class="case-section"> blocks with h2s.
+    keywords: []                ->  CreativeWork keywords (optional)
+  The body is static <section class="case-section" id="..."> blocks, each with
+  an h2; no accordions. Adobe XD prototypes are included per embed:
+    {% set xd = { url: "https://xd.adobe.com/embed/<id>/", title: "...", aspect: "phone" } %}
+    {% include "partials/xd-embed.njk" %}
+  Screenshots dropped into src/work/<slug>/screenshots/ (see its README)
+  render as a strip below the body through src/_data/work.js.
 #}
 {% import "macros/section-header.njk" as headers %}
 {% set meta = [year, type, role] | join(" · ") %}
+{% set shots = work[page.fileSlug].screenshots if work[page.fileSlug] else [] %}
 <section class="section" data-bg="linen" data-py="hero">
   <div class="container">
     {{ headers.sectionHeader(title=title, eyebrow=meta, description=question, as="h1", size="xl") }}
@@ -22,13 +29,13 @@ pageScripts:
 </section>
 <section class="section" data-bg="bone" data-py="lg">
   <div class="container case-layout">
-    <div class="prose">
+    <div class="prose case-body">
 {{ content | safe }}
     </div>
     {% if glance %}
-    <aside class="case-layout__aside">
+    <aside class="case-layout__aside" aria-labelledby="glance-title">
       <div class="glance">
-        <p class="glance__title eyebrow-wide">At a glance</p>
+        <p class="glance__title eyebrow-wide" id="glance-title">At a glance</p>
         <dl>
           {%- for item in glance %}
           <dt>{{ item.label }}</dt>
@@ -38,5 +45,38 @@ pageScripts:
       </div>
     </aside>
     {% endif %}
+  </div>
+</section>
+{%- if shots.length %}
+{%- set shotSizes = "(min-width: 64em) 20rem, (min-width: 40em) 40vw, 70vw" %}
+<section class="section" data-bg="linen" data-py="lg">
+  <div class="container stack-8">
+    {{ headers.sectionHeader(eyebrow="Screens", title="Screenshots", size="md") }}
+    <ul class="shots" role="list">
+      {%- for shot in shots %}
+      <li class="shots__item">
+        <a class="shots__link" href="{{ shot.full }}">
+          <picture>
+            <source type="image/webp" srcset="{{ shot.webpSrcset }}" sizes="{{ shotSizes }}">
+            <img src="{{ shot.src }}" srcset="{{ shot.srcset }}" sizes="{{ shotSizes }}" width="{{ shot.width }}" height="{{ shot.height }}" alt="{{ shot.alt }}" loading="lazy" decoding="async">
+          </picture>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{%- endif %}
+<section class="section" data-bg="oat" data-py="md" data-border="top">
+  <div class="container row-between">
+    <p class="body-sm c-muted">More earlier work</p>
+    <ul class="cluster-3" role="list">
+      {%- for item in [{ href: "/work/yolk/", label: "Yolk" }, { href: "/work/via/", label: "Via" }, { href: "/work/port-of-peri-peri/", label: "Port of Peri Peri" }] %}
+      {%- if item.href != page.url %}
+      <li><a class="link-arrow nav-link" href="{{ item.href }}">{{ item.label }} <span class="arrow-char" aria-hidden="true">→</span></a></li>
+      {%- endif %}
+      {%- endfor %}
+      <li><a class="link-arrow nav-link" href="/work/">All case studies <span class="arrow-char" aria-hidden="true">→</span></a></li>
+    </ul>
   </div>
 </section>

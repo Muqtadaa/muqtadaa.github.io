@@ -1,0 +1,39 @@
+---
+pagination:
+  data: redirects
+  size: 1
+  alias: redirect
+permalink: "{{ redirect.from }}"
+eleventyExcludeFromCollections: true
+excludeFromSitemap: true
+---
+{#-
+  Meta-refresh stub at a legacy path (src/_data/redirects.js). No layout: the
+  page exists only to send browsers on and tell crawlers the new address.
+-#}
+{%- set target = redirect.to | absoluteUrl(site.url) -%}
+<!doctype html>
+<html lang="{{ site.language }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ redirect.label }} has moved · {{ site.name }}</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="{{ target }}">
+  <meta http-equiv="refresh" content="0; url={{ target }}">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/utilities.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+</head>
+<body>
+  <main id="main" class="section" data-bg="bone" data-py="xl">
+    <div class="container container-narrow stack-4">
+      <p class="eyebrow-wide c-sage">This page has moved</p>
+      <h1 class="h2-md">{{ redirect.label }} now lives at a new address.</h1>
+      <p class="body">If you are not sent there automatically, follow this link: <a href="{{ target }}">{{ target }}</a></p>
+    </div>
+  </main>
+</body>
+</html>
