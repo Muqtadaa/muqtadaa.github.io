@@ -12,21 +12,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      # configure-pages needs these to set the Pages build type to "workflow".
-      pages: write
-      id-token: write
     steps:
-      # Points the repository's Pages site at this workflow (build type
-      # "workflow") and enables Pages if it is off, so deploying does not
-      # depend on anyone changing Settings > Pages by hand. If the token may
-      # not change it, this step fails with a clear message instead of the
-      # deploy silently publishing nothing.
-      - uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
       - uses: actions/checkout@v4
         with:
           # Full history so check-gallery can diff against the PR base.
@@ -77,5 +63,22 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # Pages must be set to build from this workflow, or the deployment below
+      # fails and the repository keeps running Jekyll over the source (which
+      # cannot compile the Nunjucks templates). actions/configure-pages does
+      # not cover this: its findOrCreatePagesSite() returns early when a Pages
+      # site already exists, so it only sets the build type when Pages is off
+      # entirely. Set it explicitly. The call is idempotent, needs only the
+      # pages: write permission this job already has, and fails the run if it
+      # is refused rather than deploying nothing.
+      - name: Build Pages from this workflow
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --method PUT "repos/${{ github.repository }}/pages" \
+            -f build_type=workflow \
+          || gh api --method POST "repos/${{ github.repository }}/pages" \
+            -f build_type=workflow
+
       - id: deployment
         uses: actions/deploy-pages@v4

@@ -153,19 +153,19 @@ parses the file and fails the build if any body-text pair drops below 7:1
   changed images are resized on CI. Only the derivatives the build asked for
   are copied from `.cache/img` to `_site/img`, so a restored cache never
   ships derivatives of deleted or renamed images.
-  The job's first step is `actions/configure-pages@v5` with
-  `enablement: true`, which points the repository's Pages site at this
-  workflow (build type `workflow`) and turns Pages on if it is off. That is
-  why no one has to set the source by hand, and why a permissions problem
-  fails the run instead of publishing nothing.
-- **deploy** runs on every push to `main` and publishes the artifact with
-  `actions/deploy-pages`. Pull requests stop after the build job.
+- **deploy** runs on every push to `main`. Pull requests stop after the build
+  job. Its first step sets the repository's Pages build type to `workflow`
+  through the API, then `actions/deploy-pages` publishes the artifact. That
+  first step matters: while Pages is set to "Deploy from a branch" the
+  deployment fails and the repository instead runs Jekyll over the source,
+  which cannot compile the Nunjucks templates. (`actions/configure-pages` does
+  not cover this. It returns early when a Pages site already exists, so it only
+  sets the build type when Pages is off entirely.) The call is idempotent and
+  needs only the `pages: write` permission the job already has.
 
-If `configure-pages` ever fails because the token may not change repository
-settings, set it once by hand at **Settings → Pages → Build and deployment →
-Source = GitHub Actions**. The earlier "Deploy from a branch" mode ran Jekyll
-over the repository and could not compile the Nunjucks templates, so it failed
-on every push and left the old site published.
+If that step is ever refused, the run fails rather than publishing nothing, and
+the setting can be changed by hand at **Settings → Pages → Build and deployment
+→ Source = GitHub Actions**.
 
 Rollback is `git revert` and a push; Pages redeploys the previous artifact.
 
