@@ -8,7 +8,7 @@ tags: [dnd]
 
 <dl class="dnd-facts">
   <div class="dnd-facts__row"><dt>Origin</dt><dd>Elleria. Captain, Ellerian Army, recently discharged</dd></div>
-  <div class="dnd-facts__row"><dt>Faith</dt><dd>Paladin of Malyr — Battle, Might, Justice and Defense</dd></div>
+  <div class="dnd-facts__row"><dt>Class</dt><dd>Oath of Devotion Paladin of Malyr</dd></div>
   <div class="dnd-facts__row"><dt>Blood</dt><dd>Illegitimate son of King Ramsey of Malinar; half-brother to Crown Prince Rami</dd></div>
   <div class="dnd-facts__row"><dt>Status</dt><dd>Departed at Dolonde. Founder of the New Church of Malyr</dd></div>
 </dl>
@@ -30,6 +30,11 @@ problem resolves.
 Malyr is God of Battle and Might. He is also God of Justice and Defense, and the
 Church that ruled Malinar had spent twenty years quietly editing the second half
 out.
+
+Murdock is sworn to the Oath of Devotion: honesty, courage, compassion, honour,
+duty. It is not a complicated list, and by the time the Veil Piercers reached
+Malinar the Paladin Order had abandoned every item on it while wearing the same
+symbol.
 
 Murdock worked this out slowly and then all at once. Banished mid-fight from a
 Malinari street, he found himself looking directly at Malyr, and in that moment

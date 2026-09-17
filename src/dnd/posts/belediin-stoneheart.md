@@ -8,8 +8,8 @@ tags: [dnd]
 
 <dl class="dnd-facts">
   <div class="dnd-facts__row"><dt>Origin</dt><dd>Underkeep of Barazar, Barazig Spires</dd></div>
+  <div class="dnd-facts__row"><dt>Class</dt><dd>Champion Fighter</dd></div>
   <div class="dnd-facts__row"><dt>House</dt><dd>Stoneheart — noble, diminished, three generations without its blade</dd></div>
-  <div class="dnd-facts__row"><dt>Trade</dt><dd>The front line, the Sword of the Stonehearts, and an oath to Morudin</dd></div>
   <div class="dnd-facts__row"><dt>Status</dt><dd>Active with the Veil Piercers</dd></div>
 </dl>
 
@@ -31,11 +31,14 @@ the wizard leave him behind in every chase the campaign has ever run — but ver
 little gets past him, and the things that try tend to regret it. He has an
 affinity for stone that has talked him through more than one wall.
 
+Belediin has no magic of his own. Everything divine about him is borrowed, and
+all of it is borrowed from the same object.
+
 The Sword of the Stonehearts came back to him in the ruins of Caer Morghaen. Its
 sheath did not; that went north on the back of a possessed dwarven child. What
-the blade does, it does through him: when he calls up Spirit Guardians at full
-strength, what answers is the shade of the great-grandfather who lost the sword
-in the first place.
+the blade does, it does through him — and when he spends its charges to call up
+Spirit Guardians at full strength, what answers is the shade of the
+great-grandfather who lost the sword in the first place.
 
 He also carries a third of the Masterwork of Morudin, unshielded, which has been
 quietly working on his body for years.

@@ -8,8 +8,8 @@ tags: [dnd]
 
 <dl class="dnd-facts">
   <div class="dnd-facts__row"><dt>Origin</dt><dd>Temple of Aphiel, Church District, City of Elleris</dd></div>
-  <div class="dnd-facts__row"><dt>Faith</dt><dd>Cleric of Aphiel — Life, Light and Redemption</dd></div>
-  <div class="dnd-facts__row"><dt>Trade</dt><dd>Healing, a spiritual weapon, and the patience to use both</dd></div>
+  <div class="dnd-facts__row"><dt>Class</dt><dd>Life Cleric of Aphiel — Life, Light and Redemption</dd></div>
+  <div class="dnd-facts__row"><dt>Calling</dt><dd>A pull toward people he had not met yet</dd></div>
   <div class="dnd-facts__row"><dt>Status</dt><dd>Lost beneath the Underkeep of Barazar</dd></div>
 </dl>
 

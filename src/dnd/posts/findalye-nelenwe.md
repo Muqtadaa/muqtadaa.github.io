@@ -8,7 +8,7 @@ tags: [dnd]
 
 <dl class="dnd-facts">
   <div class="dnd-facts__row"><dt>Origin</dt><dd>Eladrin. Found a prisoner in the Cisterns beneath Elleris</dd></div>
-  <div class="dnd-facts__row"><dt>Trade</dt><dd>Wizardry — theoretical, at first; latterly extremely practical</dd></div>
+  <div class="dnd-facts__row"><dt>Class</dt><dd>Divination Wizard</dd></div>
   <div class="dnd-facts__row"><dt>Known as</dt><dd>Fin</dd></div>
   <div class="dnd-facts__row"><dt>Status</dt><dd>Active with the Veil Piercers</dd></div>
 </dl>
@@ -26,6 +26,9 @@ She left with the people who opened the cage.
 
 Eventually, everything. The gap between what Fin knew and what Fin could do
 closed somewhere around the middle of the campaign and has never reopened.
+
+She is a diviner, which is why so much of what matters about her has happened at
+a distance. She sees before she reaches.
 
 She reads minds, and does it in the worst moments for the person being read —
 she was inside Direll Lazlow's head while the party was killing him, pulling out
@@ -54,7 +57,8 @@ Then Dustin and Nerissa opened his ribcage and took the crystal heart out of it.
 She has also spent time with an ancient, memory-lost eladrin named Benjamin,
 guiding him back through his own past far enough to recover his real name: Ebrin
 Jementh, a Grand Diviner out of the Feywild who once chose to go adventuring in
-the mortal world.
+the mortal world — which makes him the only other person in this story who does
+what Fin does.
 
 ## Where she is now
 

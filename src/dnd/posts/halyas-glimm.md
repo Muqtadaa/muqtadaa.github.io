@@ -8,9 +8,9 @@ tags: [dnd]
 
 <dl class="dnd-facts">
   <div class="dnd-facts__row"><dt>Origin</dt><dd>The Glimm household, Middle District, City of Elleris</dd></div>
-  <div class="dnd-facts__row"><dt>Trade</dt><dd>Sorcery. Wild magic, unasked for and not negotiable</dd></div>
-  <div class="dnd-facts__row"><dt>Family</dt><dd>The Grim Glimm Manor and four siblings who would rather fight than talk</dd></div>
-  <div class="dnd-facts__row"><dt>Status</dt><dd>Departed the company</dd></div>
+  <div class="dnd-facts__row"><dt>Class</dt><dd>Wild Magic Sorcerer</dd></div>
+  <div class="dnd-facts__row"><dt>Family</dt><dd>The Grim Glimm Manor, four siblings who would rather fight than talk, and one who is missing</dd></div>
+  <div class="dnd-facts__row"><dt>Status</dt><dd>Departed after the Unity Tournament, looking for his sister</dd></div>
 </dl>
 
 Halyas is the only one of the founders who left home for no reason at all.
@@ -50,8 +50,8 @@ yard.
 
 His siblings — Delia, Emera, Yuna and Pexis — proposed settling the family's
 problems by challenging Halyas and one of his friends to a fight. Among those
-problems: Billie had been missing for more than ten days, and his mother was
-ill.
+problems: their sister Billie had been missing for more than ten days, and
+their mother was ill.
 
 Murdock identified the illness by taste. It was infernal, and it came from
 Avernus.
@@ -62,6 +62,13 @@ for a message they could not deliver.
 
 ## Where he went
 
-Out of the story, somewhere along the road.
+He stayed through Malinar. He was there for the Unity Tournament, and for what
+the Church of Malyr did to the city once the tournament was over.
 
-The company he helped assemble kept walking.
+Then he left, and he left for the two reasons he had been carrying since the
+manor: Billie was still missing, and their mother was still dying of something
+that had come out of Avernus.
+
+Neither was going to resolve itself while he walked somebody else's road.
+
+The company he helped assemble kept walking. Halyas went to find his sister.

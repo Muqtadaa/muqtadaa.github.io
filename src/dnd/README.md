@@ -43,7 +43,7 @@ The post itself, in Markdown. Headings start at `##`.
   artwork shows when it shares at least one tag with the post, the ones sharing
   the most tags first. A post with no matching tags falls back to everything
   tagged `dnd`. Tagging a character post and its drawings with the same word
-  (`wally`, say) keeps them together.
+  (`belediin`, say) keeps them together.
 - `cover` is optional: the filename of an image in `gallery/art/` (it must
   already have a block in `captions.yml`, whose `alt` text is reused). It
   becomes the header image and the social-share image of the post.
@@ -124,8 +124,8 @@ joins the "Related art" strip automatically; the one that leads the post is the
 | Leviathan | Leviathan itself, the pirate city, the Astral Sea, the cracked Amulet of Aphiel |
 | The Ruby Gate | The Gray Lady's Peril, the Elder Brain Dragon encounter, the Ruby Gate |
 
-`children-of-a-broken-age.md` has no cover for the same reason. The character
-posts have none either, apart from Wally; token art would be the natural fit.
+`children-of-a-broken-age.md` has no cover for the same reason, and neither
+does any character post. Token art would be the natural fit.
 
 ## Voice
 

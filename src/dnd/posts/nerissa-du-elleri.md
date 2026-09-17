@@ -8,8 +8,8 @@ tags: [dnd]
 
 <dl class="dnd-facts">
   <div class="dnd-facts__row"><dt>Origin</dt><dd>Court District, City of Elleris, Kingdom of Elleria</dd></div>
+  <div class="dnd-facts__row"><dt>Class</dt><dd>Psionic Rogue</dd></div>
   <div class="dnd-facts__row"><dt>Standing</dt><dd>Princess of Elleria, daughter of the High King</dd></div>
-  <div class="dnd-facts__row"><dt>Trade</dt><dd>Rogue. Locks, lies, and knowing which noble owes what to whom</dd></div>
   <div class="dnd-facts__row"><dt>Status</dt><dd>Active with the Veil Piercers</dd></div>
 </dl>
 
@@ -31,7 +31,8 @@ travelling with her for the next several years.
 ## What she is good at
 
 Everything a court teaches and nothing it intends to. She reads a room for who
-is nervous and why. She gets into places that are locked, and out of
+is nervous and why. Some of that is court-craft. The rest is psionic, and it
+does not announce itself. She gets into places that are locked, and out of
 conversations that are worse. When a fight starts she is rarely where she was
 standing a moment ago, and when it goes badly she is the one who disengages and
 comes back at a better angle.
