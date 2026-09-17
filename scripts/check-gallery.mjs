@@ -1,17 +1,25 @@
 // Checks gallery/<folder>/ before the build (plan WS-E step 4). Runs in
-// `npm run build` and in .github/workflows/gallery-check.yml.
+// `npm run build` and in .github/workflows/gallery-check.yml and pages.yml.
 //
+//   ::warning  image without a captions.yml entry
 //   ::warning  file > 25 MiB, image > 2500 px on its long edge, unsupported
-//              extension, spaces or parentheses in the name, image without a
-//              captions.yml entry
+//     or       extension, spaces or parentheses in the name: a ::warning for
+//   ::notice   the files named by --changed-since, a ::notice when every
+//              file is checked (see below)
 //   ::error    malformed captions.yml, an entry whose file is missing, a
 //              filename collision once lower-cased (exit 1)
 //
 //   node scripts/check-gallery.mjs                       # every file
 //   node scripts/check-gallery.mjs --changed-since <ref>  # size/dimension/
-//        name warnings only for files added or changed since that git ref
-//        (the CI workflow passes the PR base); the error checks always run
+//        name findings only for files added or changed since that git ref
+//        (the CI workflows pass the PR base); the error checks always run
 //        on the whole folder.
+//
+// GitHub Actions shows at most 10 annotations of each level per step. The
+// legacy originals already produce more than that many size findings, so a
+// full-tree run demotes them to ::notice and keeps ::warning for the one
+// finding a new upload most needs to see: the missing captions.yml entry.
+// The --changed-since run in CI reports the touched files as ::warning.
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -31,11 +39,17 @@ const MAX_EDGE = 2500;
 const ALLOWED = /\.(jpe?g|png|webp|gif|mp4|webm|pdf|txt|yml|yaml|md)$/i;
 
 let warnings = 0;
+let notices = 0;
 let errors = 0;
 
 function warn(file, message) {
   warnings += 1;
   console.log(`::warning file=${file}::${message}`);
+}
+
+function notice(file, message) {
+  notices += 1;
+  console.log(`::notice file=${file}::${message}`);
 }
 
 function error(file, message) {
@@ -61,6 +75,9 @@ function changedSince(argv) {
 }
 
 const changed = changedSince(process.argv.slice(2));
+// Size, dimension and filename findings: ::warning for the changed files of
+// a --changed-since run, ::notice when the whole tree is checked.
+const flag = changed ? warn : notice;
 const folders = listFolders();
 if (folders.length === 0) {
   console.log('check-gallery: no gallery/ folders found');
@@ -105,25 +122,25 @@ for (const folder of folders) {
     if (changed && !changed.has(rel)) continue;
 
     if (!ALLOWED.test(file)) {
-      warn(rel, `unsupported file type; the gallery shows jpg, jpeg, png, webp and gif (video as mp4/webm, documents as pdf)`);
+      flag(rel, `unsupported file type; the gallery shows jpg, jpeg, png, webp and gif (video as mp4/webm, documents as pdf)`);
       continue;
     }
     if (/[\s()]/.test(file)) {
-      warn(rel, `spaces or parentheses in the filename make awkward URLs; prefer letters, digits, - and _`);
+      flag(rel, `spaces or parentheses in the filename make awkward URLs; prefer letters, digits, - and _`);
     }
     const bytes = fs.statSync(full).size;
     if (bytes > MAX_BYTES) {
-      warn(rel, `${(bytes / 1024 / 1024).toFixed(1)} MiB is over the 25 MiB limit; export a smaller file`);
+      flag(rel, `${(bytes / 1024 / 1024).toFixed(1)} MiB is over the 25 MiB limit; export a smaller file`);
     }
     if (IMAGE_EXT.test(file)) {
       try {
         const meta = await sharp(full, { limitInputPixels: false }).metadata();
         const edge = Math.max(meta.width || 0, meta.height || 0);
         if (edge > MAX_EDGE) {
-          warn(rel, `${meta.width}x${meta.height} is larger than ${MAX_EDGE} px on the long edge; it will be downscaled at build, but a smaller export keeps the repository lean`);
+          flag(rel, `${meta.width}x${meta.height} is larger than ${MAX_EDGE} px on the long edge; it will be downscaled at build, but a smaller export keeps the repository lean`);
         }
       } catch (err) {
-        warn(rel, `could not read image dimensions (${err.message})`);
+        flag(rel, `could not read image dimensions (${err.message})`);
       }
     } else if (!MEDIA_EXT.test(file) && !/\.txt$/i.test(file)) {
       // yml/yaml/md other than captions.yml and README.md: harmless, ignored.
@@ -131,5 +148,7 @@ for (const folder of folders) {
   }
 }
 
-console.log(`check-gallery: ${folders.length} folder(s), ${warnings} warning(s), ${errors} error(s)`);
+console.log(
+  `check-gallery: ${folders.length} folder(s), ${warnings} warning(s), ${notices} notice(s), ${errors} error(s)`
+);
 if (errors > 0) process.exit(1);

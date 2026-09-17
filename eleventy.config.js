@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { generateHTML } from '@11ty/eleventy-img';
-import { IMAGE_DEFAULTS, resize } from './lib/image.js';
+import { IMAGE_DEFAULTS, producedFiles, resize } from './lib/image.js';
 import { structuredData } from './lib/jsonld.js';
 import { endExiftool } from './lib/exif.js';
 import { adjacentPosts, groupPosts, postsOfType, relatedArt, typeLabel } from './lib/dnd.js';
@@ -43,8 +43,10 @@ export default function (eleventyConfig) {
 
   // ── Images ────────────────────────────────────────────────────────────
   // eleventy-img derivatives go to .cache/img (persisted by actions/cache,
-  // never committed) and are copied to _site/img in eleventy.after: a
-  // passthrough copy would race the shortcodes that write them.
+  // never committed). eleventy.after copies to _site/img only the ones this
+  // build asked for (lib/image.js records them), so a restored cache cannot
+  // ship derivatives of deleted or renamed images; a passthrough copy would
+  // both race the shortcodes that write them and copy every cached file.
   eleventyConfig.addShortcode('image', async function (src, alt, options = {}) {
     if (typeof alt !== 'string') {
       throw new Error(`image shortcode: alt text is required for ${src}`);
@@ -135,8 +137,29 @@ export default function (eleventyConfig) {
     // GitHub Pages must not run Jekyll over the built output.
     fs.writeFileSync(path.join(outDir, '.nojekyll'), '');
 
-    if (fs.existsSync(IMAGE_DEFAULTS.outputDir)) {
-      fs.cpSync(IMAGE_DEFAULTS.outputDir, path.join(outDir, 'img'), { recursive: true });
+    // Only the derivatives produced by this build, never the whole cache;
+    // anything else already under _site/img (a previous local build, since
+    // Eleventy does not empty the output directory) is removed.
+    const cacheDir = path.resolve(IMAGE_DEFAULTS.outputDir);
+    const imgDir = path.join(outDir, 'img');
+    const shipped = new Set();
+    for (const file of producedFiles) {
+      const source = path.resolve(file);
+      const relative = path.relative(cacheDir, source);
+      if (relative.startsWith('..') || path.isAbsolute(relative)) {
+        throw new Error(`image derivative ${file} is outside ${IMAGE_DEFAULTS.outputDir}`);
+      }
+      const target = path.join(imgDir, relative);
+      fs.mkdirSync(path.dirname(target), { recursive: true });
+      fs.copyFileSync(source, target);
+      shipped.add(target);
+    }
+    if (fs.existsSync(imgDir)) {
+      for (const entry of fs.readdirSync(imgDir, { recursive: true, withFileTypes: true })) {
+        if (!entry.isFile()) continue;
+        const file = path.join(entry.parentPath ?? entry.path, entry.name);
+        if (!shipped.has(file)) fs.rmSync(file);
+      }
     }
 
     // src/_data/galleries.js reads embedded captions through one exiftool

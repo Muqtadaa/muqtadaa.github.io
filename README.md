@@ -95,16 +95,21 @@ template, including the `video`, `document` and `animated` blocks used for
 timelapse MP4s, the PDF booklet and animated GIFs.
 
 How a caption is chosen, in order: `captions.yml` entry → a `.txt` file with
-the same basename → embedded metadata (XMP `dc:description`, IPTC caption,
-EXIF `ImageDescription`, Windows title/comment, PNG text) → the filename,
-humanised, with a `::warning` in the build log. Files with no `order` sort
-first, so a fresh upload lands at the top of the gallery and on the home page.
+the same basename → embedded metadata (XMP `dc:description`, XMP `dc:title`,
+IPTC caption, EXIF `ImageDescription`, Windows title/comment, PNG text) → the
+filename, humanised, with a `::warning` in the build log. Files with no
+`order` sort first, so a fresh upload lands at the top of the gallery and on
+the home page.
 
 The build **fails** for malformed `captions.yml`, an entry whose file is
 missing, an explicit `alt: ""` with no caption, or two filenames that differ
-only by case. Everything else is a warning. `gallery-check.yml` runs the same
-checks on any push or PR that touches `gallery/`, so a bad upload is flagged
-before it reaches `main`.
+only by case. A missing `captions.yml` entry is a `::warning`. Size, dimension
+and filename findings are a `::warning` for the files a push or PR touched
+(`--changed-since`, run by both workflows) and a `::notice` when the whole
+tree is checked (`npm run build`), because Actions shows at most 10
+annotations per level per step and the legacy originals alone exceed that.
+`gallery-check.yml` runs the same checks on any push or PR that touches
+`gallery/`, so a bad upload is flagged before it reaches `main`.
 
 Existing originals stay in git untouched (some are 5000 × 5000 PNGs); they are
 downscaled at build time and never copied to the output. Video, PDF and GIF
@@ -141,10 +146,13 @@ parses the file and fails the build if any body-text pair drops below 7:1
 `.github/workflows/pages.yml`:
 
 - **build** runs on every push, pull request and manual dispatch: Node 22,
-  `npm ci`, `npm run build`, then uploads `_site/` as the Pages artifact. The
-  `.cache/` directory is restored and saved with `actions/cache` keyed by
+  `npm ci`, `check-gallery.mjs --changed-since` for the touched files,
+  `npm run build`, then uploads `_site/` as the Pages artifact. The `.cache/`
+  directory is restored and saved with `actions/cache` keyed by
   `hashFiles('gallery/**')` (with a prefix restore key), so only new or
-  changed images are resized on CI.
+  changed images are resized on CI. Only the derivatives the build asked for
+  are copied from `.cache/img` to `_site/img`, so a restored cache never
+  ships derivatives of deleted or renamed images.
 - **deploy** runs only when `github.ref == 'refs/heads/main'` **and** the
   repository variable `PAGES_DEPLOY` is `true`. It publishes the artifact with
   `actions/deploy-pages`.

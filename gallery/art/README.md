@@ -24,7 +24,8 @@ Only `caption` and `alt` matter to visitors; everything else is optional.
 
 - `order`: lower numbers come first. A file with no `order` goes to the top
   of the gallery (and onto the home page) until you give it one, so new
-  work surfaces on its own.
+  work surfaces on its own. Give it a low `order` to keep it there, a high
+  one to file it away.
 - `tags`: free words. `dnd` also links the piece to the D&D section. The
   ones in use: `dnd`, `maps`, `portrait`, `timelapse`, `animation`, `wally`.
 - `hidden: true` keeps a file in the folder but out of the gallery.
@@ -58,9 +59,11 @@ Booklet.png:
 
 - A text file with the same name (`My_New_Drawing.txt`) next to the image
   is used as the caption when there is no `captions.yml` entry.
-- **Windows:** right-click the JPEG → *Properties → Details → Title* also
-  works; the build reads the embedded title. (JPEG only, and `captions.yml`
-  always wins over it.)
+- A **Title** or **Description** embedded in the file is used when there is
+  no `captions.yml` entry: on Windows, right-click the JPEG → *Properties →
+  Details → Title*; on a Mac, the Title field in Photos, Preview (*Tools →
+  Show Inspector*) or Lightroom. `captions.yml` and the `.txt` file always
+  win over it.
 
 Do not rename or delete files that already have a block here without
 updating the block, or the build stops with an error naming the file.

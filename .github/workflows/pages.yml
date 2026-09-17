@@ -14,6 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full history so check-gallery can diff against the PR base.
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -29,6 +32,15 @@ jobs:
             eleventy-img-
 
       - run: npm ci
+
+      # Size, dimension and naming warnings for the files this push or PR
+      # touched, as ::warning annotations. The full-tree run inside
+      # `npm run build` reports the same findings for legacy originals as
+      # ::notice, so they cannot crowd out a new upload's warnings (Actions
+      # shows at most 10 annotations per level per step). An all-zero
+      # `github.event.before` (new branch) or an empty value (manual run)
+      # makes the script check every file instead.
+      - run: node scripts/check-gallery.mjs --changed-since "${{ github.event.pull_request.base.sha || github.event.before }}"
 
       - run: npm run build
 

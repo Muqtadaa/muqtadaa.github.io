@@ -133,6 +133,9 @@
   });
 
   dialog.addEventListener('keydown', function (event) {
+    // Arrow keys inside a focused <video> seek and change volume; leave
+    // them to the native controls.
+    if (event.target.closest && event.target.closest('video')) return;
     if (event.altKey || event.ctrlKey || event.metaKey) return;
     switch (event.key) {
       case 'ArrowLeft':
