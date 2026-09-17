@@ -26,10 +26,11 @@ description: Digital artist, designer and dungeon master. Drawings, logos, a hom
 
 {#-
   Gallery teasers. `galleries.art` / `galleries.design` come from
-  src/_data/galleries.js (a stub until P2b). Each item is expected to carry
-  `slug`, `title`, `alt`, `thumb` (URL), `srcset`, `width` and `height`,
-  newest first; until then the section renders its header and link only.
+  src/_data/galleries.js in display order (files without an `order` in
+  captions.yml, i.e. new uploads, come first). Each item carries `slug`,
+  `title`, `alt`, `thumb`, `srcset`, `webpSrcset`, `width` and `height`.
 -#}
+{%- set teaserSizes = "(min-width: 64em) 33vw, (min-width: 40em) 50vw, 100vw" %}
 <section class="section" data-bg="bone" data-py="lg">
   <div class="container stack-8">
     <div class="row-between">
@@ -42,7 +43,7 @@ description: Digital artist, designer and dungeon master. Drawings, logos, a hom
       {%- for item in artItems %}
       <li>
         <a class="tile" href="/art/#{{ item.slug }}">
-          <div class="tile__media"><img src="{{ item.thumb }}" srcset="{{ item.srcset }}" sizes="(min-width: 64em) 33vw, (min-width: 40em) 50vw, 100vw" width="{{ item.width }}" height="{{ item.height }}" alt="{{ item.alt }}" loading="lazy" decoding="async"></div>
+          <div class="tile__media"><picture><source type="image/webp" srcset="{{ item.webpSrcset }}" sizes="{{ teaserSizes }}"><img src="{{ item.thumb }}" srcset="{{ item.srcset }}" sizes="{{ teaserSizes }}" width="{{ item.width }}" height="{{ item.height }}" alt="{{ item.alt }}" loading="lazy" decoding="async"></picture></div>
           <p class="tile__title">{{ item.title }}</p>
         </a>
       </li>
@@ -66,7 +67,7 @@ description: Digital artist, designer and dungeon master. Drawings, logos, a hom
       {%- for item in designItems %}
       <li>
         <a class="tile" href="/design/#{{ item.slug }}">
-          <div class="tile__media"><img src="{{ item.thumb }}" srcset="{{ item.srcset }}" sizes="(min-width: 64em) 33vw, (min-width: 40em) 50vw, 100vw" width="{{ item.width }}" height="{{ item.height }}" alt="{{ item.alt }}" loading="lazy" decoding="async"></div>
+          <div class="tile__media"><picture><source type="image/webp" srcset="{{ item.webpSrcset }}" sizes="{{ teaserSizes }}"><img src="{{ item.thumb }}" srcset="{{ item.srcset }}" sizes="{{ teaserSizes }}" width="{{ item.width }}" height="{{ item.height }}" alt="{{ item.alt }}" loading="lazy" decoding="async"></picture></div>
           <p class="tile__title">{{ item.title }}</p>
         </a>
       </li>
@@ -88,8 +89,7 @@ description: Digital artist, designer and dungeon master. Drawings, logos, a hom
     <div class="split split--even split--start">
       <a class="tile" href="/dnd/">
         <div class="tile__media">
-          {#- P2b moves this file to gallery/art/agdaron.png; update the path then. -#}
-          {% image "digitalart/art/agdaron.png", "Hand-drawn map of Agdaron, the homebrew world my D&D group plays in", { widths: [480, 960], sizes: "(min-width: 64em) 40rem, 100vw" } %}
+          {% image "gallery/art/agdaron.png", "Hand-drawn map of Agdaron, the homebrew world my D&D group plays in", { widths: [480, 960], sizes: "(min-width: 64em) 40rem, 100vw" } %}
         </div>
         <p class="tile__title">Agdaron, the world map</p>
         <p class="tile__meta">Drawn for the table, redrawn every time the party breaks something.</p>

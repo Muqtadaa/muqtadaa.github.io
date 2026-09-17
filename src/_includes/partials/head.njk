@@ -33,5 +33,5 @@
   <link rel="stylesheet" href="/assets/css/utilities.css">
   <link rel="stylesheet" href="/assets/css/components.css">
   <script>document.documentElement.classList.add('js');</script>
-  <script type="application/ld+json">{{ { site: site, url: page.url, title: title, description: pageDescription, breadcrumbs: breadcrumbs, extra: jsonld } | structuredData | safe }}</script>
+  <script type="application/ld+json">{{ { site: site, url: page.url, title: title, description: pageDescription, breadcrumbs: breadcrumbs, extra: jsonld, pageType: pageType } | structuredData | safe }}</script>
 </head>

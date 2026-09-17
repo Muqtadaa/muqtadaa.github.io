@@ -3,6 +3,7 @@ import path from 'node:path';
 import { generateHTML } from '@11ty/eleventy-img';
 import { IMAGE_DEFAULTS, resize } from './lib/image.js';
 import { structuredData } from './lib/jsonld.js';
+import { endExiftool } from './lib/exif.js';
 
 // Eleventy 3 config for the rebuilt site under src/ (plan WS-E). The legacy
 // pages at the repository root are no longer built; they stay in git until P4
@@ -23,7 +24,7 @@ export default function (eleventyConfig) {
 
   // Gallery media that is never resized (video, PDF, animated GIF) is served
   // from /media/<folder>/. Object globs flatten into the target, so map one
-  // folder at a time. gallery/ arrives in P2b; until then this is a no-op.
+  // folder at a time.
   if (fs.existsSync('gallery')) {
     for (const folder of fs.readdirSync('gallery', { withFileTypes: true })) {
       if (!folder.isDirectory()) continue;
@@ -75,6 +76,26 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter('limit', (array, count) => (array || []).slice(0, count));
 
+  // The subset of a gallery item that src/assets/js/lightbox.js needs,
+  // embedded as <script type="application/json" id="gallery-data">.
+  eleventyConfig.addFilter('lightboxJson', (items) =>
+    toJsonLd(
+      (items || []).map((item) => ({
+        slug: item.slug,
+        type: item.type,
+        title: item.title,
+        caption: item.caption,
+        alt: item.alt,
+        full: item.full,
+        fullWebp: item.fullWebp,
+        width: item.fullWidth,
+        height: item.fullHeight,
+        video: item.video,
+        document: item.document
+      }))
+    )
+  );
+
   eleventyConfig.addFilter('readableDate', (value) =>
     new Date(value).toLocaleDateString('en-US', {
       year: 'numeric',
@@ -98,15 +119,9 @@ export default function (eleventyConfig) {
       fs.cpSync(IMAGE_DEFAULTS.outputDir, path.join(outDir, 'img'), { recursive: true });
     }
 
-    // _data/galleries.js (P2b) reads embedded captions with exiftool-vendored;
-    // its process must be closed or the build never exits. Optional until
-    // that dependency lands.
-    try {
-      const { exiftool } = await import('exiftool-vendored');
-      await exiftool.end();
-    } catch (error) {
-      if (error?.code !== 'ERR_MODULE_NOT_FOUND') throw error;
-    }
+    // _data/galleries.js reads embedded captions through one exiftool
+    // process; it must be closed or the build never exits.
+    await endExiftool();
   });
 
   return {

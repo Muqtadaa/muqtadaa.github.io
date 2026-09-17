@@ -1,0 +1,255 @@
+# Captions for gallery/art/ (one block per file; see README.md in this folder).
+# Keys are filenames. `caption` is the story shown under the image, `alt` is the
+# literal description for screen readers, `order` sorts the gallery (lower first).
+Aang.jpg:
+  title: Aang
+  caption: I finally got an iPad, and my digital art improved dramatically. This was the first thing I drew on it, an homage to my love of Avatar the Last Airbender.
+  alt: "Aang from Avatar: The Last Airbender, bald with a blue arrow tattoo and a beard, against a cloudy sky"
+  tags: []
+  order: 10
+Aang_Breathing_Fire.jpg:
+  title: Aang Breathing Fire
+  caption: This was a study in making fire and playing with the lighting created by it. I used a reference image for the posing that really inspired the whole thing, I loved the implied movement in the figure.
+  alt: A figure lit in yellow and orange breathes a sweeping arc of fire across a smoky green background
+  tags: []
+  order: 20
+agdaron.png:
+  title: Agdaron
+  caption: This is an original map of the world I created for my D&D campaign! We've been playing nearly 3 years, and the story has gotten quite exciting. We've had some incredible ups and downs.
+  alt: Hand-drawn fantasy world map of Agdaron on parchment, with mountains, forests, a sailing ship and a compass rose
+  tags:
+    - dnd
+    - maps
+  order: 30
+Ahmed.jpg:
+  title: Ahmed
+  caption: This is my very good friend Ahmed, we've been through a LOT of ups and downs together. I took a photo of him at a hookah bar in 2017, and it's one of the best photos I have of him. When I decided I was going to draw a person, I knew it had to be this photo.
+  alt: Digital portrait of a bearded young man with dark hair looking straight at the viewer, on a grey background
+  tags:
+    - portrait
+  order: 40
+Apocalypse_Mario.jpg:
+  title: Apocalypse Mario
+  caption: I was in high school the first time I drew Mario as a realistic person living in a post-apocalyptic Mushroom Kingdom. Nearly a decade later I finally rendered a complete version of that idea. I tend to avoid drawing backgrounds as you can see, so clouds and colors it is!
+  alt: A gruff, realistic Mario in a red cap and overalls with a mallet over his shoulder, standing in fog
+  tags: []
+  order: 50
+batman.jpg:
+  title: Batman
+  caption: A heavy inking of Batman I drew after watching the first trailer for the Robert Pattinson film. In my first few months out of college, this is how I would relieve stress - by doodling incessantly.
+  alt: Heavy black ink drawing of Batman's cowled head and shoulders in profile
+  tags: []
+  order: 60
+Blue_Dragon.jpg:
+  title: Blue Dragon
+  caption: This is my first attempt at painting something and removing the black linework I'm accustomed to using, trying for a dash of realism in the process. I've been trying to draw a dragon for literally two decades so I am pretty pleased with how this came out.
+  alt: Painted blue dragon's head in profile with white horns and an open, toothy mouth
+  tags:
+    - timelapse
+  order: 70
+  video:
+    src: Blue_Dragon.mp4
+    poster: Blue_Dragon.jpg
+Cinch.jpg:
+  title: Cinch
+  caption: This is the cute animal mascot from a job I had. I always like to joke that he's Sonic the Hedgehog's distant cousin. We only ever had 3D renders of him, so I drew a 2D version.
+  alt: A cartoon blue-and-white raccoon-like mascot in a red T-shirt, standing on green grass
+  tags: []
+  order: 80
+dragonvillage.jpg:
+  title: Dragon Village
+  caption: This is a map of a village my D&D players visited. I loved the idea of a village built around the ancient skeleton of a dragon. This was one of those images that inspired me to write nearly 100 pages of lore, history, and character backstory.
+  alt: Top-down map of a village whose houses and roads are laid out around the huge skeleton of a dragon
+  tags:
+    - dnd
+    - maps
+  order: 90
+dragonborn.png:
+  title: Lucky the Lizard
+  caption: I drew this for a friend who made a D&D character by the name of Lucky the Lizard - an unfortunate Dragonborn Barbarian. Sadly, like most D&D stories, this campaign was so short-lived as to never happen.
+  alt: A gold-scaled dragonborn barbarian with red eyes and a greataxe, in a mountain pass
+  tags:
+    - dnd
+  order: 100
+Duck_Team.jpg:
+  title: Duck Team
+  caption: This is a rendition of the characters played by the cast of Not Another D&D Podcast (aka NADDPOD), the Duck Team. This podcast got me through some dark days with its lighthearted goofs and occasional heartfelt tearjerker moments. This was also drawn using Procreate on my iPad.
+  alt: "Three fantasy adventurers in the clouds: a blue-skinned elf, a muscular warrior holding a duck, and a green frog in a hoodie"
+  tags:
+    - dnd
+  order: 110
+Eye.png:
+  title: Eye
+  caption: This is the classic 'I am an artiste' move of painting an eye.
+  alt: Close-up painting of a green eye with lashes and freckled skin
+  tags: []
+  order: 120
+Eye_To_Eye_On_A_Mountaintop.png:
+  title: Eye to Eye on a Mountaintop
+  caption: I finally did something where I started with painting broad shapes and then found the image and composition within it. I really love the dynamic of the characters in this.
+  alt: A small figure in a green cloak stands on a rocky peak facing a huge blue one-eyed giant
+  tags:
+    - timelapse
+  order: 130
+  video:
+    src: Eye_To_Eye_On_A_Mountaintop.mp4
+    poster: Eye_To_Eye_On_A_Mountaintop.png
+eyepencil.jpg:
+  title: Eye in Pencil
+  caption: This is an experiment in pencil drawing and shading, I was trying really hard to get a realistic look, drawn in the gaps between validating test metrics.
+  alt: Pencil drawing of an eye and eyebrow with soft shading
+  tags: []
+  order: 140
+Fantasy_Planet.jpg:
+  title: Fantasy Planet
+  caption: In my ever-expanding arsenal of fantasy map-making skills, I now include planetoids! This is the first time I started using other layers to mask in textures using specialty brushes. I really love how this turned out.
+  alt: A small fantasy planet with continents, oceans and a moon, floating in dark space
+  tags:
+    - maps
+  order: 150
+galaxy.jpg:
+  title: Galaxy
+  caption: Using the fanciest of PhotoShop techniques as directed by a guide on YouTube, I created this galaxy as part of a promotional campaign where I was ripping off space-themed imagery from a popular Space Opera movie series.
+  alt: A spiral galaxy glowing in pink, green and gold against black space
+  tags:
+    - dnd
+  order: 160
+Ganondorf.png:
+  title: Ganondorf
+  caption: Tears of the Kingdom is one of the greatest games I've ever played - I have been so deeply inspired by it.
+  alt: Ganondorf from Tears of the Kingdom with red hair and gold jewellery, bare-chested, on a dark green background
+  tags: []
+  order: 170
+Girl.png:
+  title: Girl
+  caption: I tried my hardest to paint this properly - using good traditional media techniques. Not my forte - I prefer to cheat using my graphic design skills.
+  alt: Painted portrait of a young woman with blue eyes and auburn hair, looking at the viewer
+  tags: []
+  order: 180
+greenlantern.jpg:
+  title: Green Lantern
+  caption: This is none other than Hal Jordan himself - an experiment in flatting in colors and then using filters and effects to provide scale and depth. I like how this one turned out.
+  alt: Green Lantern flying over a glowing green globe on a black background
+  tags: []
+  order: 190
+Isometric_Underground_Battlemap.jpg:
+  title: Isometric Underground Battlemap
+  caption: This is the first isometric battlemap I drew for Roll20 for my D&D campaign. It was a unique perspective challenge, and I had to figure out how the lighting was going to work. It ended up being a lot of fun to play on though.
+  alt: Isometric map of an underground cave system with stone platforms, water and a wooden bridge
+  tags:
+    - dnd
+    - maps
+  order: 200
+joker.png:
+  title: Joker
+  caption: This one was a doodle turned full-scale attempt at drawing a cartoonishly evil Joker, only it turned out a tad creepier than expected. This was drawn on a Microsoft SurfaceBook, great little machine aside from the fact that it burned through three NVIDIA graphics cards in two years.
+  alt: Grinning Joker with green hair and a purple suit, drawn in bold black lines on white
+  tags: []
+  order: 210
+Logan_Poster.png:
+  title: Logan Poster
+  caption: This movie made me sad for literally days. I grew up on the superhero movies of the early 2000s, so X-Men and Wolverine were a big part of my childhood fantasies. I drew this as an homage to that and as an exercise in pencil work.
+  alt: Grey-scale drawing of a small hand held by a larger hand with claws, over the word LOGAN
+  tags: []
+  order: 220
+Mario_Pratt.png:
+  title: Mario Pratt
+  caption: I drew this as a meme to post on Reddit, mocking the casting of Chris Pratt as the animated Mario. I think the caption is self-explanatory.
+  alt: Comic panel of Mario calming a blue Yoshi, with a speech bubble that reads 'Easy now, Blue! Easy, you know me…'
+  tags: []
+  order: 230
+native_american.jpg:
+  title: Native American
+  caption: I had this guy sketched out for over a year before I figured out how I wanted to paint him, and then I had this idea of him standing in the setting sun and what the setting would look like. I'm proud of the fact that I actually painted a background for this!
+  alt: A man in a wide-brimmed hat, long coat and boots stands in front of a sunset over hills
+  tags:
+    - portrait
+  order: 240
+obama.png:
+  title: President v. Aliens II
+  caption: I had a project in school where I had to come up with a video game, I came up with 'President v. Aliens II, Return of the Obaminator.' Needless to say the concept had a very specific audience.
+  alt: Low-poly portrait of Barack Obama's face on a black background
+  tags: []
+  order: 250
+profileportrait.jpg:
+  title: Profile Portrait
+  caption: This was my attempt at drawing someone from a profile - it sort of turned into a skinnier version of myself? I like what I did with this ultimately, I think it was a solid attempt at painting and lighting it.
+  alt: Side profile of a bearded man with glasses against a blue and purple background
+  tags:
+    - portrait
+  order: 260
+robot.jpg:
+  title: Little Robot
+  caption: After watching the introduction of Fresh Cut Grass on Critical Role's inaugural episode of campaign three, I found myself doodling little robot creatures with various personalities. This one is still my watch background.
+  alt: A small blue cartoon robot with a rounded body, glowing eyes and a single tread, on a green floor
+  tags:
+    - dnd
+  order: 270
+selfportrait.jpg:
+  title: Self-Portrait
+  caption: This is a self-portrait I did when I was experimenting with an oily digital brush. I really like how it came out - I was terrified of ruining all my careful color placement when I started using a blending brush.
+  alt: Loosely painted self-portrait of a bearded man with dark hair, in an oily brush style
+  tags:
+    - portrait
+  order: 280
+spiderman.png:
+  title: Spider-Man
+  caption: My favorite drawing of Spiderman I've ever done, and I've been drawing him since I was six or seven years old. I love how dramatic the lighting turned out in this, purely by accident. I was attempting to cross-hatch, but then I realized it blended well with the webbing of his suit, and I got this really gnarly effect that I love.
+  alt: Spider-Man in a red-and-black cross-hatched suit, drawn from the chest up on white
+  tags: []
+  order: 290
+Spider-Man_Running.gif:
+  title: Spider-Man Running
+  caption: I've been playing with 2D animation lately - this was an attempt to capture a full sprint. Something is off about this - but I think mainly I just need to exaggerate the movement more and add some bounce to sell the strength of motion.
+  alt: Animated loop of Spider-Man sprinting in a full run
+  tags:
+    - animation
+  order: 300
+  animated: true
+superman-reeves.jpg:
+  title: Superman, Reeves
+  caption: A rendering of the original Chris Reeves portrayal of Clark Kent transforming into Superman. This is the first piece I've managed to realistically portray drapery and fabric. I'm really happy with how it turned out, though the hair could use some work.
+  alt: Clark Kent tearing open his shirt to reveal the Superman emblem
+  tags: []
+  order: 310
+superman-flats.png:
+  title: Superman, Flats
+  caption: "Another experiment in flatting in colors - this one is my man Supes. I had just read the Superman: Secret Identity and All Star Superman comics and couldn't stop drawing muscle-bound Kryptonians in tights."
+  alt: Flat-colour Superman flying toward the viewer, on black
+  tags: []
+  order: 320
+theflash.jpg:
+  title: The Flash
+  caption: Back before I had a Wacom tablet or a smartphone with a stylus and a 7" screen, I had a mouse and Adobe Flash. So I figured, why not draw THE Flash in Flash. Anyone else remember making Flash games using ActionScript and uploading to NewGrounds?
+  alt: The Flash sprinting down a road in a red suit with lightning streaks, under a cloudy sky
+  tags: []
+  order: 330
+Wally_the_Bugbear.png:
+  title: Wally the Bugbear
+  caption: For the first time in 5 years, I am playing a D&D character in a campaign. Not running the campaign, not playing a thousand and one NPCs, but my very own Player Character. This is Wally the Bugbear, a Junior Grub Scout of the Hobgoblin Dominion, Hashara. I'm having so much fun playing a snot-nosed teen as a shaman with a deep connection to nature.
+  alt: A brown-furred bugbear with blue eyes and a blue-and-yellow scarf, in front of mountains and a crescent moon
+  tags:
+    - dnd
+    - wally
+  order: 340
+Waterbending.gif:
+  title: Waterbending
+  caption: I used to use a site called DoInk.com to create frame-by-frame animations when I was only 12 or 13 years old. Those animations were pretty simple stick figures, and it's good to know that 15 years later I'm still only capable of animating stick figures.
+  alt: Animated stick figure bending a stream of water
+  tags:
+    - animation
+  order: 350
+  animated: true
+Wizard.jpg:
+  title: Athatar Ellerium
+  caption: I think this is the most ambitious drawing I've done up to this point on my iPad. I had a D&D character I've played in all of one session, a Wizard by the name of Athatar Ellerium. I've wanted to draw him for a long long time, and I'm super satisfied with how this one turned out.
+  alt: A bearded wizard in a dark cloak reads a glowing book with green magic in both hands, in a library
+  tags:
+    - dnd
+  order: 360
+womanpencil.jpg:
+  title: Woman in Pencil
+  caption: This was done around the same time as the eye drawing above, but this time I kept the linework on a separate layer and allowed the blended pencil to create value. I love how this one turned out because I accidentally captured some kind of wistful moment without intending to.
+  alt: Pencil drawing of a woman's face in profile, eyes lowered
+  tags: []
+  order: 370

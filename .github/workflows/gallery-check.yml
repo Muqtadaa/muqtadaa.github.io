@@ -1,0 +1,38 @@
+name: Gallery check
+
+# Runs when gallery/ changes: warns about oversized or oddly named uploads and
+# missing captions, fails on malformed captions.yml or filename collisions.
+# The Pages workflow runs the same script before every build.
+on:
+  push:
+    paths:
+      - 'gallery/**'
+      - 'scripts/check-gallery.mjs'
+      - 'lib/gallery.js'
+  pull_request:
+    paths:
+      - 'gallery/**'
+      - 'scripts/check-gallery.mjs'
+      - 'lib/gallery.js'
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      # Size, dimension and naming warnings only for the files this push or
+      # PR touched; the captions.yml and collision checks cover everything.
+      - run: node scripts/check-gallery.mjs --changed-since "${{ github.event.pull_request.base.sha || github.event.before }}"

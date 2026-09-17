@@ -1,0 +1,105 @@
+# Captions for gallery/design/ (one block per file; see README.md in this folder).
+# Keys are filenames. `caption` is the story shown under the image, `alt` is the
+# literal description for screen readers, `order` sorts the gallery (lower first).
+horizons.jpeg:
+  title: Looking Beyond the Horizon
+  caption: A flyer for my local mosque's annual fundraising. Most of my freelance years were really volunteer years for my local mosque. I'd do it again.
+  alt: Fundraising banquet flyer with a sunset silhouette of a family and a mosque, titled 'Looking Beyond the Horizon'
+  tags:
+    - youth-group
+  order: 10
+hotline.jpeg:
+  title: 1-800-HOTLINEDEEN
+  caption: In the wake of the crazy of Drake's Hotline Bling, this T-Shirt design was reviewed and soundly rejected for my mosque's youth group, of which I was in charge at the time. I really thought it had merit.
+  alt: Pink T-shirt design with '1-800-HOTLINEDEEN' repeated in white lines
+  tags:
+    - youth-group
+  order: 20
+millennial-ad.jpeg:
+  title: The Millennial Muslim, teaser
+  caption: My Youth Group, under my direction, put on our very first conference. It spanned two days, involved six mosques, and I unilaterally decided to theme it after Star Wars because the Force Awakens had just dropped their first trailer and I still had hope in the sequel trilogy.
+  alt: "Star Wars-style teaser: 'IACC Youth presents The Millennial Muslim' in yellow letters over a starfield"
+  tags:
+    - youth-group
+  order: 30
+millennial.jpeg:
+  title: The Millennial Muslim, flyer
+  caption: This was less of a teaser poster and more of a legitimate flyer once the event got off the ground. I ended up doing speaker posters, Instagram ads, printed six-foot tall banners, the works. I actually fully destroyed a laptop designing all of the print material for this event, just burnt the graphics card to ashes and dust.
+  alt: Event flyer for The Millennial Muslim youth conference, January 15 and 16, 2016, with dates, a QR code and sponsor logos
+  tags:
+    - youth-group
+  order: 40
+mosque.gif:
+  title: Mosque expansion
+  caption: The president of the board at my mosque, a mentor of mine, calls me one evening and asks if I can help him design something. I get to the mosque, meet him in the office, and he tells me he needs to communicate what our expansion project will be doing for fundraising purposes. I am not a 3D modeler or animator, but Google Sketchup exists, and so does YouTube. So I did this, took screenshots of every 'camera movement', and stitched together an animated GIF.
+  alt: Animated 3D walkthrough of a mosque expansion model with green domes
+  tags:
+    - animation
+    - youth-group
+  order: 50
+  animated: true
+old-logo.png:
+  title: Old personal logo
+  caption: My first logo I ever designed for myself. I liked the mirrored Ms. It felt like a really cool, modern look. Then I realized one day I had accidentally been a little too inspired by YouTuber MKBHD's logo, and had to change it.
+  alt: Black-and-white logo of two mirrored Ms with a blue accent
+  tags: []
+  order: 60
+snap-filter.png:
+  title: Youth dinner Snapchat filter
+  caption: My Youth Group was having a dinner, and the young folks wanted a Snapchat Filter for it. I decided to theme it after Harry Potter, and none of the adults noticed, they all thought I was doing some sort of historical theme.
+  alt: Snapchat filter frame with floating candles at the top and a long dining table at the bottom, Harry Potter style
+  tags:
+    - youth-group
+  order: 70
+taqwa-logo.png:
+  title: Taqwa Seminary
+  caption: I was contracted for a local Islamic Seminary program to help modernize their website and graphics. This was the first site I ever did UX for, even if I didn't realize that's what it was at the time.
+  alt: Taqwa Seminary logo in blue and yellow lettering on black
+  tags:
+    - client
+  order: 80
+utep-logo.png:
+  title: UTEP MSL
+  caption: The Muslim Student League at UT El Paso reached out to me for a logo. They got their logo, and I got an early lesson in freelance contracts.
+  alt: Circular UTEP MSL logo with orange and blue arcs on black
+  tags:
+    - client
+  order: 90
+youth-logo-three.jpeg:
+  title: Build-a-Basket
+  caption: Build-a-Basket was a youth program one of the kids I mentored came up with. We built a program where we advertised baskets of common goods, toiletries, foods, supplies, and toys, for some set donation amount. We ended up raising $20,000 in 20 days, and delivered these baskets to the refugee community in Dallas. I'd never been more proud of my kids than when they came back to the bus after walking in 100+ degree weather while fasting to hand baskets out door-to-door to these families.
+  alt: "Round Build-a-Basket logo: a basket of red hearts with a pink bow, ringed by 'IACC Youth'"
+  tags:
+    - youth-group
+  order: 100
+youth-logo-one.png:
+  title: IACC Youth logo
+  caption: A logo I helped design for my youth group. They changed the logo almost every other year. This one lasted almost four or five.
+  alt: IACC Youth logo in dark lettering with scattered pink petals on black
+  tags:
+    - youth-group
+  order: 110
+youth-logo-two.jpeg:
+  title: IACC Youth, Lucasfilm style
+  caption: Again, after that Star Wars trailer I was somewhat enamored. So I redesigned our Youth Group logo to look like a LucasFilms logo. Then I had the idea that we could use that to promote a space-themed event. And then I had the idea to hold a youth conference.
+  alt: IACC Youth wordmark in green outlined letters styled like the Lucasfilm logo
+  tags:
+    - youth-group
+  order: 120
+youthcard.jpeg:
+  title: Youth group card
+  caption: This was an informational card we distributed at our mosque to let people know to get their kids involved. Honestly, the only reason I became a designer was because I used to mess around in PhotoShop at school, and one day a guy from the Youth Group asked me to design him a flyer, and the next decade of my life was devoted to the youth group after. The skills I learned in that service are what have set me up for success now.
+  alt: Blue informational card with the IACC Youth crest, 'love profoundly, serve purposefully' and social handles
+  tags:
+    - youth-group
+  order: 130
+woc.png:
+  title: A Life, A Legacy
+  caption: This is a booklet I designed, inlaid, and printed in the span of five days. From the request I received to the moment it went to print I was working feverishly around the clock to make this damn thing happen.
+  alt: Cover of the 2014 annual philanthropic report booklet, a tree on green, titled 'A Life, A Legacy'
+  tags:
+    - youth-group
+  order: 140
+  document:
+    url: woc.pdf
+    label: View the full booklet (PDF)
