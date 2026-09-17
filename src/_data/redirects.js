@@ -13,5 +13,12 @@ export default [
     from: '/dnd/the-agdaron-campaign/',
     to: '/dnd/the-undying-of-the-light/',
     label: 'The Undying of the Light'
+  },
+  // Live for about an hour between two merges before the post was rewritten
+  // and renamed. Long enough for a crawler, so it keeps a stub.
+  {
+    from: '/dnd/the-cataclysm-and-the-five/',
+    to: '/dnd/children-of-a-broken-age/',
+    label: 'Children of a Broken Age'
   }
 ];

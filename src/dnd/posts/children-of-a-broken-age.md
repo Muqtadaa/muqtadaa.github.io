@@ -1,7 +1,7 @@
 ---
 title: "Children of a Broken Age"
 type: lore
-summary: The gods did not create Agdaron from nothing. They came to it as a family, made mortals, gave them magic, and have been living with that decision ever since. Part I of the world's history.
+summary: "Part I of the history of Agdaron: the gods and the Primordials, the gift of magic, the two divine wars, the Cataclysm, and what became of the Goddess of Light."
 date: 2026-09-16
 tags: [dnd]
 ---

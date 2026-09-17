@@ -1,71 +1,55 @@
 ---
 title: Nerissa du Elleri
 type: character
-summary: Princess of Elleria, promised to Malinar to seal a peace she was never consulted about. She climbed out of a window instead, and has been picking locks ever since.
+summary: Princess of Elleria and daughter of its High King, promised to Malinar under the treaty that ended the war. She left the capital on the night of her betrothal dinner.
 date: 2026-09-13
 tags: [dnd]
 ---
 
 <dl class="dnd-facts">
-  <div class="dnd-facts__row"><dt>Origin</dt><dd>Court District, City of Elleris, Kingdom of Elleria</dd></div>
+  <div class="dnd-facts__row"><dt>Origin</dt><dd>Court District, City of Elleris</dd></div>
   <div class="dnd-facts__row"><dt>Class</dt><dd>Psionic Rogue</dd></div>
   <div class="dnd-facts__row"><dt>Standing</dt><dd>Princess of Elleria, daughter of the High King</dd></div>
   <div class="dnd-facts__row"><dt>Status</dt><dd>Active with the Veil Piercers</dd></div>
 </dl>
 
-The betrothal was explained to her as arithmetic. Elleria had not won the war.
-Malinar had not quite won it either. A marriage would bind the two crowns
-together, guarantee Ellerian autonomy on paper, and cost the kingdom one
-daughter.
+Nerissa du Elleri is the daughter of the High King of Elleria.
 
-The introduction dinner was set for half past eight.
+Her betrothal to Malinar was an instrument of state. Elleria had not won the
+war. A marriage would bind the two crowns together, guarantee Ellerian autonomy
+on paper, and cost the kingdom one daughter.
 
-Nerissa was not at it.
+She was not consulted.
 
-She went down through the Court District under cloud cover on a Friday night,
-into the Lower District where the labourers were getting off work and nobody
-looks twice at a hood, and out of the city entirely with five strangers she had
-met that evening. The guard captain who nearly caught her on the stairs ended up
-travelling with her for the next several years.
+The introduction dinner was set for half past eight. She left the Court District
+under cloud cover, went down into the Lower District where the labourers were
+coming off work, and was out of the city before the guard understood she was
+gone. She left with five strangers she had met that evening. One of them was the
+guard captain who had nearly stopped her on the stairs.
 
-## What she is good at
+What the court taught her, she has used against courts. She reads a room for who
+is nervous and why. She opens locks, and she gets out of conversations that are
+more dangerous than the locks. Some of that is training. The rest is psionic,
+and it does not announce itself.
 
-Everything a court teaches and nothing it intends to. She reads a room for who
-is nervous and why. Some of that is court-craft. The rest is psionic, and it
-does not announce itself. She gets into places that are locked, and out of
-conversations that are worse. When a fight starts she is rarely where she was
-standing a moment ago, and when it goes badly she is the one who disengages and
-comes back at a better angle.
+At the champions' feast in Malinar she learned in a single evening that the
+Crown Prince had an illegitimate sister held hostage by the Paladin Order, that
+his father was under the same guard, and that his court jester would die for
+him. All three proved decisive.
 
-The information she is best at extracting is the kind nobody thinks they are
-giving away. In Malinar it was her, at a feast, who worked out that the Crown
-Prince had an illegitimate sister held hostage by the Paladin Order, a father
-under the same guard, and a court jester willing to die for him. All three
-turned out to matter enormously.
+Direll Lazlow murdered her mother. Nerissa was in the catacombs beneath Malinar
+when he died.
 
-## What it has cost
+Her father spent most of the campaign missing, in the company of the arch-wizard
+Ebrin Jementh. When the two of them found each other again, she sat with him in
+an inn and turned his hair grey with an account of the year.
 
-Her mother was murdered by Direll Lazlow, celebrated hero of Malinar and one of
-the architects of the coup that destroyed it. Nerissa was in the catacombs when
-he died.
-
-Her father spent much of the campaign missing, in the company of an arch-wizard
-named Ebrin Jementh. When they finally found one another again, she sat with him
-in an inn and turned his hair grey with an account of the intervening year.
-
-In Malinar a banishment threw her out of the world entirely. She came back
-through a plane of light and crystal, the personal outer realm of the Goddess of
-Light, where Althea's old worshippers still enjoy an afterlife in an unending
-city square. Nerissa walked their streets, climbed a tower full of everything
-they had ever known, took a Ring of Revivify and a shard of glowing crystal, and
-used the shard as a key to open a door into the Nexus.
+A banishment in Malinar threw her out of the world entirely. She came back
+through a plane of light and crystal: the private outer realm of the Goddess of
+Light, where Althea's old worshippers still keep an afterlife in an unending
+city square. Nerissa walked their streets. She climbed a tower that held
+everything they had ever known. She took a Ring of Revivify and a shard of
+glowing crystal, and used the shard as a key to open a door into the Nexus.
 
 She is the only member of the party to have seen the Gray Lady's heaven from the
 inside.
-
-She was not impressed.
-
-## Where she is now
-
-Aboard the Gray Lady's Peril, descending through the Nine Hells, some distance
-from the dinner she walked out of.

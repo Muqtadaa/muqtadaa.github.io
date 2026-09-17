@@ -1,15 +1,14 @@
 ---
 title: "Agdaron: a world in brief"
 type: lore
-summary: Two kingdoms out of a twenty-year war, five dwarven Underkeeps, a halfling council that brokered the peace, and a continent nobody has sailed to in a thousand years.
+summary: "The geography of the Eastern Continent: two kingdoms newly out of a twenty-year war, the dwarven Underkeeps of the Barazig Spires, and the lands around them."
 date: 2026-09-15
 tags: [dnd, maps]
 cover: agdaron.png
 ---
 
-What follows is the Agdaron a traveller could assemble from tavern talk, a good
-atlas and an honest cartographer. What lies underneath it belongs to
-[the campaign](/dnd/the-undying-of-the-light/).
+This is the Agdaron a traveller could learn from an atlas and a tavern. What
+lies underneath it belongs to [the campaign](/dnd/the-undying-of-the-light/).
 
 ## Two kingdoms and a bad twenty years
 
@@ -21,9 +20,9 @@ and it reaches the sea through the Falliel Bay in its southeast. **Malinar** is
 the human kingdom, closer to the coast, and moves its trade through ports along
 the Rovari.
 
-They spent nearly twenty years killing each other. It began as a border dispute
-— armed forces came to blows at roughly the same moment as a major political
-gaffe — and it never stopped being a war about land and so-called honour.
+They spent nearly twenty years killing each other. It began as a border dispute.
+Armed forces came to blows at roughly the same moment as a major political
+gaffe, and the war that followed was fought over land and so-called honour.
 
 It left the rich richer and the poor poorer. Elleria's middle class shrank to a
 fraction of its former size and has not grown back. Crops have come in thinner
@@ -34,13 +33,12 @@ of Elders because neither crown would sit down in the other's capital. Trade
 caravans run the agreed routes again. Neither side trusts the other, so every
 caravan travels with soldiers or mercenaries.
 
-Beyond the borders of both kingdoms, the wild lands are exactly what the phrase
-promises: monsters, bandits, brigands, and the sort of adventure that kills
-people.
+Beyond the borders of both kingdoms lie the wild lands: monsters, bandits,
+brigands and adventure.
 
 ## The City of Elleris
 
-Elleris is beautiful as long as one stays above ground.
+Elleris is a grand city, and on the surface a whimsical one.
 
 Its walls are tall and its streets are cobblestone, whorled with colour. The
 Lower District is trade — merchants, blacksmiths, food markets and a great many
@@ -55,8 +53,8 @@ never entirely forgiven the divine for it.
 
 Castle Elleric stands at the southwest of the kingdom: five towers on a
 pentagonal inner wall, brickwork and vinery swirling up them in colours that
-have no business working together, multi-coloured domes above, white marble and
-gold filigree within. It is the finest building in Agdaron.
+make the whole thing look unreal, multi-coloured domes above, white marble and
+gold filigree within. It is the finest building in the kingdom.
 
 Beneath all of it lie the Cisterns — a wandering maze of pipes, sewers and
 tunnels running out of the city in a dozen directions, and the place where the
@@ -69,8 +67,7 @@ holding three of the five dwarven Underkeeps. Barazar is the great one;
 Frostspire lies to its northwest and Iron Deep to its southwest, and the road
 splits between them beneath torches the dwarves keep lit year-round.
 
-Barazar is a city inside a mountain, and its builders were not subtle about it.
-The approach runs through a working quarry and onto cobblestone laid with King
+Barazar is a city inside a mountain. The approach runs through a working quarry and onto cobblestone laid with King
 Aghat Umraz's heraldry. Automatons of bronze, silver and gold stand guard at
 regular intervals, humanoid from the waist up and rolling on a single sphere.
 Rail carts carry visitors inside, driven by a conductor with one hand on a
@@ -79,7 +76,7 @@ crystal.
 The Market district beneath the mountain has a ceiling so high it passes for a
 night sky, lit by drifting mage-lights and one brighter light standing in for
 the sun at roughly half strength. It is enough to keep a visitor comfortable.
-Stay long enough and the under-dwelling madness finds them regardless.
+Prolonged exposure brings on the under-dwelling madness regardless.
 
 ## The neighbours
 
