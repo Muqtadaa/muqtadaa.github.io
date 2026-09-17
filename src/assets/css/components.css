@@ -1476,6 +1476,13 @@
 
 /* ── D&D canon (dnd-index.njk, dnd-post.njk) ─────────────────────────── */
 /* Post cards on /dnd/: a .card with an optional cover on top. */
+/* Cards size to their own content: a group mixing posts that have a cover
+   with posts that do not would otherwise stretch every text-only card in the
+   row to the height of the one with an image. */
+.post-grid {
+  align-items: start;
+}
+
 .post-card {
   display: flex;
   flex-direction: column;
@@ -1572,6 +1579,44 @@
   font-size: 14px;
   line-height: 1.5;
   color: var(--text-muted);
+}
+
+/* Character posts open with a <dl class="dnd-facts"> of the handful of things
+   a reader wants before the prose: where they are from, what they do, how
+   their thread ended. Hairline rows rather than a card, to match .prose table. */
+.dnd-facts {
+  margin: 0;
+  border-top: 1px solid var(--hairline-strong);
+}
+
+.dnd-facts__row {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--hairline-strong);
+}
+
+.dnd-facts dt {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.dnd-facts dd {
+  margin: 0;
+  color: var(--ink);
+}
+
+@media (min-width: 40em) {
+  .dnd-facts__row {
+    grid-template-columns: 9rem minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: baseline;
+  }
 }
 
 /* Previous / next within the post's type, with the index link between. */

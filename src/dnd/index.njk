@@ -2,7 +2,7 @@
 layout: layouts/dnd-index.njk
 title: D&D
 eyebrow: Campaign canon
-lead: Agdaron is the homebrew world my group has been playing in since 2019, and The Undying of the Light is the campaign that has been running through it. Campaigns first, then the lore behind them, then the characters who keep breaking both.
+lead: Agdaron is a world a thousand years past its own apocalypse, and The Undying of the Light is the campaign running through it. The story first, then the history it sits on, then the people carrying it.
 description: Campaign canon for Agdaron, the homebrew D&D world Muqtadaa Miandara runs, and The Undying of the Light, the campaign set in it. Campaigns, lore and characters, with the drawings made for the table.
 ---
 {% import "macros/section-header.njk" as headers %}
@@ -20,7 +20,7 @@ description: Campaign canon for Agdaron, the homebrew D&D world Muqtadaa Miandar
   <div class="container stack-8">
     {#- No eyebrow: "Lore" above "Lore" is the section title said twice. -#}
     {{ headers.sectionHeader(title='<span id="group-' + group.type.id + '">' + group.type.plural + '</span>', description=group.type.description, size="md") }}
-    <ul class="grid grid-3" role="list">
+    <ul class="grid grid-3 post-grid" role="list">
       {%- for post in group.posts %}
       <li>
         <a class="post-card" href="{{ post.url }}">

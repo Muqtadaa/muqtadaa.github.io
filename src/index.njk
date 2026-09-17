@@ -81,17 +81,17 @@ description: Digital artist, designer and dungeon master. Drawings, logos, a hom
 <section class="section" data-bg="linen" data-py="lg">
   <div class="container stack-8">
     <div class="row-between">
-      {{ headers.sectionHeader(eyebrow="Dungeons & Dragons", title="The table", description="My group has been playing in the same homebrew world for years. The lore, the campaigns and the characters are finally getting written down, one post at a time.") }}
+      {{ headers.sectionHeader(eyebrow="Dungeons & Dragons", title="The table", description="Agdaron is a homebrew world a thousand years past its own apocalypse, and it has been in play since 2019. The campaign, the history behind it and the people carrying it, written down one post at a time.") }}
       <a class="link-arrow nav-link" href="/dnd/">Enter the canon <span class="arrow-char" aria-hidden="true">→</span></a>
     </div>
     {%- set posts = (collections.dndPost | reverse | limit(3)) if collections.dndPost else [] %}
     <div class="{{ 'split split--even split--start' if posts.length else 'stack-4' }}">
       <a class="tile" href="/dnd/">
         <div class="tile__media">
-          {% image "gallery/art/agdaron.png", "Hand-drawn map of Agdaron, the homebrew world my D&D group plays in", { widths: [480, 960], sizes: "(min-width: 64em) 40rem, 100vw" } %}
+          {% image "gallery/art/agdaron.png", "Hand-drawn map of Agdaron, the homebrew world of the Undying of the Light campaign", { widths: [480, 960], sizes: "(min-width: 64em) 40rem, 100vw" } %}
         </div>
         <p class="tile__title">Agdaron, the world map</p>
-        <p class="tile__meta">Drawn for the table, redrawn every time the party breaks something.</p>
+        <p class="tile__meta">Drawn for the table, and redrawn every time the party breaks something.</p>
       </a>
       {%- if posts.length %}
       <div class="stack-4">

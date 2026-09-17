@@ -88,17 +88,34 @@ session log, newest first.
 - `lib/dnd.js`: the type list and copy, grouping, related-art and
   previous/next helpers, and the JSON-LD builder.
 
+## The character facts block
+
+A character post opens with a short list of the things a reader wants before the
+prose. It is plain HTML at the top of the Markdown body, and the `dnd-facts`
+styles in `components.css` turn it into hairline rows:
+
+```html
+<dl class="dnd-facts">
+  <div class="dnd-facts__row"><dt>Origin</dt><dd>Underkeep of Barazar</dd></div>
+  <div class="dnd-facts__row"><dt>Status</dt><dd>Active with the Veil Piercers</dd></div>
+</dl>
+```
+
+Four rows is the working maximum. Labels are nouns, not sentences, and the last
+row is usually where the character's thread currently stands.
+
 ## Art still wanted
 
 `the-undying-of-the-light.md` was written from the OneNote campaign records, and
 it breaks into acts at the points where a picture would earn its place. Nothing
-in `gallery/art/` covers most of them yet. When a piece exists, add it to
-`gallery/art/captions.yml` tagged `dnd` and it joins the "Related art" strip on
-the post automatically; the one that leads the post is the `cover` in its front
-matter.
+in `gallery/art/` covers them yet, and the post has no `cover` until one exists.
+When a piece is ready, add it to `gallery/art/captions.yml` tagged `dnd` and it
+joins the "Related art" strip automatically; the one that leads the post is the
+`cover` in its front matter.
 
 | Section | What would go there |
 |---|---|
+| The post cover | The lead image for the campaign as a whole |
 | Six strangers in Elleris | Early Elleris battlemap, the party token line-up, or the Cistern map |
 | Barazar | The Barazar map, dwarven city art, the Stonesword, or the Mind Flayer encounter |
 | The Unity Tournament | The Malinar coup battlemap, Murdock's token art, the burning city or the divine manifestation |
@@ -107,4 +124,11 @@ matter.
 | Leviathan | Leviathan itself, the pirate city, the Astral Sea, the cracked Amulet of Aphiel |
 | The Ruby Gate | The Gray Lady's Peril, the Elder Brain Dragon encounter, the Ruby Gate |
 
-`the-cataclysm-and-the-five.md` has no cover for the same reason.
+`children-of-a-broken-age.md` has no cover for the same reason. The character
+posts have none either, apart from Wally; token art would be the natural fit.
+
+## Voice
+
+Third person throughout, in the register of a traditional fantasy chronicle.
+Nothing under `/dnd/` is written in the first person, including the character
+posts and the section copy on `/dnd/` and the home page.
