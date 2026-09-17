@@ -79,7 +79,7 @@ description: Digital artist, designer and dungeon master. Drawings, logos, a hom
   </div>
 </section>
 
-{#- The table: D&D. collections.dndPost arrives in P3. -#}
+{#- The table: the three newest D&D posts (collections.dndPost, from src/dnd/posts/) and the map tile. -#}
 <section class="section" data-bg="linen" data-py="lg">
   <div class="container stack-8">
     <div class="row-between">
@@ -100,7 +100,7 @@ description: Digital artist, designer and dungeon master. Drawings, logos, a hom
         <ul class="post-list" role="list">
           {%- for post in posts %}
           <li class="post-list__item">
-            <p class="post-list__eyebrow eyebrow-wide">{{ post.data.type }}{% if post.date %} · <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>{% endif %}</p>
+            <p class="post-list__eyebrow eyebrow-wide">{{ post.data.type | dndTypeLabel }}{% if post.date %} · <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>{% endif %}</p>
             <p class="post-list__title"><a href="{{ post.url }}">{{ post.data.title }}</a></p>
             {%- if post.data.summary %}<p class="post-list__summary">{{ post.data.summary }}</p>{% endif %}
           </li>

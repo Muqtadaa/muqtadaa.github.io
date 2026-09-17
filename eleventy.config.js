@@ -4,6 +4,7 @@ import { generateHTML } from '@11ty/eleventy-img';
 import { IMAGE_DEFAULTS, resize } from './lib/image.js';
 import { structuredData } from './lib/jsonld.js';
 import { endExiftool } from './lib/exif.js';
+import { adjacentPosts, groupPosts, postsOfType, relatedArt, typeLabel } from './lib/dnd.js';
 
 // Eleventy 3 config for the rebuilt site under src/ (plan WS-E). The legacy
 // pages at the repository root are no longer built; they stay in git until P4
@@ -82,6 +83,20 @@ export default function (eleventyConfig) {
   );
 
   eleventyConfig.addFilter('limit', (array, count) => (array || []).slice(0, count));
+
+  // Gallery items carrying one tag (e.g. the art tagged `dnd` on /dnd/).
+  eleventyConfig.addFilter('withTag', (items, tag) =>
+    (items || []).filter((item) => (item.tags || []).includes(tag))
+  );
+
+  // The D&D canon (lib/dnd.js): collections.dndPost grouped by type, the
+  // posts of one type, a post's neighbours within its type, the art related
+  // to a post, and the display label of a type id.
+  eleventyConfig.addFilter('dndGroups', groupPosts);
+  eleventyConfig.addFilter('dndOfType', postsOfType);
+  eleventyConfig.addFilter('dndAdjacent', adjacentPosts);
+  eleventyConfig.addFilter('dndRelatedArt', relatedArt);
+  eleventyConfig.addFilter('dndTypeLabel', typeLabel);
 
   // The subset of a gallery item that src/assets/js/lightbox.js needs,
   // embedded as <script type="application/json" id="gallery-data">.

@@ -2,8 +2,80 @@
 layout: layouts/dnd-index.njk
 title: D&D
 eyebrow: Campaign canon
-lead: The world my group has been playing in for years, written down one post at a time. Campaigns, lore and characters are on their way.
-description: Campaign canon for the homebrew D&D world Muqtadaa Miandara runs. Campaigns, lore and characters.
+lead: The world my group has been playing in for years, written down one post at a time. Campaigns first, then the lore behind them, then the characters who keep breaking both.
+description: Campaign canon for Agdaron, the homebrew D&D world Muqtadaa Miandara runs. Campaigns, lore and characters, with the drawings made for the table.
 ---
-{#- Placeholder: P3 replaces this page with the grouped collection index (plan WS-F). -#}
-<p class="empty-note">The first campaign, lore and character posts are being written. Until then, the sketchbook is at <a href="/art/">/art/</a>.</p>
+{% import "macros/section-header.njk" as headers %}
+
+{#-
+  One group per post type (lib/dnd.js POST_TYPES order: Campaigns, Lore,
+  Characters), newest post first; a type with no posts is skipped. Posts come
+  from src/dnd/posts/ (see src/dnd/README.md).
+-#}
+{%- set groups = collections.dndPost | dndGroups %}
+{%- set cardSizes = "(min-width: 64em) 26rem, (min-width: 40em) 50vw, 100vw" %}
+{%- if groups.length %}
+{%- for group in groups %}
+<section class="section" data-bg="bone" data-py="lg"{% if not loop.first %} data-border="top"{% endif %} aria-labelledby="group-{{ group.type.id }}">
+  <div class="container stack-8">
+    <div class="row-between">
+      {{ headers.sectionHeader(eyebrow=group.type.label, title='<span id="group-' + group.type.id + '">' + group.type.plural + '</span>', description=group.type.description, size="md") }}
+      <p class="body-sm c-muted">{{ group.posts.length }} post{% if group.posts.length != 1 %}s{% endif %}</p>
+    </div>
+    <ul class="grid grid-3" role="list">
+      {%- for post in group.posts %}
+      <li>
+        <a class="post-card" href="{{ post.url }}">
+          {%- if post.data.coverItem %}
+          {%- set cover = post.data.coverItem %}
+          <div class="post-card__media"><picture><source type="image/webp" srcset="{{ cover.webpSrcset }}" sizes="{{ cardSizes }}"><img src="{{ cover.thumb }}" srcset="{{ cover.srcset }}" sizes="{{ cardSizes }}" width="{{ cover.width }}" height="{{ cover.height }}" alt="{{ cover.alt }}" loading="lazy" decoding="async"></picture></div>
+          {%- endif %}
+          <div class="post-card__body">
+            <p class="post-card__eyebrow eyebrow-wide">{{ post.data.type | dndTypeLabel }}{% if post.date %} · <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>{% endif %}</p>
+            <p class="post-card__title">{{ post.data.title }}</p>
+            {%- if post.data.summary %}<p class="post-card__summary">{{ post.data.summary }}</p>{% endif %}
+          </div>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{%- endfor %}
+{%- else %}
+<section class="section" data-bg="bone" data-py="lg">
+  <div class="container">
+    <p class="empty-note">The first campaign, lore and character posts are being written. Until then, the sketchbook is at <a href="/art/">/art/</a>.</p>
+  </div>
+</section>
+{%- endif %}
+
+{#-
+  From the sketchbook: art tagged `dnd` in gallery/art/captions.yml, up to
+  eight pieces. Each tile links to /art/#<slug>, which opens the gallery
+  lightbox on that piece.
+-#}
+{%- set sketches = galleries.art | withTag("dnd") | limit(8) %}
+{%- set sketchSizes = "(min-width: 40em) 16rem, 60vw" %}
+<section class="section" data-bg="linen" data-py="lg">
+  <div class="container stack-8">
+    <div class="row-between">
+      {{ headers.sectionHeader(eyebrow="Digital art", title="From the sketchbook", description="Maps, player characters and NPCs drawn for the table. Everything tagged D&amp;D in the art gallery ends up here.", size="md") }}
+      <a class="link-arrow nav-link" href="/art/">All drawings <span class="arrow-char" aria-hidden="true">→</span></a>
+    </div>
+    {%- if sketches.length %}
+    <ul class="sketch-strip" role="list">
+      {%- for item in sketches %}
+      <li class="sketch-strip__item">
+        <a class="tile" href="/art/#{{ item.slug }}">
+          <div class="tile__media"><picture><source type="image/webp" srcset="{{ item.webpSrcset }}" sizes="{{ sketchSizes }}"><img src="{{ item.thumb }}" srcset="{{ item.srcset }}" sizes="{{ sketchSizes }}" width="{{ item.width }}" height="{{ item.height }}" alt="{{ item.alt }}" loading="lazy" decoding="async"></picture></div>
+          <p class="tile__title">{{ item.title }}</p>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+    {%- else %}
+    <p class="empty-note">Nothing in the gallery is tagged <code>dnd</code> yet; tag a drawing in <code>gallery/art/captions.yml</code> and it shows up here.</p>
+    {%- endif %}
+  </div>
+</section>
