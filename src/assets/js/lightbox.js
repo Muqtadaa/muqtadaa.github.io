@@ -1,8 +1,8 @@
 // Gallery lightbox on the native <dialog> (plan WS-E step 4). Progressive
 // enhancement: every tile is a plain link to the full-size file; with
 // JavaScript the click opens the dialog instead. Wrap-around navigation and
-// the swipe thresholds (300 ms, 50 px, 200 px) are ported from the legacy
-// src/js/shared.js initGalleryModal.
+// the swipe thresholds (300 ms, 50 px, 200 px) are ported from the previous
+// site's gallery modal (src/js/shared.js in git history before P4).
 (function () {
   var dialog = document.getElementById('lightbox');
   var dataNode = document.getElementById('gallery-data');

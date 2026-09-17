@@ -1,4 +1,0 @@
-window.addEventListener('DOMContentLoaded', function () {
-  window.PortfolioShared.initStickyHeader();
-  window.PortfolioShared.initDelegatedToggles();
-});

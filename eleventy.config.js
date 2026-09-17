@@ -6,9 +6,8 @@ import { structuredData } from './lib/jsonld.js';
 import { endExiftool } from './lib/exif.js';
 import { adjacentPosts, groupPosts, postsOfType, relatedArt, typeLabel } from './lib/dnd.js';
 
-// Eleventy 3 config for the rebuilt site under src/ (plan WS-E). The legacy
-// pages at the repository root are no longer built; they stay in git until P4
-// deletes them.
+// Eleventy 3 config for the site under src/ (plan WS-E). Gallery sources live
+// in gallery/, shared build helpers in lib/, pre-build checks in scripts/.
 
 export default function (eleventyConfig) {
   eleventyConfig.setInputDirectory('src');
@@ -16,13 +15,12 @@ export default function (eleventyConfig) {
   eleventyConfig.setIncludesDirectory('_includes');
   eleventyConfig.setDataDirectory('_data');
 
-  // Not templates: the legacy scripts (deleted in P4) and folder READMEs.
-  eleventyConfig.ignores.add('src/js');
+  // Folder READMEs are authoring notes, not templates.
   eleventyConfig.ignores.add('src/**/README.md');
 
   // Static assets served as-is. src/assets/img/ is deliberately not copied:
-  // those files (case-study figures) are build inputs for the image shortcode
-  // and only their derivatives under /img/ are published.
+  // those files (the portrait, case-study figures) are build inputs for the
+  // image shortcode and only their derivatives under /img/ are published.
   eleventyConfig.addPassthroughCopy({
     'src/assets/css': 'assets/css',
     'src/assets/fonts': 'assets/fonts',
@@ -141,7 +139,7 @@ export default function (eleventyConfig) {
       fs.cpSync(IMAGE_DEFAULTS.outputDir, path.join(outDir, 'img'), { recursive: true });
     }
 
-    // _data/galleries.js reads embedded captions through one exiftool
+    // src/_data/galleries.js reads embedded captions through one exiftool
     // process; it must be closed or the build never exits.
     await endExiftool();
   });

@@ -5,9 +5,9 @@ import { resize } from '../../lib/image.js';
 const url = 'https://muqtadaa.github.io';
 const cro = 'https://crotogether.com';
 
-// The LinkedIn headshot (800 x 800) rather than the 7 MB beach selfie; the
-// hero and og:image share these derivatives (plan open question 1).
-const portrait = 'images/1732419661081.jpeg';
+// The 800 x 800 headshot; the hero and og:image share its derivatives (plan
+// open question 1). Not copied to _site: only the resized versions are served.
+const portrait = 'src/assets/img/portrait.jpeg';
 
 export default async function () {
   const portraitMeta = await resize(portrait, { widths: [320, 640, 800] });
