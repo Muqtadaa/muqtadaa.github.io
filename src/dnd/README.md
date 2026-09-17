@@ -53,10 +53,10 @@ do not add it by hand, and do not use it as a gallery tag.
 
 ## What goes in a post
 
-The three posts that are live are short on purpose: they say only what is
-actually written down. When you sit down to expand one, these are the sections
-worth having. They live here rather than in the posts themselves, because an
-outline addressed to the author is not something a reader should have to read.
+A post says only what is actually written down. When you sit down to add one,
+or to expand one of the short ones, these are the sections worth having. They
+live here rather than in the posts themselves, because an outline addressed to
+the author is not something a reader should have to read.
 
 **Lore.** The shape of the place (geography, and only what a traveller could
 learn in a tavern — secrets belong in the campaign posts). Who runs things
@@ -87,3 +87,24 @@ session log, newest first.
 - `src/_includes/layouts/dnd-post.njk`: the post page.
 - `lib/dnd.js`: the type list and copy, grouping, related-art and
   previous/next helpers, and the JSON-LD builder.
+
+## Art still wanted
+
+`the-undying-of-the-light.md` was written from the OneNote campaign records, and
+it breaks into acts at the points where a picture would earn its place. Nothing
+in `gallery/art/` covers most of them yet. When a piece exists, add it to
+`gallery/art/captions.yml` tagged `dnd` and it joins the "Related art" strip on
+the post automatically; the one that leads the post is the `cover` in its front
+matter.
+
+| Section | What would go there |
+|---|---|
+| Six strangers in Elleris | Early Elleris battlemap, the party token line-up, or the Cistern map |
+| Barazar | The Barazar map, dwarven city art, the Stonesword, or the Mind Flayer encounter |
+| The Unity Tournament | The Malinar coup battlemap, Murdock's token art, the burning city or the divine manifestation |
+| Dolonde | Dolonde Old City, Magnus Rex, Gray Lady / Arielle token art, the Arc du Fey |
+| The Feywild | The Autumn Court, the Winter battlemap, Corellon's tomb, Feywild token art |
+| Leviathan | Leviathan itself, the pirate city, the Astral Sea, the cracked Amulet of Aphiel |
+| The Ruby Gate | The Gray Lady's Peril, the Elder Brain Dragon encounter, the Ruby Gate |
+
+`the-cataclysm-and-the-five.md` has no cover for the same reason.
