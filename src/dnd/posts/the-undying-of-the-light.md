@@ -4,7 +4,6 @@ type: campaign
 summary: Six strangers ran away from home in the elven capital of Elleris and ended up descending into the Nine Hells to stop a goddess from unmaking magic. The story so far, as it was actually played.
 date: 2026-09-17
 tags: [dnd]
-cover: Isometric_Underground_Battlemap.jpg
 ---
 
 Long before the kingdoms of Elleria and Malinar raised walls against one
@@ -40,20 +39,20 @@ A thousand years passed.
 
 Then, in the elven capital of Elleris, several strangers decided to run.
 
-Princess Nerissa du Elleri slipped away from an arranged marriage intended to
-secure a fragile peace with neighboring Malinar. Dustin Maple, a Malinari
+Princess [Nerissa du Elleri](/dnd/nerissa-du-elleri/) slipped away from an arranged marriage intended to
+secure a fragile peace with neighboring Malinar. [Dustin Maple](/dnd/dustin-maple/), a Malinari
 deserter hiding behind the bar of a lower-district tavern, found soldiers from
-his old unit drinking within arm's reach. Belediin Stoneheart, last scion of a
+his old unit drinking within arm's reach. [Belediin Stoneheart](/dnd/belediin-stoneheart/), last scion of a
 diminished dwarven house, was chasing rumors of the ancestral sword his family
-had lost generations before. Murdock Shaw, recently discharged from the Ellerian
-army, had begun to discover that peacetime suited him rather poorly. Halyas
-Glimm was simply leaving home to see what the world held for him, while Aedin,
+had lost generations before. [Murdock Shaw](/dnd/murdock-shaw/), recently discharged from the Ellerian
+army, had begun to discover that peacetime suited him rather poorly. [Halyas
+Glimm](/dnd/halyas-glimm/) was simply leaving home to see what the world held for him, while [Aedin](/dnd/aedin/),
 cleric of Aphiel, felt a divine pull toward people he had not yet met.
 
 Their paths converged beneath the streets.
 
 There, in the sprawling cisterns under Elleris, they found kobolds, prisoners, a
-frightened eladrin wizard named Findalye Nelenwe, and an old relic once carried
+frightened eladrin wizard named [Findalye Nelenwe](/dnd/findalye-nelenwe/), and an old relic once carried
 by Aphiel before the mortal hero had ascended to godhood. They also found
 letters referring to abducted men, women, and children as product, experimental
 bodies being tested for use by someone known only as "our Lady."
