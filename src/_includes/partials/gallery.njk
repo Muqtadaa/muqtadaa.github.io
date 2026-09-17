@@ -6,7 +6,7 @@
 #}
 {%- set items = galleries[gallery] %}
 {%- set tileSizes = "(min-width: 64em) 33vw, (min-width: 40em) 50vw, 100vw" %}
-<p class="gallery__count body-sm c-muted">{{ items.length }} piece{% if items.length != 1 %}s{% endif %}. Select one to see it large; arrow keys and swipes move between them.</p>
+<p class="gallery__count body-sm c-muted">{{ items.length }} piece{% if items.length != 1 %}s{% endif %}</p>
 <ul class="gallery" role="list">
   {%- for item in items %}
   <li>

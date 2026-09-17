@@ -18,10 +18,8 @@ description: Campaign canon for Agdaron, the homebrew D&D world Muqtadaa Miandar
 {%- for group in groups %}
 <section class="section" data-bg="bone" data-py="lg"{% if not loop.first %} data-border="top"{% endif %} aria-labelledby="group-{{ group.type.id }}">
   <div class="container stack-8">
-    <div class="row-between">
-      {{ headers.sectionHeader(eyebrow=group.type.label, title='<span id="group-' + group.type.id + '">' + group.type.plural + '</span>', description=group.type.description, size="md") }}
-      <p class="body-sm c-muted">{{ group.posts.length }} post{% if group.posts.length != 1 %}s{% endif %}</p>
-    </div>
+    {#- No eyebrow: "Lore" above "Lore" is the section title said twice. -#}
+    {{ headers.sectionHeader(title='<span id="group-' + group.type.id + '">' + group.type.plural + '</span>', description=group.type.description, size="md") }}
     <ul class="grid grid-3" role="list">
       {%- for post in group.posts %}
       <li>
@@ -42,12 +40,6 @@ description: Campaign canon for Agdaron, the homebrew D&D world Muqtadaa Miandar
   </div>
 </section>
 {%- endfor %}
-{%- else %}
-<section class="section" data-bg="bone" data-py="lg">
-  <div class="container">
-    <p class="empty-note">The first campaign, lore and character posts are being written. Until then, the sketchbook is at <a href="/art/">/art/</a>.</p>
-  </div>
-</section>
 {%- endif %}
 
 {#-
@@ -57,13 +49,15 @@ description: Campaign canon for Agdaron, the homebrew D&D world Muqtadaa Miandar
 -#}
 {%- set sketches = galleries.art | withTag("dnd") | limit(8) %}
 {%- set sketchSizes = "(min-width: 40em) 16rem, 60vw" %}
+{#- Nothing tagged `dnd` renders no strip at all; check-gallery.mjs warns the
+    author at build time instead of the page apologising to the reader. -#}
+{%- if sketches.length %}
 <section class="section" data-bg="linen" data-py="lg">
   <div class="container stack-8">
     <div class="row-between">
-      {{ headers.sectionHeader(eyebrow="Digital art", title="From the sketchbook", description="Maps, player characters and NPCs drawn for the table. Everything tagged D&amp;D in the art gallery ends up here.", size="md") }}
+      {{ headers.sectionHeader(eyebrow="Digital art", title="From the sketchbook", description="Maps, player characters and NPCs drawn for the table.", size="md") }}
       <a class="link-arrow nav-link" href="/art/">All drawings <span class="arrow-char" aria-hidden="true">→</span></a>
     </div>
-    {%- if sketches.length %}
     <ul class="sketch-strip" role="list">
       {%- for item in sketches %}
       <li class="sketch-strip__item">
@@ -74,8 +68,6 @@ description: Campaign canon for Agdaron, the homebrew D&D world Muqtadaa Miandar
       </li>
       {%- endfor %}
     </ul>
-    {%- else %}
-    <p class="empty-note">Nothing in the gallery is tagged <code>dnd</code> yet; tag a drawing in <code>gallery/art/captions.yml</code> and it shows up here.</p>
-    {%- endif %}
   </div>
 </section>
+{%- endif %}

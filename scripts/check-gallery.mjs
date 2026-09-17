@@ -148,6 +148,21 @@ for (const folder of folders) {
   }
 }
 
+// The D&D pages show art tagged `dnd`: the "From the sketchbook" strip on
+// /dnd/ and the "Related art" strip under each post. With nothing tagged,
+// those sections render nothing at all rather than explaining themselves to
+// the reader, so the reminder to tag something belongs here instead.
+const artCaptions = loadCaptions(path.join('gallery', 'art')).entries;
+const taggedDnd = Object.values(artCaptions).filter(
+  (entry) => Array.isArray(entry?.tags) && entry.tags.includes('dnd')
+).length;
+if (fs.existsSync(path.join('gallery', 'art')) && taggedDnd === 0) {
+  warn(
+    path.join('gallery', 'art', CAPTIONS_FILE),
+    'no artwork is tagged `dnd`, so the sketchbook strips on /dnd/ and on each D&D post render nothing; add `tags: [dnd]` to a drawing to fill them'
+  );
+}
+
 console.log(
   `check-gallery: ${folders.length} folder(s), ${warnings} warning(s), ${notices} notice(s), ${errors} error(s)`
 );

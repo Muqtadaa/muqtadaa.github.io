@@ -6,8 +6,7 @@ import { COLLECTION_TAG, TYPE_IDS, articleStructuredData, isPostType } from '../
 // artwork). Front matter, see src/dnd/README.md:
 //   title, type (lore | campaign | character), summary, date,
 //   tags (optional, matched against gallery tags for "Related art"),
-//   cover (optional: a filename in gallery/art/),
-//   placeholder: true (optional: shows the "placeholder text" note).
+//   cover (optional: a filename in gallery/art/).
 export default {
   layout: 'layouts/dnd-post.njk',
   tags: [COLLECTION_TAG],

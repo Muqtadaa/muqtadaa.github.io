@@ -47,11 +47,34 @@ The post itself, in Markdown. Headings start at `##`.
 - `cover` is optional: the filename of an image in `gallery/art/` (it must
   already have a block in `captions.yml`, whose `alt` text is reused). It
   becomes the header image and the social-share image of the post.
-- `placeholder: true` shows a "placeholder text" note at the top of the post.
-  The three sample posts carry it; remove the line once the real copy is in.
 
 The `dndPost` collection tag is added automatically by `posts.11tydata.js`;
 do not add it by hand, and do not use it as a gallery tag.
+
+## What goes in a post
+
+The three posts that are live are short on purpose: they say only what is
+actually written down. When you sit down to expand one, these are the sections
+worth having. They live here rather than in the posts themselves, because an
+outline addressed to the author is not something a reader should have to read.
+
+**Lore.** The shape of the place (geography, and only what a traveller could
+learn in a tavern — secrets belong in the campaign posts). Who runs things
+(factions, crowns, churches). The rules of the world (how magic is taught, what
+the gods answer, which monsters are real). What the map gets wrong (the running
+list of what the party renamed, burned down or accidentally founded).
+
+**Campaign.** The party, a paragraph per character, linking to their character
+post once it exists: who they were at level one and what they turned into.
+Where it went, in order, told the way you would tell a new player, spoilers
+included. The moments people still bring up — three or four, told properly,
+say more than any summary. What it changed in the world.
+
+**Character.** Where they come from, in their own voice, at the length they
+would tell it. What they can do, in plain words: what the kit gives them, what
+it asks for, and the one trick the party has learned to stand clear of. A
+session log, newest first.
+
 
 ## Where the pieces live
 
