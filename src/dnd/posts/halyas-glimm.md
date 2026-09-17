@@ -1,7 +1,7 @@
 ---
 title: Halyas Glimm
 type: character
-summary: A half-elf sorcerer with wild magic living in his blood, who left home to find out what the world held for him and mostly found out what his own spells held.
+summary: A half-elf sorcerer with wild magic in his blood, who left Elleris with no reason but curiosity. He left the company after the Unity Tournament to look for his missing sister.
 date: 2026-09-08
 tags: [dnd]
 ---
@@ -9,66 +9,40 @@ tags: [dnd]
 <dl class="dnd-facts">
   <div class="dnd-facts__row"><dt>Origin</dt><dd>The Glimm household, Middle District, City of Elleris</dd></div>
   <div class="dnd-facts__row"><dt>Class</dt><dd>Wild Magic Sorcerer</dd></div>
-  <div class="dnd-facts__row"><dt>Family</dt><dd>The Grim Glimm Manor, four siblings who would rather fight than talk, and one who is missing</dd></div>
-  <div class="dnd-facts__row"><dt>Status</dt><dd>Departed after the Unity Tournament, looking for his sister</dd></div>
+  <div class="dnd-facts__row"><dt>Family</dt><dd>The Grim Glimm Manor. Four siblings, and Billie, who is missing</dd></div>
+  <div class="dnd-facts__row"><dt>Status</dt><dd>Departed after the Unity Tournament</dd></div>
 </dl>
 
-Halyas is the only one of the founders who left home for no reason at all.
+Halyas Glimm left home for no reason except to find out what was out there.
 
-No warrant, no betrothal, no lost heirloom. A goodbye supper, a caravan leaving
-the Wagon Flagon at nine for a nominal fee, and a young half-elf who wanted to
-find out what destiny had in mind. The caravan had a Malinari military escort as
-far as the border, after which it would split off toward Logaara.
+There was no warrant, no betrothal, no lost heirloom. A goodbye supper, a
+caravan leaving the Wagon Flagon at nine for a nominal fee, and a young half-elf
+who wanted to know what the world held.
 
-He never got on it.
+He never boarded it.
 
-## What he is good at
+The wild magic in his blood surges when it wants to. He once whispered, audibly,
+about killing a senile old elf, took the fireball that answered, and stayed
+standing only because the surge chose that moment to keep him whole.
 
-Chaos, on purpose and otherwise.
+His better instrument is nerve. Faced with two hill giants arguing over which of
+them would keep a gray coin, Halyas floated the party's own coin in front of
+them with mage hand and explained that he served the same Benefactor. They
+believed him.
 
-The wild magic in his blood surges when it wants to, and the campaign has been
-both saved and endangered by its timing. He once whispered — audibly — about
-murdering a senile old elf, took a fireball that dropped half the party, and was
-kept upright by a surge that chose exactly that moment to be helpful.
+The Glimm estate is a ramshackle house on a plot of burnt shrubs and broken
+trees, reached by airship and occupied by kobolds who speak in upper-crust
+accents and take tea while the younger Glimms brawl in the front yard. His
+siblings — Delia, Emera, Yuna and Pexis — proposed to settle the family's
+problems by fighting Halyas and one of his friends for the right to decide them.
 
-His better trick is nerve. Faced with two hill giants arguing over which of them
-got to keep a gray coin, Halyas used mage hand to float the party's own coin in
-front of them and calmly explained that he served the same Benefactor. It
-worked.
+Two problems stood above the rest. Their sister Billie had been missing for more
+than ten days. Their mother was ill, and Murdock identified the illness by taste
+as infernal, out of Avernus.
 
-He went to considerable trouble to acquire a version of *find familiar* that
-could be cast on somebody else's behalf. The high-elf shopkeeper who sold it to
-him was vile about his half-elf ancestry, so Dustin robbed the shop on his way
-out.
+Halyas stayed through Malinar. He was there for the Unity Tournament, and for
+what the Church of Malyr did to the city once the tournament was over.
 
-## The Grim Glimm Manor
-
-The Glimm estate is a ramshackle house on a large plot of burnt shrubs and
-broken trees, reached by airship and populated by kobolds who speak in
-upper-crust accents and take tea while the younger Glimms brawl in the front
-yard.
-
-His siblings — Delia, Emera, Yuna and Pexis — proposed settling the family's
-problems by challenging Halyas and one of his friends to a fight. Among those
-problems: their sister Billie had been missing for more than ten days, and
-their mother was ill.
-
-Murdock identified the illness by taste. It was infernal, and it came from
-Avernus.
-
-For a while afterwards Halyas kept writing to his brother, worried about a
-sister who would not answer. The post office once refunded him a silver piece
-for a message they could not deliver.
-
-## Where he went
-
-He stayed through Malinar. He was there for the Unity Tournament, and for what
-the Church of Malyr did to the city once the tournament was over.
-
-Then he left, and he left for the two reasons he had been carrying since the
-manor: Billie was still missing, and their mother was still dying of something
-that had come out of Avernus.
-
-Neither was going to resolve itself while he walked somebody else's road.
+Then he left, for the two reasons he had carried since the manor.
 
 The company he helped assemble kept walking. Halyas went to find his sister.

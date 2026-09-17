@@ -129,6 +129,31 @@ does any character post. Token art would be the natural fit.
 
 ## Voice
 
-Third person throughout, in the register of a traditional fantasy chronicle.
-Nothing under `/dnd/` is written in the first person, including the character
-posts and the section copy on `/dnd/` and the home page.
+Third person throughout, in the register of a traditional fantasy chronicle, the
+one the campaign and lore posts are written in. Nothing under `/dnd/` is written
+in the first person, including the character posts and the section copy on
+`/dnd/` and the home page.
+
+Declarative and unhedged. State the fact, then the consequence. A one-sentence
+paragraph is for weight, not for a joke: *The Betrayers lost.* *She was not
+consulted.* *Morudin was pleased.*
+
+What this voice does not do, because the first draft of these pages did all of
+it and read like a machine:
+
+- End on an ironic reversal. *"...and has been picking locks ever since."*
+  *"He found it. He has been paying for it since."* Every summary on the site
+  once ended this way. None should.
+- Wink at the reader in an em-dash aside, or close a sentence with *which is
+  not very close*, *which is what happens when*, *turned out to be*.
+- Reach for a rhythmic three-part list when two things are true and the third
+  is filler.
+- Narrate the page's own running order. `/dnd/` does not need to announce that
+  the campaigns come before the lore.
+
+## What goes on a character post
+
+Facts block, then 200 to 400 words of continuous prose. No subheadings: they
+turn seven people into one form, and the first version of these pages proved it
+by giving five of the seven the same three. Let the length follow the character
+— Aedin's story is short, Belediin's is not.

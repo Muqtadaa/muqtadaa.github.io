@@ -1,7 +1,7 @@
 ---
 title: The Undying of the Light
 type: campaign
-summary: Six strangers ran away from home in the elven capital of Elleris and ended up descending into the Nine Hells to stop a goddess from unmaking magic. The story so far, as it was actually played.
+summary: The campaign the table has been playing since 2019, from the cisterns beneath Elleris to the descent into the Nine Hells. The story so far, in the order it happened.
 date: 2026-09-17
 tags: [dnd]
 ---

@@ -1,7 +1,7 @@
 ---
 title: Findalye Nelenwe
 type: character
-summary: An apprentice wizard with excellent theory and no practical experience whatsoever, found in a cage under Elleris. She has since stood inside the corpse of the god who made her people.
+summary: An eladrin apprentice wizard, found a prisoner in the cisterns beneath Elleris on the night the company formed. She is a diviner, and most of what she has done has been done at a distance.
 date: 2026-09-10
 tags: [dnd]
 ---
@@ -13,54 +13,38 @@ tags: [dnd]
   <div class="dnd-facts__row"><dt>Status</dt><dd>Active with the Veil Piercers</dd></div>
 </dl>
 
-The party did not recruit Findalye. They rescued her.
+The party did not recruit Findalye. They found her in a cage.
 
-She was in the first great cistern under Elleris, a five-level metal drum with
-pipes running off to every district, penned with the rest of the prisoners while
-a kobold chieftain decided what to do with them. She knew a great deal about
-magic and nothing at all about danger.
+She was in the first great cistern beneath Elleris, a five-level metal drum with
+pipes running out to every district, penned with the other prisoners while a
+kobold chieftain decided what to do with them. She knew a great deal about magic
+and nothing about danger.
 
 She left with the people who opened the cage.
 
-## What she is good at
+The gap between what Fin knew and what Fin could do closed somewhere in the
+middle of the campaign. She is a diviner, and most of what matters about her has
+happened at a distance. She sees before she reaches.
 
-Eventually, everything. The gap between what Fin knew and what Fin could do
-closed somewhere around the middle of the campaign and has never reopened.
+She was inside Direll Lazlow's mind while the party killed him, taking what he
+knew. She killed a Malyri acolyte standing over orphaned children in the streets
+of Malinar, in one spell, and sent the older ones deeper into the building to
+hide. When a Malyri angel put Nerissa on the ground in the Summer Court, Fin
+took hold of her and put five hundred feet between them and it. She salvaged a
+cannon from a derelict Githyanki ship and helped fit it to the party's airship.
 
-She is a diviner, which is why so much of what matters about her has happened at
-a distance. She sees before she reaches.
+Fin went looking for her ancestors and found a body. She cast her mind past the
+Prime Material and witnessed the life and death of the god of the elves and the
+eladrin, whose husk still drifts in the Astral Plane. She reached again, touched
+the Feywild, and felt kin there, and a cry for help.
 
-She reads minds, and does it in the worst moments for the person being read —
-she was inside Direll Lazlow's head while the party was killing him, pulling out
-what he knew. She burns things down: a Malyri acolyte guarding orphaned children
-in the streets of Malinar went up in a single spell. She gets people out, which
-is harder. When a Malyri angel crit Nerissa into the ground in the Summer Court,
-Fin grabbed her and put five hundred feet between them and it.
-
-She is also the reason the party has a Githyanki cannon bolted to an airship.
-
-## What it has cost
-
-Fin went looking for her ancestors and found a body.
-
-She cast her mind past the Prime Material and witnessed the life and death of
-the god of the elves and the eladrin, whose husk still drifts in the Astral
-Plane. She reached again, touched the Feywild, and felt kin there — and a cry
-for help.
-
-That thread ended in Corellon's tomb, past ancient guardians and a lich with an
-inflated sense of theatre. Fin stood in front of the remains of her literal
-creator and had a moment with him that nobody else at the table could have had.
+That thread ended in Corellon's tomb. Past the guardians and the lich, Fin stood
+in front of the remains of her own creator.
 
 Then Dustin and Nerissa opened his ribcage and took the crystal heart out of it.
 
-She has also spent time with an ancient, memory-lost eladrin named Benjamin,
-guiding him back through his own past far enough to recover his real name: Ebrin
-Jementh, a Grand Diviner out of the Feywild who once chose to go adventuring in
-the mortal world — which makes him the only other person in this story who does
-what Fin does.
+She has also spent time with an ancient eladrin named Benjamin, guiding him back
+through his own memory far enough to recover his name: Ebrin Jementh, a Grand
+Diviner out of the Feywild who once chose to go adventuring in the mortal world.
 
-## Where she is now
-
-Aboard the Gray Lady's Peril, considerably more dangerous than the girl in the
-cage.
+He does what Fin does.

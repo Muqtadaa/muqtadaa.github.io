@@ -1,67 +1,54 @@
 ---
 title: Dustin Maple
 type: character
-summary: A Malinari soldier who deserted when the war stopped making sense, hid behind a bar in the enemy capital, and turned out to be the deadliest shot in Agdaron.
+summary: A Malinari soldier who deserted the war and hid behind a bar in the enemy capital. He fights now as both a Battle Master and a Drakewarden, and he is the most dangerous shot in the party.
 date: 2026-09-12
 tags: [dnd]
 ---
 
 <dl class="dnd-facts">
-  <div class="dnd-facts__row"><dt>Origin</dt><dd>A noble estate in Malinar; latterly the Wagon Flagon, Lower District, Elleris</dd></div>
+  <div class="dnd-facts__row"><dt>Origin</dt><dd>Malinar. Latterly the Wagon Flagon, Lower District, Elleris</dd></div>
   <div class="dnd-facts__row"><dt>Class</dt><dd>Battle Master Fighter and Drakewarden Ranger</dd></div>
   <div class="dnd-facts__row"><dt>Standing</dt><dd>Deserter of the Malinari Armed Forces</dd></div>
   <div class="dnd-facts__row"><dt>Status</dt><dd>Active with the Veil Piercers</dd></div>
 </dl>
 
-He was pouring drinks in the capital of the country he had been trained to
-invade when a squad from his own boot camp walked into the bar.
+Dustin Maple deserted the Malinari army because the brutality of the war had
+hollowed him out.
 
-Dustin got them drunk. It was the correct answer and it was very nearly not
-enough.
+He did it thoroughly. A false name, an enemy capital, and work behind the bar of
+the Wagon Flagon in the lower district of Elleris, where nobody asks about
+anyone's history.
 
-He had deserted because the brutality of the war had hollowed him out, and he
-had done it thoroughly: a false name, an enemy city, a job where nobody asks
-about anyone's history. What he had not planned for was that a princess, a
-dwarf, a priest, a sorcerer, a soldier and an apprentice wizard would all choose
-the same tavern on the same night.
+On the night the campaign begins, a squad from his own boot camp walked into the
+bar. He got them drunk before any of them placed his face.
 
-## What he is good at
+He fights as two men. One of them learned it out of a Malinari drill manual and
+never stopped: measured maneuvers, openings taken deliberately, the discipline
+of a soldier who deserted the army and not the training. The other keeps a
+drake, and answers to Melorah.
 
-Killing things at range, faster than anyone at the table believes.
+At range he is the most dangerous person in the party. He put two arrows into
+King Aghat Umraz and forced the Mind Flayer riding him to show itself. He killed
+an executioner from a distant rooftop before the man could take his father's
+head. Direll Lazlow, captain of the Malyri Paladin Order, Chosen Harbinger of
+Malyr, murderer of a king and a queen, died at the end of Dustin's bow,
+pleading.
 
-The list is long and it reads the same way every time. Two arrows into a dwarven
-king, which forced the Mind Flayer riding him to show itself. An executioner
-dropped from a distant rooftop before he could take Dustin's father's head. A
-Bear Prince of the Feywild insulted, then punished, in the space of one round.
-Direll Lazlow — captain of the Malyri Paladin Order, Chosen Harbinger of Malyr,
-murderer of one king and one queen — died at the end of Dustin's bow, pleading.
+Away from a fight he is the party's pragmatist, and not always a welcome one. It
+was Dustin who argued that crime cannot be abolished, only known, and that a
+familiar hand on the underworld is worth more than an unfamiliar one.
 
-He fights as two men. One of them learned it out of a Malinari drill manual
-and has never stopped: measured maneuvers, openings taken on purpose, the
-discipline of a soldier who deserted the army and not the training. The other
-keeps a drake.
+Melorah found him somewhere on the road and set him a task. He does not discuss
+it. It surfaces when it matters. In the Feywild, against Ezra the Unkind, it was
+Dustin leaning into that connection and into the Wisdom of the Dragon that
+turned the battle.
 
-Off the battlefield he is the party's uncomfortable pragmatist. It was Dustin
-who pointed out that crime cannot be abolished, only known, and that a familiar
-hand on the underworld beats an unfamiliar one. Nobody enjoyed hearing it.
-Nobody had a better answer.
-
-## What it has cost
-
-Melorah found him somewhere along the way, and he has carried a task from the
-Goddess of Nature ever since. He does not talk about it much. It surfaces when
-it matters — in the Feywild, against Ezra the Unkind, it was Dustin leaning into
-that connection and into the Wisdom of the Dragon that turned the fight.
-
-He died in that battle.
+He died in that fight.
 
 Beyond it he found his mother waiting, and Melorah with her.
 
-He chose to come back.
+He chose to return.
 
-Since then he has reunited with his father, met his younger siblings, acquired a
-tiger, and gone back out into the dark.
-
-## Where he is now
-
-Aboard the Gray Lady's Peril, still shooting.
+He has since found his father alive, met his younger siblings, and taken a tiger
+out of the Feywild.

@@ -1,29 +1,28 @@
 ---
 title: The planes beyond Agdaron
 type: lore
-summary: The Feywild and its seasonal courts, the Astral Sea and the pirate haven built inside a dead serpent's skull, and the nine layers of a Hell that was built to punish and never to release.
+summary: The Feywild and its seasonal courts, the Astral Sea and the pirate haven inside a dead serpent's skull, and the nine layers of the Hells.
 date: 2026-09-14
 tags: [dnd]
 cover: galaxy.jpg
 ---
 
 Agdaron is one world among several, and the Veil Piercers have spent their later
-years outside it. These are the places a mortal can actually reach, and what
-waits in each.
+years outside it. These are the places a mortal can reach, and what waits in
+each.
 
 ## The Feywild
 
-Reached through the Arc du Fey, among other doors, and the reason nobody
-sensible uses one twice.
+Reached through the Arc du Fey, among other doors.
 
-Time runs differently there. It is not a fixed ratio and it is not fair: a
-season spent in the Feywild can cost decades on the far side, and travellers
-have returned to find children they met grown old.
+Time runs differently there, and the rate is not fixed. A season spent in the
+Feywild can cost decades on the far side. Travellers have come back to find
+children they met grown old.
 
 Its politics run on the seasons. Four courts — Summer, Winter, Spring and Autumn
 — with Summer and Winter as the powers and the other two as the ground they
 fight over. Summer and Winter had been locked into the same stalemate for
-generations, an arrangement that suited their two rulers and nobody else.
+generations, an arrangement that suited the two rulers holding it in place.
 
 Older things are buried beneath the Feywild than the courts care to discuss,
 including a tomb that predates all four of them.
@@ -31,22 +30,21 @@ including a tomb that predates all four of them.
 ## The Astral Sea
 
 The Astral Sea connects the planes, and it is a sea in every way that matters. A
-traveller needs a ship, a crew, and the understanding that everything living out
-there treats them as weather.
+traveller needs a ship and a crew. The things living out there treat both as
+weather.
 
-**Githyanki** and **Githzerai** sail it, and have hated one another long enough
-that the hatred has become structural. So do astral dreadnoughts, astral sharks
+**Githyanki** and **Githzerai** sail it, and have hated one another for longer
+than either remembers. So do astral dreadnoughts, astral sharks
 that eat souls, ethereal filaments that drift and feed on psychic energy, and
 storms that damage the mind rather than the hull. So do rogue wizards, other
 adventurers, and pirates.
 
-The pirates deserve their own paragraph. **Leviathan** is a haven built on and
-inside the skull of a dead cosmic serpent, and it is the closest thing the
-Astral Sea has to a port worth trusting, which is not very close.
+**Leviathan** is a haven built on and inside the skull of a dead cosmic serpent.
+It is the nearest thing the Astral Sea has to a port worth trusting.
 
 Somewhere in the same reaches, the **Ruby Gate** burns like a wound. It is the
-way into Hell, and it opens both ways — which is how a dwarven nobleman fell
-through it and came out the far side a Devil Prince.
+way into Hell, and it opens both ways. A dwarven nobleman fell through it and
+came out the far side a Devil Prince.
 
 ## The Nine Hells
 
@@ -55,9 +53,9 @@ with the Primordials against mortal life, and he turned his sentence into a
 throne.
 
 What he built is a machine for punishment, running without an off switch and
-without a release valve. Nothing in it is designed to rehabilitate anyone. That
-observation is the question the campaign keeps returning to, and the Veil
-Piercers have been chewing on it since the first layer.
+without a release valve. Nothing in it is designed to rehabilitate anyone.
+
+That is the question the Veil Piercers have carried since the first layer.
 
 - **1. Avernus** — Zariel. A barren waste of fiery pits and the damned, and
   currently a warfront: Zariel and the Order of the Cleansing Flame against
