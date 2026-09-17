@@ -12,7 +12,21 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      # configure-pages needs these to set the Pages build type to "workflow".
+      pages: write
+      id-token: write
     steps:
+      # Points the repository's Pages site at this workflow (build type
+      # "workflow") and enables Pages if it is off, so deploying does not
+      # depend on anyone changing Settings > Pages by hand. If the token may
+      # not change it, this step fails with a clear message instead of the
+      # deploy silently publishing nothing.
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
       - uses: actions/checkout@v4
         with:
           # Full history so check-gallery can diff against the PR base.
@@ -48,11 +62,9 @@ jobs:
         with:
           path: _site
 
-  # Only runs on main once the owner has switched Settings > Pages > Source to
-  # "GitHub Actions" and set the repository variable PAGES_DEPLOY=true.
-  # Until then, pushes and PRs still prove the build without a failing deploy.
+  # Publishes on every push to main. Pull requests stop after the build job.
   deploy:
-    if: github.ref == 'refs/heads/main' && vars.PAGES_DEPLOY == 'true'
+    if: github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     permissions:

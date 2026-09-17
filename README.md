@@ -153,22 +153,21 @@ parses the file and fails the build if any body-text pair drops below 7:1
   changed images are resized on CI. Only the derivatives the build asked for
   are copied from `.cache/img` to `_site/img`, so a restored cache never
   ships derivatives of deleted or renamed images.
-- **deploy** runs only when `github.ref == 'refs/heads/main'` **and** the
-  repository variable `PAGES_DEPLOY` is `true`. It publishes the artifact with
-  `actions/deploy-pages`.
+  The job's first step is `actions/configure-pages@v5` with
+  `enablement: true`, which points the repository's Pages site at this
+  workflow (build type `workflow`) and turns Pages on if it is off. That is
+  why no one has to set the source by hand, and why a permissions problem
+  fails the run instead of publishing nothing.
+- **deploy** runs on every push to `main` and publishes the artifact with
+  `actions/deploy-pages`. Pull requests stop after the build job.
 
-Two one-time manual steps make the deploy job live; until they are done the
-build still proves every PR without a failing deploy:
-
-1. **Settings → Pages → Build and deployment → Source = GitHub Actions.**
-   (The previous "Deploy from a branch" mode ran Jekyll over the repository
-   and could not build the Nunjucks templates.)
-2. **Settings → Secrets and variables → Actions → Variables → New repository
-   variable** `PAGES_DEPLOY` = `true`.
+If `configure-pages` ever fails because the token may not change repository
+settings, set it once by hand at **Settings → Pages → Build and deployment →
+Source = GitHub Actions**. The earlier "Deploy from a branch" mode ran Jekyll
+over the repository and could not compile the Nunjucks templates, so it failed
+on every push and left the old site published.
 
 Rollback is `git revert` and a push; Pages redeploys the previous artifact.
-Switching the Pages source back to a branch also restores the last good
-branch deployment.
 
 The output includes `.nojekyll`, `sitemap.xml`, `robots.txt`, `llms.txt`,
 `404.html`, and meta-refresh stubs at the old `.html` addresses
