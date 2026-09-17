@@ -154,18 +154,24 @@ parses the file and fails the build if any body-text pair drops below 7:1
   are copied from `.cache/img` to `_site/img`, so a restored cache never
   ships derivatives of deleted or renamed images.
 - **deploy** runs on every push to `main`. Pull requests stop after the build
-  job. Its first step sets the repository's Pages build type to `workflow`
-  through the API, then `actions/deploy-pages` publishes the artifact. That
-  first step matters: while Pages is set to "Deploy from a branch" the
-  deployment fails and the repository instead runs Jekyll over the source,
-  which cannot compile the Nunjucks templates. (`actions/configure-pages` does
-  not cover this. It returns early when a Pages site already exists, so it only
-  sets the build type when Pages is off entirely.) The call is idempotent and
-  needs only the `pages: write` permission the job already has.
+  job. It checks that Pages is set to build from a workflow, then
+  `actions/deploy-pages` publishes the artifact.
 
-If that step is ever refused, the run fails rather than publishing nothing, and
-the setting can be changed by hand at **Settings → Pages → Build and deployment
-→ Source = GitHub Actions**.
+**One setting has to be right, and only a repository admin can set it:**
+**Settings → Pages → Build and deployment → Source = GitHub Actions.** While it
+is on "Deploy from a branch" nothing here can publish: the deployment fails and
+the repository runs Jekyll over the source instead, which cannot compile the
+Nunjucks templates.
+
+The workflow cannot set it for you. `GITHUB_TOKEN`'s `pages: write` permission
+authorises Pages *deployments*, not the site's configuration, so
+`PUT`/`POST /repos/{owner}/{repo}/pages` answer `403 Resource not accessible by
+integration` even from a job that holds it. (`actions/configure-pages` does not
+help either: it returns early when a Pages site already exists, so it sets the
+build type only when Pages is off entirely.) Hence the read-only check, which
+names the setting in the log rather than leaving you with the deploy action's
+less obvious error. If the check itself cannot read the configuration it warns
+and lets the deployment go ahead.
 
 Rollback is `git revert` and a push; Pages redeploys the previous artifact.
 
