@@ -9,7 +9,7 @@ eleventyExcludeFromCollections: true
 {% import "macros/section-header.njk" as headers %}
 <section class="section" data-bg="linen" data-py="xl">
   <div class="container container-narrow stack-8">
-    {{ headers.sectionHeader(eyebrow="404", title="That page isn't here.", description="It may have moved. Try one of these:", as="h1", size="xl") }}
+    {{ headers.sectionHeader(title="That page isn't here.", description="It may have moved.", as="h1", size="xl") }}
     <ul class="footer__links" role="list">
       <li><a class="link-arrow" href="{{ '/' | absoluteUrl(site.url) }}">Home <span class="arrow-char" aria-hidden="true">→</span></a></li>
       {%- for item in nav %}

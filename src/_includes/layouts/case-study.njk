@@ -20,11 +20,10 @@ pageScripts:
   render as a strip below the body through src/_data/work.js.
 #}
 {% import "macros/section-header.njk" as headers %}
-{% set meta = [year, type, role] | join(" · ") %}
 {% set shots = work[page.fileSlug].screenshots if work[page.fileSlug] else [] %}
 <section class="section" data-bg="linen" data-py="hero">
   <div class="container">
-    {{ headers.sectionHeader(title=title, eyebrow=meta, description=question, as="h1", size="xl") }}
+    {{ headers.sectionHeader(title=title, description=question, as="h1", size="xl") }}
   </div>
 </section>
 <section class="section" data-bg="bone" data-py="lg">
@@ -51,7 +50,7 @@ pageScripts:
 {%- set shotSizes = "(min-width: 64em) 20rem, (min-width: 40em) 40vw, 70vw" %}
 <section class="section" data-bg="linen" data-py="lg">
   <div class="container stack-8">
-    {{ headers.sectionHeader(eyebrow="Screens", title="Screenshots", size="md") }}
+    {{ headers.sectionHeader(title="Screenshots", size="md") }}
     <ul class="shots" role="list">
       {%- for shot in shots %}
       <li class="shots__item">
