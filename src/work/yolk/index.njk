@@ -77,7 +77,7 @@ glance:
   <h3 class="subhead">Potential solutions</h3>
   <p>I found the following as usable tools in my research: increased emotional vocabulary, meditation, active awareness exercises, mood music, and intentional thought redirection.</p>
   <h3 class="subhead">Context and constraints</h3>
-  <p>Emotions are uniquely individual to the individual, as redundant as that sounds. Any solution needs to be universally accessible to people of different backgrounds and education levels. I have to remember that I am attempting to complete a relatively large project for a single person, and not bite off more than I can chew.</p>
+  <p>Emotions are individual, and any solution has to reach people of different backgrounds and education levels. And this is a large project for one person: do not bite off more than I can chew.</p>
   <h3 class="subhead">The question, rephrased</h3>
   <p class="pull">How might people self-actualise through the use of healthy and accessible coping mechanisms?</p>
 </section>
@@ -105,7 +105,7 @@ glance:
 
 <section class="case-section" id="user-research">
   <h2>User research</h2>
-  <p>I started off asking a few questions I considered key to understanding my audience, in a short survey answered by 43 people. I gained a few key insights.</p>
+  <p>I put a short survey to 43 people.</p>
   <div class="survey">
     <figure class="survey__chart">
       <figcaption>How often do you check in with yourself emotionally?</figcaption>
@@ -142,8 +142,8 @@ glance:
       </tbody>
     </table>
   </div>
-  <p>Based on a sample of 43, it seems that despite over 60% of people checking in with themselves at least frequently, the same proportion feel overwhelmed by their emotions with approximately the same frequency. This implies that a large number of people need help intuiting and processing their emotions on a regular basis, so I can safely say that my idea for a user experience has a definitive audience. My next step here is to identify specific user personas within that audience to model their <strong>behaviours and attitudes</strong> in relation to my intended user experience.</p>
-  <p>Respondents also described their preferred methods of relaxing and improving their mood. My major takeaways were the following:</p>
+  <p>Over 60% of them check in with themselves at least frequently — and the same proportion feel overwhelmed by their emotions about as often. Checking in is not the same as coping, which is the gap the app had to sit in.</p>
+  <p>Respondents also described how they relax and improve their mood:</p>
   <ul>
     <li>A little over <strong>50%</strong> of the polled audience were willing to use a product to help them keep track of their feelings better.</li>
     <li>The respondents had a lot of crossover in how they dealt with their emotions, with several methods appearing over and over. These indicate <strong>key features</strong> to include in any user experience addressing the larger question.</li>
@@ -152,7 +152,7 @@ glance:
 
 <section class="case-section" id="personas">
   <h2>User personas</h2>
-  <p>I ended up polling the same audience about their demographics, trying to understand who was interested in a product to help navigate their daily emotional well-being, and came across the following insights:</p>
+  <p>I asked the same audience about their demographics, to see who was interested in a product like this:</p>
   <div class="table-wrap" tabindex="0" role="region" aria-label="Survey demographics: who they are, their main goal and their major obstacles">
     <table>
       <thead>
@@ -185,7 +185,7 @@ glance:
       </tbody>
     </table>
   </div>
-  <p>I derived the above table by aggregating the common responses to the poll. These three age groups sort of grouped themselves up by responding very similarly. I took note of that, and developed the following user personas.</p>
+  <p>The three age groups sorted themselves out: each answered very similarly to the others in its band. Three personas followed.</p>
 
   <article class="persona" aria-labelledby="persona-jackie">
     <div class="persona__side">
@@ -367,13 +367,12 @@ glance:
       </ol>
     </div>
   </div>
-  <p>The answers that I received to these questions informed me greatly. The feedback indicated that a rotating wheel of emotions was highly interactive and eye-catching, which serves the key feature of selecting a mood well. Users indicated they did not expect a scrolling page, as based on the pitch they expected a lifestyle app with a relatively static homepage, not a dynamic scrolling feed like a social media app.</p>
-  <p>Overall this user testing session guided me towards which of the features off the different wireframes could be adapted and fit together into an interactive prototype.</p>
+  <p>The rotating wheel won: interactive, eye-catching, and a good fit for the one thing the home screen exists to do. Nobody expected the page to scroll — from the pitch they had expected a lifestyle app with a static home screen, not a social feed. That settled which pieces of the eight went into the prototype.</p>
 </section>
 
 <section class="case-section" id="onboarding">
   <h2>Onboarding</h2>
-  <p>I ended up focusing a fair amount of my time on developing the onboarding experience. For this user experience to truly help users, it needs to know a fair bit about them. For it to customise the experience to the individual user, that means collecting data in onboarding without it being a hindrance.</p>
+  <p>Most of my time went on onboarding. To customise anything, the app needs to know a fair bit about you — and it has to collect that without becoming an obstacle.</p>
   <h3>First pass</h3>
   {% set xd = { url: "https://xd.adobe.com/embed/df216132-3b76-4394-8a10-0ff5b2e75315-8a72/?fullscreen", title: "Yolk onboarding, first pass (Adobe XD)", placeholder: "Onboarding, first pass", aspect: "phone" } %}
   {% include "partials/xd-embed.njk" %}
@@ -387,8 +386,7 @@ glance:
       </ul>
     </li>
   </ul>
-  <p>These comments helped me to refine my approach. I studied a number of other onboarding experiences to better understand their immersive and intuitive natures. The most prominent of these was Spotify, which is often lauded for its onboarding user experience. I won't go into detail about the choices made by their design team, though you can check out <a href="https://uxcademy.com/quizzes/spotify-onboarding/1" rel="noopener">this quiz</a> if you're curious to know more.</p>
-  <p>I decided to implement a few changes.</p>
+  <p>So I studied other onboarding flows, <a href="https://uxcademy.com/quizzes/spotify-onboarding/1" rel="noopener">Spotify's</a> most closely, and changed three things.</p>
   <ol>
     <li>Split up the onboarding into multiple steps, to avoid overwhelming users with content density.</li>
     <li>Track the progress of the user through the onboarding, to avoid uncertainty.</li>

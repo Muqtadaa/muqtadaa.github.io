@@ -634,14 +634,6 @@
   color: var(--text-body);
 }
 
-.empty-note {
-  padding: 1.25rem 0;
-  border-top: 1px solid var(--hairline);
-  border-bottom: 1px solid var(--hairline);
-  color: var(--text-muted);
-  font-size: 14px;
-}
-
 /* ── Link list (day-job links) ───────────────────────────────────────── */
 .link-list {
   display: flex;
@@ -1476,10 +1468,6 @@
   background: var(--white);
 }
 
-.xd-embed__note {
-  align-self: center;
-}
-
 .prose .xd-embed + p,
 .prose .xd-embed + ul,
 .prose .xd-embed + ol {
@@ -1566,13 +1554,6 @@
 }
 
 /* The post page. */
-.post-note {
-  padding: 0.75rem 1rem;
-  border-left: 2px solid var(--accent-rule);
-  background: var(--linen);
-  color: var(--text-muted);
-}
-
 .post-cover {
   margin: 0;
 }

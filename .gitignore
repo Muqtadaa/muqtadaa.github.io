@@ -1,3 +1,7 @@
 node_modules/
 _site/
 .cache/
+
+# Claude Code local settings (impeccable writes its detector hooks here;
+# the detector binary is not committed, so the hooks would no-op anyway)
+.claude/settings.local.json

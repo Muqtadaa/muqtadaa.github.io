@@ -27,9 +27,6 @@ breadcrumbs:
   </header>
   <div class="section" data-bg="bone" data-py="lg">
     <div class="container container-narrow stack-8">
-      {%- if placeholder %}
-      <p class="post-note body-sm" role="note">Placeholder text. The real write-up replaces this once it is written; the images, links and structure are the real thing.</p>
-      {%- endif %}
       {%- if coverItem %}
       <figure class="post-cover">
         {% image "gallery/art/" + cover, coverItem.alt, { widths: [768, 1536], sizes: "(min-width: 48em) 48rem, 100vw", loading: "eager", decoding: "async", fetchpriority: "high" } %}
@@ -46,7 +43,7 @@ breadcrumbs:
 <section class="section" data-bg="linen" data-py="lg" aria-labelledby="related-title">
   <div class="container stack-8">
     <div class="row-between">
-      {{ headers.sectionHeader(eyebrow="From the sketchbook", title='<span id="related-title">Related art</span>', size="md") }}
+      {{ headers.sectionHeader(title='<span id="related-title">Related art</span>', size="md") }}
       <a class="link-arrow nav-link" href="/art/">All drawings <span class="arrow-char" aria-hidden="true">→</span></a>
     </div>
     <ul class="grid grid-3 related-art" role="list">
