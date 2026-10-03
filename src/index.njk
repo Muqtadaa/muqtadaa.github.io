@@ -12,7 +12,7 @@ description: Digital artist, designer and dungeon master. Drawings, logos, a hom
     <div class="hero__copy">
       <p class="eyebrow-wide c-sage">Digital artist · Designer · Dungeon master · CRO consultant</p>
       <h1 class="h1 hero__title">I make things for people. Lately: drawings, logos, and a <em>homebrew world.</em></h1>
-      <p class="body-lg hero__lead">Hi, I'm Muqtadaa. This is the personal side of my work: digital art, graphic design for friends and community, and the D&amp;D world my group has been building for years. If you're here for the growth and experimentation work, that lives at <a href="{{ site.links.cro }}">CRO Together</a>.</p>
+      <p class="body-lg hero__lead">Hi, I'm Muqtadaa. This is the personal side of my work. If you're here for the growth and experimentation work, that lives at <a href="{{ site.links.cro }}">CRO Together</a>.</p>
       <div class="cluster-3">
         <a class="btn btn--primary" href="/art/">See the art</a>
         <a class="btn btn--outline" href="{{ site.links.croContact }}">Work with me</a>
@@ -38,7 +38,7 @@ description: Digital artist, designer and dungeon master. Drawings, logos, a hom
 <section class="section" data-bg="bone" data-py="lg">
   <div class="container stack-8">
     <div class="row-between">
-      {{ headers.sectionHeader(eyebrow="Digital art", title="From the sketchbook", description="Fan art, portraits and maps for the table.") }}
+      {{ headers.sectionHeader(title="From the sketchbook") }}
       <a class="link-arrow nav-link" href="/art/">All drawings <span class="arrow-char" aria-hidden="true">→</span></a>
     </div>
     <ul class="grid grid-3" role="list">
@@ -60,7 +60,7 @@ description: Digital artist, designer and dungeon master. Drawings, logos, a hom
 <section class="section" data-bg="bone" data-py="lg" data-border="top">
   <div class="container stack-8">
     <div class="row-between">
-      {{ headers.sectionHeader(eyebrow="Graphic design", title="Design for people I care about", description="Logos, flyers and social graphics for my mosque's youth group, classmates and the odd client. Made with care, usually for free.") }}
+      {{ headers.sectionHeader(title="Design for people I care about") }}
       <a class="link-arrow nav-link" href="/design/">All design work <span class="arrow-char" aria-hidden="true">→</span></a>
     </div>
     <ul class="grid grid-3" role="list">
@@ -81,7 +81,7 @@ description: Digital artist, designer and dungeon master. Drawings, logos, a hom
 <section class="section" data-bg="linen" data-py="lg">
   <div class="container stack-8">
     <div class="row-between">
-      {{ headers.sectionHeader(eyebrow="Dungeons & Dragons", title="The table", description="A homebrew world rebuilt on the ruins of its own apocalypse, in play since 2019.") }}
+      {{ headers.sectionHeader(title="The table") }}
       <a class="link-arrow nav-link" href="/dnd/">Enter the canon <span class="arrow-char" aria-hidden="true">→</span></a>
     </div>
     {%- set posts = (collections.dndPost | reverse | limit(3)) if collections.dndPost else [] %}
@@ -110,23 +110,18 @@ description: Digital artist, designer and dungeon master. Drawings, logos, a hom
   </div>
 </section>
 
-{#- The day job: one teaser stat, four links to crotogether.com, no client names. -#}
+{#- The day job: the one stat PRODUCT.md allows, and a link on to /work/,
+    which owns the account of the consultancy and the links out to it. -#}
 <section class="section" data-bg="ink" data-py="xl">
-  <div class="container split">
-    <div class="stack-8">
-      {{ headers.sectionHeader(eyebrow="The day job", title="By day, I run experiments.", variant="dark", size="xl") }}
-      <div class="stack-4 body-lg">
-        <p>I'm the founder of <a href="{{ site.links.cro }}">CRO Together</a>, a boutique conversion-rate-optimisation consultancy. I help growth teams find where their funnels leak, decide what's actually worth testing, run the experiments, and read the results honestly.</p>
-        <p>It's the same instinct as the drawings, really: look closely, notice what people do rather than what they say, and make the thing better.</p>
-      </div>
+  <div class="container stack-8">
+    <div class="row-between">
+      {{ headers.sectionHeader(title="By day, I run experiments.", variant="dark", size="xl") }}
+      <a class="link-arrow nav-link" href="/work/">The work, and how it runs <span class="arrow-char" aria-hidden="true">→</span></a>
+    </div>
+    <div class="split">
+      <p class="body-lg">It's the same instinct as the drawings, really: look closely, notice what people do rather than what they say, and make the thing better.</p>
       {{ stats.stat(value="$15.1M", label="Incremental revenue from experimentation in 2025", variant="dark", size="xl") }}
     </div>
-    <ul class="link-list" role="list">
-      <li><a href="{{ site.links.croProof }}">Results</a></li>
-      <li><a href="{{ site.links.croServices }}">Services</a></li>
-      <li><a href="{{ site.links.croTools }}">Free Optimizely tools</a></li>
-      <li><a href="{{ site.links.croContact }}">Get in touch</a></li>
-    </ul>
   </div>
 </section>
 
@@ -134,7 +129,7 @@ description: Digital artist, designer and dungeon master. Drawings, logos, a hom
 <section class="section" data-bg="bone" data-py="lg">
   <div class="container stack-8">
     <div class="row-between">
-      {{ headers.sectionHeader(eyebrow="Earlier work", title="Three UX case studies", description="From before the CRO years: a capstone app, a civic-tech concept, and a restaurant ordering flow I designed while managing the counter.") }}
+      {{ headers.sectionHeader(title="Three UX case studies") }}
       <a class="link-arrow nav-link" href="/work/">All case studies <span class="arrow-char" aria-hidden="true">→</span></a>
     </div>
     <div class="grid grid-3">
@@ -160,7 +155,7 @@ description: Digital artist, designer and dungeon master. Drawings, logos, a hom
 {#- What I work with: text chips only, no logo images. -#}
 <section class="section" data-bg="oat" data-py="lg" data-border="top">
   <div class="container stack-8">
-    {{ headers.sectionHeader(eyebrow="Toolbox", title="What I work with", size="md") }}
+    {{ headers.sectionHeader(title="What I work with", size="md") }}
     <div class="grid grid-2">
       <div class="chip-group">
         <p class="chip-group__label label">Experimentation</p>
